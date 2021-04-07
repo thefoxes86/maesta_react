@@ -12,18 +12,18 @@ export default function Header(props) {
       </Helmet>
 
       <nav>
-        <ul>
-          <li>
+        <div className="row">
+          <div className="col-md-6">
             <NavLink to="/" activeClassName="active">
               Home
             </NavLink>
-          </li>
-          <li>
+          </div>
+          <div className="col-md-6">
             <NavLink to="/vini" activeClassName="active">
               Vini
             </NavLink>
-          </li>
-        </ul>
+          </div>
+        </div>
       </nav>
     </React.Fragment>
   );

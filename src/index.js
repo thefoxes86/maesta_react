@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
-import "./index.css";
+import "./assets/index.scss";
 
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
