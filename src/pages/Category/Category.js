@@ -1,6 +1,7 @@
 import React from "react";
 import FetchApi from "../../lib/fetchApi";
 import Header from "../../components/Header";
+import "../../assets/js/scrollingImagesEffect";
 
 export default function Category(props) {
   const posts = FetchApi("https://maestadellaformica.com/wp-json/wp/v2/posts", {
@@ -16,6 +17,7 @@ export default function Category(props) {
   return (
     <React.Fragment>
       <Header title="Vini" />
+
       {posts &&
         posts.map((post, index) => <h1>Categoria {post.title.rendered}</h1>)}
     </React.Fragment>

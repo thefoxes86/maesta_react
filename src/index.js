@@ -10,14 +10,18 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 ReactDOM.render(
   <Router>
     <React.StrictMode>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/vini">
-          <Category />
-        </Route>
-      </Switch>
+      <main className="demo-1">
+        <div data-scroll className="page page--layout-2">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/vini">
+              <Category />
+            </Route>
+          </Switch>
+        </div>
+      </main>
     </React.StrictMode>
   </Router>,
   document.getElementById("root")
