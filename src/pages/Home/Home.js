@@ -30,15 +30,13 @@ export default function Home(props) {
             <div
               className="content__item-img"
               style={{
-                backgroundImage: `url(https://www.acquabuona.it/wp-content/uploads/2019/01/20190114_081957.jpg)`,
+                backgroundImage: `url(img/img__1.png)`,
               }}
             ></div>
           </div>
           <div className="content__item-deco"></div>
           <h2 className="content__item-title">Oh</h2>
-          <p className="content__item-description">
-            Little trees and bushes grow however makes them happy.
-          </p>
+          <p className="content__item-description"></p>
         </div>
         <div className="content__item content__item--wide">
           <span className="content__item-number">02</span>
@@ -46,7 +44,7 @@ export default function Home(props) {
             <div
               className="content__item-img"
               style={{
-                backgroundImage: `url(https://www.acquabuona.it/wp-content/uploads/2019/01/20190114_081957.jpg)`,
+                backgroundImage: `url(img/img__2.png)`,
               }}
             ></div>
           </div>
@@ -62,7 +60,7 @@ export default function Home(props) {
             <div
               className="content__item-img"
               style={{
-                backgroundImage: `url(https://www.acquabuona.it/wp-content/uploads/2019/01/20190114_081957.jpg)`,
+                backgroundImage: `url(img/img__3.png)`,
               }}
             ></div>
           </div>
