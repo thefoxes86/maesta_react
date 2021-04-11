@@ -1,6 +1,7 @@
 import React from "react";
 import FetchApi from "../../lib/fetchApi";
 import Header from "../../components/Header";
+import simpleParallax from "simple-parallax-js";
 import "../../assets/js/scrollingImagesEffect";
 
 export default function Home(props) {
@@ -14,16 +15,47 @@ export default function Home(props) {
     },
     redirect: "follow", // manual, *follow, error
   });
+
+  const image = document.querySelector(".px__background__image");
+
+  new simpleParallax(image, {
+    scale: 1.5,
+  });
   return (
     <React.Fragment>
       <Header title="Home" />
 
-      {posts &&
-        posts.map((post, index) => (
-          <h1 className="page__title">{post.title.rendered}</h1>
-        ))}
+      <div className="content content__first content--full content--alternate">
+        <div className="content__item content__item--wide content--full-height">
+          <div className="content__item-imgwrap">
+            <div
+              className="content__item-img"
+              style={{
+                backgroundImage: `url(img/img__0.png)`,
+              }}
+            ></div>
+          </div>
+          <div className="content__item-deco"></div>
+          <div className="content__item-path">
+            <svg
+              id="path__0"
+              data-name="path__0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="1091.5"
+              height="754.375"
+              viewBox="0 0 1091.5 754.375"
+            >
+              <path
+                id="track__1"
+                data-name="track__1"
+                d="M0,0,1091.5,92.375v662L0,662Z"
+                fill="#252526"
+              />
+            </svg>
+          </div>
+          <p className="content__item-description"></p>
+        </div>
 
-      <div className="content content--full content--alternate">
         <div className="content__item content__item--wide">
           <span className="content__item-number">01</span>
           <div className="content__item-imgwrap">
@@ -35,9 +67,29 @@ export default function Home(props) {
             ></div>
           </div>
           <div className="content__item-deco"></div>
-          <h2 className="content__item-title">Oh</h2>
+          <div className="content__item-path">
+            <svg
+              id="path__1"
+              data-name="path__1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="885.398"
+              height="611.931"
+              viewBox="0 0 885.398 611.931"
+            >
+              <g id="path__1" data-name="path__1">
+                <path
+                  id="track__1"
+                  data-name="track__1"
+                  d="M885.4,611.931,0,537V0L885.4,74.932Z"
+                  transform="translate(0 0)"
+                  fill="#eb8c2c"
+                />
+              </g>
+            </svg>
+          </div>
           <p className="content__item-description"></p>
         </div>
+
         <div className="content__item content__item--wide">
           <span className="content__item-number">02</span>
           <div className="content__item-imgwrap">
@@ -49,11 +101,36 @@ export default function Home(props) {
             ></div>
           </div>
           <div className="content__item-deco"></div>
-          <h2 className="content__item-title">Ri</h2>
-          <p className="content__item-description">
-            We don't have to be committed. We are just playing here.
-          </p>
+          <div className="content__item-path">
+            <svg
+              id="path__2"
+              data-name="path__2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="885.398"
+              height="611.931"
+              viewBox="0 0 885.398 611.931"
+            >
+              <path
+                id="track__2"
+                data-name="track__2"
+                d="M0,0,885.4,74.932v537L0,537Z"
+                fill="#e3672a"
+              />
+            </svg>
+          </div>
+          <p className="content__item-description"></p>
         </div>
+
+        <section className="parallax__container">
+          <div className="background">
+            <img
+              className="px__background__image"
+              src="img/img__3.png"
+              alt=""
+            />
+          </div>
+          <div className="foreground">testo</div>
+        </section>
         <div className="content__item content__item--wide">
           <span className="content__item-number">03</span>
           <div className="content__item-imgwrap">
@@ -65,95 +142,25 @@ export default function Home(props) {
             ></div>
           </div>
           <div className="content__item-deco"></div>
-          <h2 className="content__item-title">Nj</h2>
-          <p className="content__item-description">
-            I thought today we would do a happy little picture.
-          </p>
-        </div>
-        <div className="content__item content__item--wide">
-          <span className="content__item-number">04</span>
-          <div className="content__item-imgwrap">
-            <div
-              className="content__item-img"
-              style={{
-                backgroundImage: `url(https://www.acquabuona.it/wp-content/uploads/2019/01/20190114_081957.jpg)`,
-              }}
-            ></div>
+          <div className="content__item-path">
+            <svg
+              id="path__2"
+              data-name="path__2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="885.398"
+              height="611.931"
+              viewBox="0 0 885.398 611.931"
+            >
+              <path
+                id="track__3"
+                data-name="track__3"
+                d="M885.4,611.931,0,537V0L885.4,74.932Z"
+                fill="#d44d2b"
+              />
+            </svg>
           </div>
-          <div className="content__item-deco"></div>
-          <h2 className="content__item-title">Mo</h2>
-          <p className="content__item-description">
-            Nature is so fantastic, enjoy it. Let it make you happy.
-          </p>
+          <p className="content__item-description"></p>
         </div>
-        <div className="content__item content__item--wide">
-          <span className="content__item-number">05</span>
-          <div className="content__item-imgwrap">
-            <div
-              className="content__item-img"
-              style={{
-                backgroundImage: `url(https://www.acquabuona.it/wp-content/uploads/2019/01/20190114_081957.jpg)`,
-              }}
-            ></div>
-          </div>
-          <div className="content__item-deco"></div>
-          <h2 className="content__item-title">Ne</h2>
-          <p className="content__item-description">
-            We need a shadow side and a highlight side.
-          </p>
-        </div>
-        <div className="content__item content__item--wide">
-          <span className="content__item-number">06</span>
-          <div className="content__item-imgwrap">
-            <div
-              className="content__item-img"
-              style={{
-                backgroundImage: `url(https://www.acquabuona.it/wp-content/uploads/2019/01/20190114_081957.jpg)`,
-              }}
-            ></div>
-          </div>
-          <div className="content__item-deco"></div>
-          <h2 className="content__item-title">Wy</h2>
-          <p className="content__item-description">
-            We'll put some happy little leaves here and there.
-          </p>
-        </div>
-        <div className="content__item content__item--wide">
-          <span className="content__item-number">07</span>
-          <div className="content__item-imgwrap">
-            <div
-              className="content__item-img"
-              style={{
-                backgroundImage: `url(https://www.acquabuona.it/wp-content/uploads/2019/01/20190114_081957.jpg)`,
-              }}
-            ></div>
-          </div>
-          <div className="content__item-deco"></div>
-          <h2 className="content__item-title">Tx</h2>
-          <p className="content__item-description">
-            With something so strong, a little bit can go a long way.
-          </p>
-        </div>
-        <div className="content__item content__item--wide">
-          <span className="content__item-number">08</span>
-          <div className="content__item-imgwrap">
-            <div
-              className="content__item-img"
-              style={{
-                backgroundImage: `url(https://www.acquabuona.it/wp-content/uploads/2019/01/20190114_081957.jpg)`,
-              }}
-            ></div>
-          </div>
-          <div className="content__item-deco"></div>
-          <h2 className="content__item-title">Sd</h2>
-          <p className="content__item-description">
-            There are no limits in this world.
-          </p>
-        </div>
-        <p className="credits">
-          Photography by
-          <a href="https://www.instagram.com/byfoul/">Frankie Cordoba</a>
-        </p>
       </div>
     </React.Fragment>
   );

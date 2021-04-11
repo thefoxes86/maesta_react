@@ -39,7 +39,7 @@ class Item {
     // the inner image
     this.DOM.image = this.DOM.el.querySelector(".content__item-img");
     this.DOM.imageWrapper = this.DOM.image.parentNode;
-    this.DOM.title = this.DOM.el.querySelector(".content__item-title");
+    this.DOM.title = this.DOM.el.querySelector(".content__item-path");
     this.renderedStyles = {
       // here we define which property will change as we scroll the page and the item is inside the viewport
       // in this case we will be:
