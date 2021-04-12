@@ -19,14 +19,14 @@ export default function Home(props) {
   const image = document.querySelector(".px__background__image");
 
   new simpleParallax(image, {
-    scale: 1.5,
+    scale: 1.2,
   });
   return (
     <React.Fragment>
       <Header title="Home" />
 
       <div className="content content__first content--full content--alternate">
-        <div className="content__item content__item--wide content--full-height">
+        <div className="content__item content__item__first content__item--wide content--full-height">
           <div className="content__item-imgwrap">
             <div
               className="content__item-img"
@@ -35,7 +35,7 @@ export default function Home(props) {
               }}
             ></div>
           </div>
-          <div className="content__item-deco"></div>
+
           <div className="content__item-path">
             <svg
               id="path__0"
@@ -57,7 +57,12 @@ export default function Home(props) {
         </div>
 
         <div className="content__item content__item--wide">
-          <span className="content__item-number">01</span>
+          <span className="content__item-text">
+            <div className="title">
+              <h3>Testo di prova</h3>
+            </div>
+            <p className="description">Testo da inserire di prova</p>
+          </span>
           <div className="content__item-imgwrap">
             <div
               className="content__item-img"
@@ -66,7 +71,7 @@ export default function Home(props) {
               }}
             ></div>
           </div>
-          <div className="content__item-deco"></div>
+
           <div className="content__item-path">
             <svg
               id="path__1"
@@ -91,7 +96,7 @@ export default function Home(props) {
         </div>
 
         <div className="content__item content__item--wide">
-          <span className="content__item-number">02</span>
+          <span className="content__item-text">02</span>
           <div className="content__item-imgwrap">
             <div
               className="content__item-img"
@@ -100,7 +105,7 @@ export default function Home(props) {
               }}
             ></div>
           </div>
-          <div className="content__item-deco"></div>
+
           <div className="content__item-path">
             <svg
               id="path__2"
@@ -131,8 +136,14 @@ export default function Home(props) {
           </div>
           <div className="foreground">testo</div>
         </section>
+        <div className="content__item" style={{ height: 0 }}>
+          <div className="content__item-imgwrap">
+            <div className="content__item-img"></div>
+            <div className="content__item-path"></div>
+          </div>
+        </div>
         <div className="content__item content__item--wide">
-          <span className="content__item-number">03</span>
+          <span className="content__item-text">03</span>
           <div className="content__item-imgwrap">
             <div
               className="content__item-img"
@@ -141,7 +152,7 @@ export default function Home(props) {
               }}
             ></div>
           </div>
-          <div className="content__item-deco"></div>
+
           <div className="content__item-path">
             <svg
               id="path__2"
