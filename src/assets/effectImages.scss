@@ -118,7 +118,7 @@ a:focus {
   justify-self: center;
 }
 
-.content--full {
+.content--full-height {
   height: 100vh;
   justify-self: center;
 }
@@ -143,11 +143,11 @@ a:focus {
 }
 
 .content__item--wide {
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 10% 90%;
 }
 
 .content__item--wide:nth-child(odd) {
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 90% 10%;
 }
 
 .content--center .content__item {
@@ -184,7 +184,7 @@ a:focus {
   position: relative;
   --imgwidth: 100%;
   margin: 0 auto;
-  grid-area: 2 / 1 / 3 / 3;
+  grid-area: 2 / 1 / 3 / 2;
   overflow: hidden;
   width: var(--imgwidth);
   padding-bottom: calc(var(--imgwidth) / (var(--aspect-ratio)));
@@ -342,6 +342,10 @@ a:focus {
     left: 0;
     height: 100%;
     z-index: 0;
+
+    img {
+      width: 100vw;
+    }
   }
 
   .foreground {

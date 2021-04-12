@@ -14,6 +14,9 @@ export default function Header(props) {
         <title>{props.title}</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
+      <div className="logo">
+        <img src="img/logo.png" alt="" />
+      </div>
       <Menu />
     </React.Fragment>
   );

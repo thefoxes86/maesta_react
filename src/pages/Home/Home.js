@@ -125,7 +125,7 @@ export default function Home(props) {
           <div className="background">
             <img
               className="px__background__image"
-              src="img/img__3.png"
+              src="img/texture__muro.png"
               alt=""
             />
           </div>

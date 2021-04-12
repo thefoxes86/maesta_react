@@ -1,13 +1,30 @@
 @import "../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
 @import "./effectImages.scss";
 
+.logo {
+  top: 5vh;
+  width: 12vw;
+  height: 15vh;
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+
+  img {
+    max-width: auto;
+    height: 100%;
+  }
+}
+
 .menu {
-  width: 15vw;
+  width: 12vw;
   height: 70px;
   background-color: black;
   position: absolute;
   left: 0;
-  top: calc(50vh - 35px);
+  top: 25vh;
   padding: 15px;
   display: flex;
   justify-content: flex-end;
