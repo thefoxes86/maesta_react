@@ -1,6 +1,9 @@
-@import "../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap");
 @import "./effectImages.scss";
 
+body {
+  font-family: "Oswald", sans-serif;
+}
 .logo {
   top: 5vh;
   width: 12vw;
@@ -25,7 +28,7 @@
   position: absolute;
   left: 0;
   top: 25vh;
-  padding: 15px;
+  padding: 20px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -40,6 +43,15 @@
       height: 1px;
       background-color: white;
     }
+    span:nth-child(3) {
+      width: 50%;
+    }
+  }
+  .text__menu {
+    color: white;
+    font-size: 28px;
+    padding-left: 10px;
+    font-weight: 300;
   }
 }
 

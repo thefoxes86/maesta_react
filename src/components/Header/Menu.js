@@ -5,12 +5,13 @@ export default function Menu(props) {
   const [open, setOpen] = useState(false);
   return (
     <React.Fragment>
-      <div className="menu">
-        <div className="hamburger" onClick={() => setOpen(true)}>
+      <div className="menu" onClick={() => setOpen(true)}>
+        <div className="hamburger">
           <span></span>
           <span></span>
           <span></span>
         </div>
+        <span className="text__menu">MENU</span>
       </div>
       {open && (
         <nav className="container__menu" onClick={() => setOpen(false)}>
