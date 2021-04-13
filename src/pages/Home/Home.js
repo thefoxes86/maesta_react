@@ -3,6 +3,7 @@ import FetchApi from "../../lib/fetchApi";
 import Header from "../../components/Header";
 import simpleParallax from "simple-parallax-js";
 import "../../assets/js/scrollingImagesEffect";
+import { NavLink } from "react-router-dom";
 
 export default function Home(props) {
   const posts = FetchApi("https://maestadellaformica.com/wp-json/wp/v2/posts", {
@@ -53,16 +54,9 @@ export default function Home(props) {
               />
             </svg>
           </div>
-          <p className="content__item-description"></p>
         </div>
 
         <div className="content__item content__item--wide">
-          <span className="content__item-text">
-            <div className="title">
-              <h3>Testo di prova</h3>
-            </div>
-            <p className="description">Testo da inserire di prova</p>
-          </span>
           <div className="content__item-imgwrap">
             <div
               className="content__item-img"
@@ -92,11 +86,40 @@ export default function Home(props) {
               </g>
             </svg>
           </div>
-          <p className="content__item-description"></p>
+          <span className="content__item-text">
+            <div className="title">
+              <h3>Testo di prova</h3>
+            </div>
+            <p className="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
+              nisl id mattis consectetur. Curabitur a vulputate nulla. Donec ex
+              quam, finibus quis nunc a, efficitur tincidunt erat. Duis
+              porttitor sagittis sem nec semper.
+            </p>
+            <NavLink to="/" exact className="continue">
+              Continua
+            </NavLink>
+          </span>
         </div>
 
         <div className="content__item content__item--wide">
-          <span className="content__item-text">02</span>
+          <span className="content__item-text">
+            <div className="title">
+              <h3>Testo di prova</h3>
+            </div>
+            <p className="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
+              nisl id mattis consectetur. Curabitur a vulputate nulla. Donec ex
+              quam, finibus quis nunc a, efficitur tincidunt erat. Duis
+              porttitor sagittis sem nec semper.
+            </p>
+            <NavLink to="/" exact className="continue">
+              Continua
+            </NavLink>
+          </span>
+
           <div className="content__item-imgwrap">
             <div
               className="content__item-img"
@@ -123,7 +146,6 @@ export default function Home(props) {
               />
             </svg>
           </div>
-          <p className="content__item-description"></p>
         </div>
 
         <section className="parallax__container">
@@ -136,6 +158,7 @@ export default function Home(props) {
           </div>
           <div className="foreground">testo</div>
         </section>
+
         <div className="content__item" style={{ height: 0 }}>
           <div className="content__item-imgwrap">
             <div className="content__item-img"></div>
@@ -143,7 +166,6 @@ export default function Home(props) {
           </div>
         </div>
         <div className="content__item content__item--wide">
-          <span className="content__item-text">03</span>
           <div className="content__item-imgwrap">
             <div
               className="content__item-img"
@@ -170,7 +192,21 @@ export default function Home(props) {
               />
             </svg>
           </div>
-          <p className="content__item-description"></p>
+          <span className="content__item-text">
+            <div className="title">
+              <h3>Testo di prova</h3>
+            </div>
+            <p className="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
+              nisl id mattis consectetur. Curabitur a vulputate nulla. Donec ex
+              quam, finibus quis nunc a, efficitur tincidunt erat. Duis
+              porttitor sagittis sem nec semper.
+            </p>
+            <NavLink to="/" exact className="continue">
+              Continua
+            </NavLink>
+          </span>
         </div>
       </div>
     </React.Fragment>
