@@ -17,11 +17,13 @@ export default function Home(props) {
     redirect: "follow", // manual, *follow, error
   });
 
-  const image = document.querySelector(".px__background__image");
-
-  new simpleParallax(image, {
-    scale: 1.2,
+  const images = [...document.querySelectorAll(".px__background__image")];
+  images.forEach((el) => {
+    new simpleParallax(el, {
+      scale: 1.1,
+    });
   });
+
   return (
     <React.Fragment>
       <Header title="Home" />
@@ -153,6 +155,24 @@ export default function Home(props) {
             <img
               className="px__background__image"
               src="img/texture__muro.png"
+              alt=""
+            />
+          </div>
+          <div className="foreground">testo</div>
+        </section>
+
+        {/* <div className="content__item" style={{ height: 0 }}>
+          <div className="content__item-imgwrap">
+            <div className="content__item-img"></div>
+            <div className="content__item-path"></div>
+          </div>
+        </div> */}
+
+        <section className="parallax__container">
+          <div className="background">
+            <img
+              className="px__background__image"
+              src="img/clouds.png"
               alt=""
             />
           </div>

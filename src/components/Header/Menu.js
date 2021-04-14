@@ -5,7 +5,7 @@ export default function Menu(props) {
   const [open, setOpen] = useState(false);
   return (
     <React.Fragment>
-      <div className="menu" onClick={() => setOpen(true)}>
+      <div className="menu hover__light" onClick={() => setOpen(true)}>
         <div className="hamburger">
           <span></span>
           <span></span>

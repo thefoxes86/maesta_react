@@ -345,20 +345,29 @@ a:focus {
 }
 
 .content--alternate .content__item-path,
-.content__item--wide:nth-child(odd) .content__item-description {
+.content__item--wide:nth-child(odd) {
   grid-area: 1 / 1 / 4 / 2;
   justify-self: start;
-  left: -5vw;
+}
 
+.content--alternate .content__item .content__item-path {
   svg {
     width: 55vw;
+    position: absolute;
+    left: -10vw;
+  }
+}
+.content--alternate .content__item:nth-child(odd) .content__item-path {
+  svg {
+    width: 55vw;
+    position: absolute;
+    left: 20vw;
   }
 }
 
 .content--alternate .content__item:nth-child(odd) .content__item-path {
   grid-area: 2 / 2 / 3 / 3;
   justify-self: start;
-  left: 15vw;
 }
 .content__item--wide .content__item-description {
   grid-area: 1 / 1 / 4 / 3;
