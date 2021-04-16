@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function TransitionPages(props) {
+export default function TransitionPages({ children, location }) {
   const blackBox = {
     initial: {
       height: "100vh",
@@ -10,10 +10,24 @@ export default function TransitionPages(props) {
     exit: {
       height: "100vh",
       top: 0,
+      transition: {
+        duration: 1.5,
+        ease: [0.87, 0, 0.13, 1],
+      },
     },
     animate: {
       height: 0,
       top: "100vh",
+      transition: {
+        duration: 1.5,
+        ease: [0.87, 0, 0.13, 1],
+      },
+    },
+    pageZoomInitial: {
+      transform: "scale(1.1)",
+    },
+    pageZoomAnimate: {
+      transform: "scale(1)",
       transition: {
         duration: 1.5,
         ease: [0.87, 0, 0.13, 1],
@@ -24,9 +38,10 @@ export default function TransitionPages(props) {
     <React.Fragment>
       <motion.div
         className="absolute z-50 flex items-center justify-center w-full bg-black"
-        exit={blackBox.exit}
-        initial={blackBox.initial}
-        animate={blackBox.animate}
+        variants={blackBox}
+        initial="initial"
+        animate="animate"
+        exit="exit"
       >
         <motion.svg className="absolute z-50 flex">
           <pattern
@@ -51,18 +66,12 @@ export default function TransitionPages(props) {
         </motion.svg>
       </motion.div>
       <motion.div
-        initial={{
-          transform: "scale(1.1)",
-        }}
-        animate={{
-          transform: "scale(1)",
-          transition: {
-            duration: 1.5,
-            ease: [0.87, 0, 0.13, 1],
-          },
-        }}
+        variants={blackBox}
+        initial="pageZoomInitial"
+        exit="exit"
+        animate="pageZoomAnimate"
       >
-        {props.children}
+        {children}
       </motion.div>
     </React.Fragment>
   );

@@ -10,10 +10,10 @@
 
 body {
   margin: 0;
-  --color-text: #dc6e25;
+  --color-text: #000;
   --color-bg: #fff;
   --color-link: #000;
-  --color-link-hover: #dc6e25;
+  --color-link-hover: #d9000d;
   --aspect-ratio: 1/1.5;
   --imgwidthmax: 500px;
   --size-title: 10rem;
@@ -31,7 +31,6 @@ body {
   --color-link-hover: #5c4541;
   --aspect-ratio: 32/17;
   font-size: 1.25rem;
-  font-family: ivymode, sans-serif;
   --size-title: 15vw;
 }
 
@@ -58,6 +57,27 @@ a:focus {
 .content__first {
   grid-area: grid;
   margin: 15vh 0 0 0 !important;
+
+  .content__block__inner-page {
+    grid-area: 2 / 1 / 2 / 2;
+    position: relative;
+
+    .text__intro {
+      font-weight: 100;
+      font-size: 40px;
+      width: 50%;
+      position: absolute;
+      top: 10%;
+      left: 16%;
+    }
+
+    img {
+      width: 50%;
+      position: absolute;
+      bottom: 15%;
+      left: 0;
+    }
+  }
 }
 .content {
   grid-area: grid;

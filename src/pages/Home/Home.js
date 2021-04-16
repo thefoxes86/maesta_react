@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FetchApi from "../../lib/fetchApi";
 import Header from "../../components/Header";
 import simpleParallax from "simple-parallax-js";
@@ -6,6 +6,7 @@ import "../../assets/js/scrollingImagesEffect";
 import { NavLink } from "react-router-dom";
 import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
 import TransitionPages from "../../components/TransitionPages";
+import { motion } from "framer-motion";
 
 export default function Home(props) {
   const posts = FetchApi("https://maestadellaformica.com/wp-json/wp/v2/posts", {
@@ -26,8 +27,6 @@ export default function Home(props) {
     });
   });
 
-  getScrollPage();
-
   return (
     <React.Fragment>
       <Header title="Home" />
@@ -35,6 +34,12 @@ export default function Home(props) {
       <TransitionPages>
         <div className="content content__first content--full content--alternate">
           <div className="content__item content__item__first content__item--wide content--full-height">
+            <div className="content__block__inner-page">
+              <div className="text__intro">
+                Quasi tutta tradizione con un pizzico di fantasia...
+              </div>
+              <motion.img src="img/circle_home_top.png" />
+            </div>
             <div className="content__item-imgwrap">
               <div
                 className="content__item-img"

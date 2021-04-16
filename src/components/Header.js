@@ -27,12 +27,17 @@ export default function Header(props) {
 const cursorPersonalize = () => {
   const cursor = document.querySelector(".cursor");
   const hoverLight = [...document.querySelectorAll(".hover__light")];
+  const hoverDark = [...document.querySelectorAll(".hover__dark")];
 
   cursor &&
     document.addEventListener("mousemove", (e) => {
-      // if (e.pageX < 0 || e.pageX > window.innerWidth) {
-
-      // }
+      if (
+        e.pageX < 5 ||
+        e.pageX > window.innerWidth - 5 ||
+        e.pageY < 5 ||
+        e.pageY > window.innerHeight - 5
+      ) {
+      }
       cursor.setAttribute(
         "style",
         "top: " + (e.pageY - 15) + "px; left: " + (e.pageX - 15) + "px;"
@@ -47,9 +52,19 @@ const cursorPersonalize = () => {
   //   }, 500);
   // });
   hoverLight.forEach((element) => {
-    element.addEventListener("mouseover", () => cursor.classList.add("hover"));
+    element.addEventListener("mouseover", () =>
+      cursor.classList.add("hover_black")
+    );
     element.addEventListener("mouseout", () =>
-      cursor.classList.remove("hover")
+      cursor.classList.remove("hover_black")
+    );
+  });
+  hoverDark.forEach((element) => {
+    element.addEventListener("mouseover", () =>
+      cursor.classList.add("hover_white")
+    );
+    element.addEventListener("mouseout", () =>
+      cursor.classList.remove("hover_white")
     );
   });
 };

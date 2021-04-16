@@ -1,34 +1,151 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Menu(props) {
   const [open, setOpen] = useState(false);
+  const variants = {
+    openContainer: { width: "50vw" },
+    closeContainer: { opacity: 0 },
+    opacityOff: {
+      display: "none",
+    },
+    opacityOn: {
+      display: "block",
+    },
+    openMenu: {
+      backgroundColor: "white",
+      color: "black",
+    },
+    closeMenu: {
+      backgroundColor: "black",
+      color: "white",
+    },
+    firstSpan: {
+      open: {
+        backgroundColor: "black",
+        transform: "rotate(45deg) translateX(5px) translateY(10px)",
+      },
+      close: {},
+    },
+    secondtSpan: {
+      open: {
+        opacity: 0,
+        left: "-15px",
+        backgroundColor: "black",
+      },
+      close: {},
+    },
+    thirdSpan: {
+      open: {
+        backgroundColor: "black",
+        width: "100%",
+        transform: "rotate(-45deg) translateX(5px) translateY(-10px)",
+      },
+      close: {},
+    },
+    transition: {
+      duration: 1.5,
+      ease: [0.87, 0, 0.13, 1],
+    },
+    transitiondDelay: {
+      delay: 1.5,
+      duration: 0.2,
+      ease: [0.87, 0, 0.13, 1],
+    },
+  };
   return (
     <React.Fragment>
-      <div className="menu hover__light" onClick={() => setOpen(true)}>
+      <motion.div
+        className={open ? "menu hover__light" : "menu hover__dark"}
+        transition={variants.transition}
+        animate={open ? variants.openMenu : variants.closeMenu}
+        onTap={() => {
+          const status = open ? false : true;
+          setOpen(status);
+        }}
+      >
         <div className="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+          <motion.span
+            transition={variants.transition}
+            animate={open ? variants.firstSpan.open : variants.firstSpan.close}
+          ></motion.span>
+          <motion.span
+            transition={variants.transition}
+            animate={
+              open ? variants.secondtSpan.open : variants.secondtSpan.close
+            }
+          ></motion.span>
+          <motion.span
+            transition={variants.transition}
+            animate={open ? variants.thirdSpan.open : variants.thirdSpan.close}
+          ></motion.span>
         </div>
-        <span className="text__menu">MENU</span>
-      </div>
-      {open && (
-        <nav className="container__menu" onClick={() => setOpen(false)}>
-          <ul>
-            <li>
-              <NavLink to="/" activeClassName="active">
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/vini" activeClassName="active">
-                Vini
-              </NavLink>
-            </li>
-          </ul>
-        </nav>
-      )}
+        <motion.span
+          className="text__menu"
+          animate={open ? variants.openMenu : variants.closeMenu}
+        >
+          {open ? "MENU" : "MENU"}
+        </motion.span>
+      </motion.div>
+
+      <motion.nav
+        className="container__menu"
+        animate={open ? variants.openContainer : variants.closeContainer}
+        transition={variants.transition}
+      >
+        <motion.ul
+          animate={open ? variants.opacityOn : variants.opacityOff}
+          transition={variants.transitiondDelay}
+        >
+          <li>
+            <NavLink
+              to="/luoghi"
+              className="hover__dark"
+              activeClassName="active"
+            >
+              LUOGHI DEL RACCONTO
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/sapori"
+              className="hover__dark"
+              activeClassName="active"
+            >
+              SAPORI DELLA TERRA
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/sapori"
+              className="hover__dark"
+              activeClassName="active"
+            >
+              VOLTI DELL'ALTIPIANO
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/respiri"
+              className="hover__dark"
+              activeClassName="active"
+            >
+              RESPIRI DELLA MENTE
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/contatti"
+              className="hover__dark"
+              activeClassName="active"
+            >
+              CONTATTI
+            </NavLink>
+          </li>
+          <li>INSTAGRAM ICON</li>
+        </motion.ul>
+      </motion.nav>
     </React.Fragment>
   );
 }
