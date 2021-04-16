@@ -139,15 +139,43 @@ body {
 }
 
 .container__menu {
-  position: absolute;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  align-items: center;
   background-color: black;
-  width: 40vw;
+  width: 60vw;
   height: 100vh;
-  left: 0vw;
+  left: 0;
   top: 0;
+
+  ul {
+    padding-left: 0;
+    list-style-type: none;
+    li {
+      a {
+        color: white;
+        font-size: 24px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
-nav {
-  position: absolute;
-  z-index: 99999999;
+// ANIMATION TRANSITION PAGE
+
+.bg-black {
+  background-color: black;
+}
+.w-full {
+  width: 100vw;
+}
+.absolute {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.z-50 {
+  z-index: 9999;
 }

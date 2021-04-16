@@ -4,6 +4,8 @@ import Header from "../../components/Header";
 import simpleParallax from "simple-parallax-js";
 import "../../assets/js/scrollingImagesEffect";
 import { NavLink } from "react-router-dom";
+import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
+import TransitionPages from "../../components/TransitionPages";
 
 export default function Home(props) {
   const posts = FetchApi("https://maestadellaformica.com/wp-json/wp/v2/posts", {
@@ -24,211 +26,202 @@ export default function Home(props) {
     });
   });
 
+  getScrollPage();
+
   return (
     <React.Fragment>
       <Header title="Home" />
 
-      <div className="content content__first content--full content--alternate">
-        <div className="content__item content__item__first content__item--wide content--full-height">
-          <div className="content__item-imgwrap">
-            <div
-              className="content__item-img"
-              style={{
-                backgroundImage: `url(img/img__0.png)`,
-              }}
-            ></div>
-          </div>
+      <TransitionPages>
+        <div className="content content__first content--full content--alternate">
+          <div className="content__item content__item__first content__item--wide content--full-height">
+            <div className="content__item-imgwrap">
+              <div
+                className="content__item-img"
+                style={{
+                  backgroundImage: `url(img/img__0.png)`,
+                }}
+              ></div>
+            </div>
 
-          <div className="content__item-path">
-            <svg
-              id="path__0"
-              data-name="path__0"
-              xmlns="http://www.w3.org/2000/svg"
-              width="1091.5"
-              height="754.375"
-              viewBox="0 0 1091.5 754.375"
-            >
-              <path
-                id="track__1"
-                data-name="track__1"
-                d="M0,0,1091.5,92.375v662L0,662Z"
-                fill="#252526"
-              />
-            </svg>
-          </div>
-        </div>
-
-        <div className="content__item content__item--wide">
-          <div className="content__item-imgwrap">
-            <div
-              className="content__item-img"
-              style={{
-                backgroundImage: `url(img/img__1.png)`,
-              }}
-            ></div>
-          </div>
-
-          <div className="content__item-path">
-            <svg
-              id="path__1"
-              data-name="path__1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="885.398"
-              height="611.931"
-              viewBox="0 0 885.398 611.931"
-            >
-              <g id="path__1" data-name="path__1">
+            <div className="content__item-path">
+              <svg
+                id="path__0"
+                data-name="path__0"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1091.5"
+                height="754.375"
+                viewBox="0 0 1091.5 754.375"
+              >
                 <path
                   id="track__1"
                   data-name="track__1"
-                  d="M885.4,611.931,0,537V0L885.4,74.932Z"
-                  transform="translate(0 0)"
-                  fill="#eb8c2c"
+                  d="M0,0,1091.5,92.375v662L0,662Z"
+                  fill="#252526"
                 />
-              </g>
-            </svg>
-          </div>
-          <span className="content__item-text">
-            <div className="title">
-              <h3>Testo di prova</h3>
+              </svg>
             </div>
-            <p className="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
-              nisl id mattis consectetur. Curabitur a vulputate nulla. Donec ex
-              quam, finibus quis nunc a, efficitur tincidunt erat. Duis
-              porttitor sagittis sem nec semper.
-            </p>
-            <NavLink to="/" exact className="continue">
-              Continua
-            </NavLink>
-          </span>
-        </div>
-
-        <div className="content__item content__item--wide">
-          <span className="content__item-text">
-            <div className="title">
-              <h3>Testo di prova</h3>
-            </div>
-            <p className="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
-              nisl id mattis consectetur. Curabitur a vulputate nulla. Donec ex
-              quam, finibus quis nunc a, efficitur tincidunt erat. Duis
-              porttitor sagittis sem nec semper.
-            </p>
-            <NavLink to="/" exact className="continue">
-              Continua
-            </NavLink>
-          </span>
-
-          <div className="content__item-imgwrap">
-            <div
-              className="content__item-img"
-              style={{
-                backgroundImage: `url(img/img__2.png)`,
-              }}
-            ></div>
           </div>
 
-          <div className="content__item-path">
-            <svg
-              id="path__2"
-              data-name="path__2"
-              xmlns="http://www.w3.org/2000/svg"
-              width="885.398"
-              height="611.931"
-              viewBox="0 0 885.398 611.931"
-            >
-              <path
-                id="track__2"
-                data-name="track__2"
-                d="M0,0,885.4,74.932v537L0,537Z"
-                fill="#e3672a"
+          <div className="content__item content__item--wide">
+            <div className="content__item-imgwrap">
+              <div
+                className="content__item-img"
+                style={{
+                  backgroundImage: `url(img/img__1.png)`,
+                }}
+              ></div>
+            </div>
+
+            <div className="content__item-path">
+              <svg
+                id="path__1"
+                data-name="path__1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="885.398"
+                height="611.931"
+                viewBox="0 0 885.398 611.931"
+              >
+                <g id="path__1" data-name="path__1">
+                  <path
+                    id="track__1"
+                    data-name="track__1"
+                    d="M885.4,611.931,0,537V0L885.4,74.932Z"
+                    transform="translate(0 0)"
+                    fill="#eb8c2c"
+                  />
+                </g>
+              </svg>
+            </div>
+            <span className="content__item-text">
+              <div className="title">
+                <h3>Testo di prova</h3>
+              </div>
+              <p className="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
+                nisl id mattis consectetur. Curabitur a vulputate nulla. Donec
+                ex quam, finibus quis nunc a, efficitur tincidunt erat. Duis
+                porttitor sagittis sem nec semper.
+              </p>
+              <NavLink to="/" exact className="continue">
+                Continua
+              </NavLink>
+            </span>
+          </div>
+
+          <div className="content__item content__item--wide">
+            <span className="content__item-text">
+              <div className="title">
+                <h3>Testo di prova</h3>
+              </div>
+              <p className="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
+                nisl id mattis consectetur. Curabitur a vulputate nulla. Donec
+                ex quam, finibus quis nunc a, efficitur tincidunt erat. Duis
+                porttitor sagittis sem nec semper.
+              </p>
+              <NavLink to="/" exact className="continue">
+                Continua
+              </NavLink>
+            </span>
+
+            <div className="content__item-imgwrap">
+              <div
+                className="content__item-img"
+                style={{
+                  backgroundImage: `url(img/img__2.png)`,
+                }}
+              ></div>
+            </div>
+
+            <div className="content__item-path">
+              <svg
+                id="path__2"
+                data-name="path__2"
+                xmlns="http://www.w3.org/2000/svg"
+                width="885.398"
+                height="611.931"
+                viewBox="0 0 885.398 611.931"
+              >
+                <path
+                  id="track__2"
+                  data-name="track__2"
+                  d="M0,0,885.4,74.932v537L0,537Z"
+                  fill="#e3672a"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <section className="parallax__container">
+            <div className="background">
+              <img
+                className="px__background__image"
+                src="img/texture__muro.png"
+                alt=""
               />
-            </svg>
-          </div>
-        </div>
-
-        <section className="parallax__container">
-          <div className="background">
-            <img
-              className="px__background__image"
-              src="img/texture__muro.png"
-              alt=""
-            />
-          </div>
-          <div className="foreground">testo</div>
-        </section>
-
-        {/* <div className="content__item" style={{ height: 0 }}>
-          <div className="content__item-imgwrap">
-            <div className="content__item-img"></div>
-            <div className="content__item-path"></div>
-          </div>
-        </div> */}
-
-        <section className="parallax__container">
-          <div className="background">
-            <img
-              className="px__background__image"
-              src="img/clouds.png"
-              alt=""
-            />
-          </div>
-          <div className="foreground">testo</div>
-        </section>
-
-        <div className="content__item" style={{ height: 0 }}>
-          <div className="content__item-imgwrap">
-            <div className="content__item-img"></div>
-            <div className="content__item-path"></div>
-          </div>
-        </div>
-        <div className="content__item content__item--wide">
-          <div className="content__item-imgwrap">
-            <div
-              className="content__item-img"
-              style={{
-                backgroundImage: `url(img/img__3.png)`,
-              }}
-            ></div>
-          </div>
-
-          <div className="content__item-path">
-            <svg
-              id="path__2"
-              data-name="path__2"
-              xmlns="http://www.w3.org/2000/svg"
-              width="885.398"
-              height="611.931"
-              viewBox="0 0 885.398 611.931"
-            >
-              <path
-                id="track__3"
-                data-name="track__3"
-                d="M885.4,611.931,0,537V0L885.4,74.932Z"
-                fill="#d44d2b"
-              />
-            </svg>
-          </div>
-          <span className="content__item-text">
-            <div className="title">
-              <h3>Testo di prova</h3>
             </div>
-            <p className="description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
-              nisl id mattis consectetur. Curabitur a vulputate nulla. Donec ex
-              quam, finibus quis nunc a, efficitur tincidunt erat. Duis
-              porttitor sagittis sem nec semper.
-            </p>
-            <NavLink to="/" exact className="continue">
-              Continua
-            </NavLink>
-          </span>
+            <div className="foreground">testo</div>
+          </section>
+
+          <section className="parallax__container">
+            <div className="background">
+              <img
+                className="px__background__image"
+                src="img/clouds.png"
+                alt=""
+              />
+            </div>
+            <div className="foreground">testo</div>
+          </section>
+
+          <div className="content__item content__item--wide">
+            <div className="content__item-imgwrap">
+              <div
+                className="content__item-img"
+                style={{
+                  backgroundImage: `url(img/img__3.png)`,
+                }}
+              ></div>
+            </div>
+
+            <div className="content__item-path">
+              <svg
+                id="path__2"
+                data-name="path__2"
+                xmlns="http://www.w3.org/2000/svg"
+                width="885.398"
+                height="611.931"
+                viewBox="0 0 885.398 611.931"
+              >
+                <path
+                  id="track__3"
+                  data-name="track__3"
+                  d="M885.4,611.931,0,537V0L885.4,74.932Z"
+                  fill="#d44d2b"
+                />
+              </svg>
+            </div>
+            <span className="content__item-text">
+              <div className="title">
+                <h3>Testo di prova</h3>
+              </div>
+              <p className="description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
+                nisl id mattis consectetur. Curabitur a vulputate nulla. Donec
+                ex quam, finibus quis nunc a, efficitur tincidunt erat. Duis
+                porttitor sagittis sem nec semper.
+              </p>
+              <NavLink to="/" exact className="continue">
+                Continua
+              </NavLink>
+            </span>
+          </div>
         </div>
-      </div>
+      </TransitionPages>
     </React.Fragment>
   );
 }

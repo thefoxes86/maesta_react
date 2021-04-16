@@ -15,18 +15,18 @@ export default function Menu(props) {
       </div>
       {open && (
         <nav className="container__menu" onClick={() => setOpen(false)}>
-          <div className="row">
-            <div className="col-md-6">
+          <ul>
+            <li>
               <NavLink to="/" activeClassName="active">
                 Home
               </NavLink>
-            </div>
-            <div className="col-md-6">
+            </li>
+            <li>
               <NavLink to="/vini" activeClassName="active">
                 Vini
               </NavLink>
-            </div>
-          </div>
+            </li>
+          </ul>
         </nav>
       )}
     </React.Fragment>

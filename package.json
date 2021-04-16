@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "animejs": "^3.2.1",
     "bootstrap": "^4.6.0",
+    "framer-motion": "^4.1.4",
     "imagesloades": "file:local_modules/ImagesLoades",
     "node-sass": "^5.0.0",
     "react": "^17.0.2",

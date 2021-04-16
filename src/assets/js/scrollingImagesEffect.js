@@ -278,15 +278,19 @@ const preloadImages = () => {
   });
 };
 
-// And then..
-preloadImages().then(() => {
-  // Remove the loader
-  document.body.classList.remove("loading");
-  // Get the scroll position and update the lastScroll variable
-  getPageYScroll();
-  lastScroll = docScroll;
-  // Initialize the Smooth Scrolling
-  {
-    new SmoothScroll();
-  }
-});
+const getScrollPage = () => {
+  // And then..
+  preloadImages().then(() => {
+    // Remove the loader
+    document.body.classList.remove("loading");
+    // Get the scroll position and update the lastScroll variable
+    getPageYScroll();
+    lastScroll = docScroll;
+    // Initialize the Smooth Scrolling
+    {
+      new SmoothScroll();
+    }
+  });
+};
+
+export { getScrollPage };
