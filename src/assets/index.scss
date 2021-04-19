@@ -61,22 +61,26 @@ body {
   width: 12vw;
   height: 15vh;
   position: absolute;
+  z-index: 9999;
   left: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 0;
 
-  img {
-    max-width: auto;
-    height: 100%;
+  & a {
+    text-align: right;
+    img {
+      width: 80%;
+      height: auto;
+    }
   }
 }
 
 .menu {
   width: 12vw;
   height: 70px;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   position: absolute;
   left: 0;
   top: 25vh;
@@ -177,6 +181,9 @@ body {
 // ANIMATION TRANSITION PAGE
 
 .bg-black {
+  background-color: black;
+}
+.bg-black-out {
   background-color: black;
 }
 .w-full {

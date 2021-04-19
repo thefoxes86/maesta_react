@@ -26,6 +26,7 @@ export default function Home(props) {
       scale: 1.1,
     });
   });
+  getScrollPage();
 
   return (
     <React.Fragment>
@@ -100,7 +101,7 @@ export default function Home(props) {
             </div>
             <span className="content__item-text">
               <div className="title">
-                <h3>Testo di prova</h3>
+                <h3>Luoghi del racconto</h3>
               </div>
               <p className="description">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -109,7 +110,7 @@ export default function Home(props) {
                 ex quam, finibus quis nunc a, efficitur tincidunt erat. Duis
                 porttitor sagittis sem nec semper.
               </p>
-              <NavLink to="/" exact className="continue">
+              <NavLink to="/luoghi-del-racconto" className="continue">
                 Continua
               </NavLink>
             </span>

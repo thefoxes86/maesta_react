@@ -2,29 +2,43 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
-import { AnimatePresence } from "framer-motion";
-import "./assets/index.scss";
+import Page from "./pages/Page";
+import ScrollTop from "./components/ScrollTop";
 
+import "./assets/index.scss";
 import reportWebVitals from "./reportWebVitals";
+
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 ReactDOM.render(
   <Router>
     <React.StrictMode>
-      <main className="demo-1">
-        <div data-scroll className="page page--layout-2">
-          <AnimatePresence exitBeforeEnter>
+      <ScrollTop>
+        <main className="demo-1">
+          <div data-scroll className="page page--layout-2">
             <Switch>
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route exact path="/vini">
-                <Category />
+              <Route exact path="/luoghi-del-racconto">
+                <Category cat="luoghi" />
+              </Route>
+              <Route exact path="/sapori-della-terra">
+                <Category cat="sapori" />
+              </Route>
+              <Route exact path="/volti-dell-altipiano">
+                <Category cat="volti" />
+              </Route>
+              <Route exact path="/respiri-della-mente">
+                <Category cat="respiri" />
+              </Route>
+              <Route exact path="/contatti">
+                <Page title="contatti" />
               </Route>
             </Switch>
-          </AnimatePresence>
-        </div>
-      </main>
+          </div>
+        </main>
+      </ScrollTop>
     </React.StrictMode>
   </Router>,
   document.getElementById("root")

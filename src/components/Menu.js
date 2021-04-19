@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Menu(props) {
   const [open, setOpen] = useState(false);
@@ -14,16 +14,20 @@ export default function Menu(props) {
       display: "block",
     },
     openMenu: {
-      backgroundColor: "white",
-      color: "black",
+      backgroundColor: "rgb(255,255,255)",
+    },
+    openMenuText: {
+      color: "rgb(0,0,0)",
     },
     closeMenu: {
-      backgroundColor: "black",
-      color: "white",
+      backgroundColor: "rgb(0,0,0)",
+    },
+    closeMenuText: {
+      color: "rgb(255,255,255)",
     },
     firstSpan: {
       open: {
-        backgroundColor: "black",
+        backgroundColor: "rgb(0,0,0)",
         transform: "rotate(45deg) translateX(5px) translateY(10px)",
       },
       close: {},
@@ -83,7 +87,7 @@ export default function Menu(props) {
         </div>
         <motion.span
           className="text__menu"
-          animate={open ? variants.openMenu : variants.closeMenu}
+          animate={open ? variants.openMenuText : variants.closeMenuText}
         >
           {open ? "MENU" : "MENU"}
         </motion.span>
@@ -100,7 +104,7 @@ export default function Menu(props) {
         >
           <li>
             <NavLink
-              to="/luoghi"
+              to="/luoghi-del-racconto"
               className="hover__dark"
               activeClassName="active"
             >
@@ -109,7 +113,7 @@ export default function Menu(props) {
           </li>
           <li>
             <NavLink
-              to="/sapori"
+              to="/sapori-della-terra"
               className="hover__dark"
               activeClassName="active"
             >
@@ -118,7 +122,7 @@ export default function Menu(props) {
           </li>
           <li>
             <NavLink
-              to="/sapori"
+              to="/volti-dell-altipiano"
               className="hover__dark"
               activeClassName="active"
             >
@@ -127,7 +131,7 @@ export default function Menu(props) {
           </li>
           <li>
             <NavLink
-              to="/respiri"
+              to="/respiri-della-mente"
               className="hover__dark"
               activeClassName="active"
             >

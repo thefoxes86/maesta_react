@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { NavLink } from "react-router-dom";
 import Menu from "./Menu";
 
 export default function Header(props) {
@@ -16,7 +17,9 @@ export default function Header(props) {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <div className="logo hover__light">
-        <img src="img/logo.png" alt="" />
+        <NavLink to="/" exact>
+          <img src="img/logo.png" alt="" />
+        </NavLink>
       </div>
       <div className="cursor"></div>
       <Menu />
