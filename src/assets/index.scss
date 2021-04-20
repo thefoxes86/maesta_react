@@ -155,9 +155,9 @@ body {
   display: flex;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
-  width: 0;
+  width: 50vw;
   height: 100vh;
-  left: 0;
+  left: -50vw;
   top: 0;
 
   ul {
@@ -196,4 +196,30 @@ body {
 }
 .z-50 {
   z-index: 9999;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .logo {
+    width: 40vw;
+    height: 70px;
+    left: 45vw;
+  }
+  .menu {
+    width: 40vw;
+    top: 5vh;
+  }
+  .container__menu {
+    width: 95vw;
+
+    ul {
+      padding-left: 0;
+      list-style-type: none;
+      position: absolute;
+      top: 20vh;
+      left: 20%;
+      li a {
+        font-size: 24px;
+      }
+    }
+  }
 }

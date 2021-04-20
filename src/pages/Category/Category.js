@@ -21,13 +21,15 @@ export default function Category(props) {
     redirect: "follow", // manual, *follow, error
   });
 
+  getScrollPage();
+
   return (
     <React.Fragment>
       <Header title={props.cat} />
       <Menu />
       <TransitionPages page={props.cat}>
-        <div className="content content__first content--full content--alternate">
-          <div className="content__item content__item__first content__item--wide content--full-height">
+        <div className="content content__first content--full">
+          <div className="content__item content__item__first__right content--full-height">
             <div className="content__block__inner-page">
               <div className="text__intro">
                 Quasi tutta tradizione con un pizzico di fantasia...
@@ -62,7 +64,7 @@ export default function Category(props) {
             </div>
           </div>
 
-          <div className="content__item content__item--wide">
+          <div className="content__item content__item__left">
             <div className="content__item-imgwrap">
               <div
                 className="content__item-img"
@@ -109,7 +111,7 @@ export default function Category(props) {
             </span>
           </div>
 
-          <div className="content__item content__item--wide">
+          <div className="content__item content__item__right">
             <span className="content__item-text">
               <div className="title">
                 <h3>Testo di prova</h3>

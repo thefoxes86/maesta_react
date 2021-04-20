@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Menu(props) {
   const [open, setOpen] = useState(false);
   const variants = {
-    openContainer: { width: "50vw" },
-    closeContainer: { opacity: 0 },
+    openContainer: { left: "0" },
+    closeContainer: { opacity: 0, left: "-50vw" },
     opacityOff: {
       display: "none",
     },

@@ -66,10 +66,11 @@ export default function TransitionPages({ children, location, page }) {
   allLinks.forEach((element) => {
     element.addEventListener("click", (e) => {
       e.preventDefault();
-      const finalPath = e.path[0].pathname.substring(
-        1,
-        e.path[0].pathname.length
-      );
+      console.log(e.path[0].pathname);
+      const finalPath =
+        e.path[0].pathname !== undefined
+          ? e.path[0].pathname.substring(1, e.path[0].pathname.length)
+          : "/";
       controls.start(blackBox.animateOut).then(() => {
         controls.start(blackBox.pageZoomExit);
         history.push(finalPath);
