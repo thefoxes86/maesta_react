@@ -107,6 +107,7 @@ export default function Menu(props) {
               to="/luoghi-del-racconto"
               className="hover__dark"
               activeClassName="active"
+              type="category"
             >
               LUOGHI DEL RACCONTO
             </NavLink>
@@ -116,6 +117,7 @@ export default function Menu(props) {
               to="/sapori-della-terra"
               className="hover__dark"
               activeClassName="active"
+              type="category"
             >
               SAPORI DELLA TERRA
             </NavLink>
@@ -125,6 +127,7 @@ export default function Menu(props) {
               to="/volti-dell-altipiano"
               className="hover__dark"
               activeClassName="active"
+              type="category"
             >
               VOLTI DELL'ALTIPIANO
             </NavLink>
@@ -134,6 +137,7 @@ export default function Menu(props) {
               to="/respiri-della-mente"
               className="hover__dark"
               activeClassName="active"
+              type="category"
             >
               RESPIRI DELLA MENTE
             </NavLink>
@@ -143,6 +147,7 @@ export default function Menu(props) {
               to="/contatti"
               className="hover__dark"
               activeClassName="active"
+              type="page"
             >
               CONTATTI
             </NavLink>

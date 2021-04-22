@@ -1,7 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Home from "./pages/Home";
-import Category from "./pages/Category";
+import Luoghi from "./pages/Luoghi";
+import Sapori from "./pages/Sapori";
+import Volti from "./pages/Volti";
+import Respiri from "./pages/Respiri";
 import Page from "./pages/Page";
 import ScrollTop from "./components/ScrollTop";
 
@@ -18,22 +21,42 @@ ReactDOM.render(
           <div data-scroll className="page page--layout-2">
             <Switch>
               <Route exact path="/">
-                <Home />
+                <Home type="home" key={window.location.pathname} />
               </Route>
               <Route exact path="/luoghi-del-racconto">
-                <Category cat="luoghi" />
+                <Luoghi
+                  type="category"
+                  cat="luoghi"
+                  key={window.location.pathname}
+                />
               </Route>
               <Route exact path="/sapori-della-terra">
-                <Category cat="sapori" />
+                <Sapori
+                  type="category"
+                  cat="sapori"
+                  key={window.location.pathname}
+                />
               </Route>
               <Route exact path="/volti-dell-altipiano">
-                <Category cat="volti" />
+                <Volti
+                  type="category"
+                  cat="volti"
+                  key={window.location.pathname}
+                />
               </Route>
               <Route exact path="/respiri-della-mente">
-                <Category cat="respiri" />
+                <Respiri
+                  type="category"
+                  cat="respiri"
+                  key={window.location.pathname}
+                />
               </Route>
               <Route exact path="/contatti">
-                <Page title="contatti" />
+                <Page
+                  type="page"
+                  title="contatti"
+                  key={window.location.pathname}
+                />
               </Route>
             </Switch>
           </div>

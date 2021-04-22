@@ -3,6 +3,7 @@ import FetchApi from "../../lib/fetchApi";
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import "../../assets/js/scrollingImagesEffect";
+import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
 
 import TransitionPages from "../../components/TransitionPages";
 
@@ -17,6 +18,7 @@ export default function Page(props) {
     },
     redirect: "follow", // manual, *follow, error
   });
+
   return (
     <React.Fragment>
       <Header title={props.page} />

@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import FetchApi from "../../lib/fetchApi";
 import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
-import "../../assets/js/scrollingImagesEffect";
 
 import TransitionPages from "../../components/TransitionPages";
 
-export default function Category(props) {
+export default function Sapori(props) {
   const posts = FetchApi("https://maestadellaformica.com/wp-json/wp/v2/posts", {
     mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -22,7 +21,6 @@ export default function Category(props) {
   });
 
   getScrollPage();
-
   return (
     <React.Fragment>
       <Header title={props.cat} />

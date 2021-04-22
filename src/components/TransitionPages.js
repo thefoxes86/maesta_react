@@ -1,64 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { useHistory } from "react-router-dom";
 
-export default function TransitionPages({ children, location, page }) {
+import { blackBox } from "../lib/blackBox";
+
+export default function TransitionPages({ children, location, page, type }) {
   const history = useHistory();
-  const blackBox = {
-    initial: {
-      height: "100vh",
-      top: 0,
-    },
-    exit: {
-      height: "100vh",
-      top: 0,
-    },
-    initialOut: {
-      height: "100vh",
-      top: 0,
-      opacity: 0,
-    },
-    animate: {
-      height: 0,
-      top: "100vh",
-      transition: {
-        duration: 1.5,
-        ease: [0.87, 0, 0.13, 1],
-      },
-    },
-    animate2: {
-      opacity: 0,
-      top: 0,
-      height: 0,
-    },
-    animate3: {
-      opacity: 1,
-    },
-    animateOut: {
-      height: "100vh",
-      top: 0,
-      transition: {
-        duration: 1,
-        ease: [0.87, 0, 0.13, 1],
-      },
-    },
-    pageZoomInitial: {
-      opacity: 0,
-      transform: "scale(1.05)",
-    },
-    pageZoomExit: {
-      transform: "scale(0.95)",
-      opacity: 0,
-    },
-    pageZoomAnimate: {
-      transform: "scale(1.0)",
-      opacity: 1,
-      transition: {
-        duration: 1.5,
-        ease: [0.87, 0, 0.13, 1],
-      },
-    },
-  };
 
   const allLinks = [...document.querySelectorAll("a")];
   const controls = useAnimation();
@@ -66,7 +13,8 @@ export default function TransitionPages({ children, location, page }) {
   allLinks.forEach((element) => {
     element.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log(e.path[0].pathname);
+      console.log("1");
+
       const finalPath =
         e.path[0].pathname !== undefined
           ? e.path[0].pathname.substring(1, e.path[0].pathname.length)
@@ -77,8 +25,11 @@ export default function TransitionPages({ children, location, page }) {
       });
     });
   });
+  console.log("3");
   controls.start(blackBox.animate).then(() => {
+    console.log("4");
     controls.start(blackBox.animate2).then(() => {
+      console.log("5");
       controls.start(blackBox.animate3);
     });
   });
