@@ -20,7 +20,6 @@ export default function TransitionPages({ children, location, page, type }) {
           ? e.path[0].pathname.substring(1, e.path[0].pathname.length)
           : "/";
       controls.start(blackBox.animateOut).then(() => {
-        controls.start(blackBox.pageZoomExit);
         history.push(finalPath);
       });
     });
@@ -70,9 +69,9 @@ export default function TransitionPages({ children, location, page, type }) {
       <AnimatePresence>
         <motion.div
           key={children}
-          variants={blackBox}
-          initial={blackBox.pageZoomInitial}
-          animate={blackBox.pageZoomAnimate}
+          // variants={blackBox}
+          // initial={blackBox.pageZoomInitial}
+          // animate={blackBox.pageZoomAnimate}
         >
           {children}
         </motion.div>

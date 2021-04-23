@@ -23,10 +23,9 @@ export default function Page(props) {
     <React.Fragment>
       <Header title={props.page} />
       <Menu />
-      <TransitionPages>
-        {posts &&
-          posts.map((post, index) => <h1>Categoria {post.title.rendered}</h1>)}
-      </TransitionPages>
+
+      {posts &&
+        posts.map((post, index) => <h1>Categoria {post.title.rendered}</h1>)}
     </React.Fragment>
   );
 }
