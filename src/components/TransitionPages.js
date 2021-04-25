@@ -10,6 +10,7 @@ export default function TransitionPages({ children, location, page, type }) {
   const allLinks = [...document.querySelectorAll("a")];
   const controls = useAnimation();
 
+  console.log("ernto cia");
   allLinks.forEach((element) => {
     element.addEventListener("click", (e) => {
       e.preventDefault();

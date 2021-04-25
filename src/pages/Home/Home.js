@@ -5,7 +5,7 @@ import simpleParallax from "simple-parallax-js";
 import "../../assets/js/scrollingImagesEffect";
 import { NavLink } from "react-router-dom";
 import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
-import TransitionPages from "../../components/TransitionPages";
+import Parallax from "../../components/Parallax";
 import { motion } from "framer-motion";
 
 export default function Home(props) {
@@ -160,27 +160,7 @@ export default function Home(props) {
           </div>
         </div>
 
-        <section className="parallax__container">
-          <div className="background">
-            <img
-              className="px__background__image"
-              src="img/texture__muro.png"
-              alt=""
-            />
-          </div>
-          <div className="foreground">testo</div>
-        </section>
-
-        <section className="parallax__container">
-          <div className="background">
-            <img
-              className="px__background__image"
-              src="img/clouds.png"
-              alt=""
-            />
-          </div>
-          <div className="foreground">testo</div>
-        </section>
+        <Parallax height="100vh" />
 
         <div className="content__item content__item__left">
           <div className="content__item-imgwrap">

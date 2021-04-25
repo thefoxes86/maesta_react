@@ -223,3 +223,72 @@ body {
     }
   }
 }
+
+// GRID PARALLAX WINE
+
+.grid__container_pruduct {
+  display: grid;
+  margin: 10vh 0;
+  align-items: center;
+
+  .title {
+    grid-area: title;
+    background-color: black;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 98;
+    h3 {
+      font-size: 20px;
+      text-transform: uppercase;
+      color: white;
+    }
+  }
+  .image {
+    grid-area: image;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    z-index: 99;
+
+    img {
+      position: absolute;
+      height: 300px;
+    }
+  }
+  .description {
+    grid-area: description;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: white;
+    width: 100%;
+    min-height: 60px;
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 5% 10%;
+    z-index: 98;
+  }
+}
+
+.grid__container_pruduct_left {
+  display: grid;
+  grid-template-areas: "title image description .";
+  grid-template-columns: 1fr 0.1fr 2fr 2fr;
+
+  .description {
+    justify-content: flex-start;
+  }
+}
+
+.grid__container_pruduct_right {
+  grid-template-areas: ". description image title";
+  grid-template-columns: 2fr 2fr 0.1fr 1fr;
+
+  .description {
+    justify-content: flex-end;
+  }
+}

@@ -18,9 +18,9 @@ ReactDOM.render(
   <Router>
     <React.StrictMode>
       <ScrollTop>
-        <TransitionPages>
-          <main className="demo-1">
-            <div data-scroll className="page page--layout-2">
+        <main className="demo-1">
+          <div data-scroll className="page page--layout-2">
+            <TransitionPages>
               <Switch>
                 <Route exact path="/">
                   <Home type="home" key={window.location.pathname} />
@@ -61,9 +61,9 @@ ReactDOM.render(
                   />
                 </Route>
               </Switch>
-            </div>
-          </main>
-        </TransitionPages>
+            </TransitionPages>
+          </div>
+        </main>
       </ScrollTop>
     </React.StrictMode>
   </Router>,
