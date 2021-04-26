@@ -1,9 +1,6 @@
 import React from "react";
 import FetchApi from "../../lib/fetchApi";
-import Header from "../../components/Header";
-import Menu from "../../components/Menu";
 import "../../assets/js/scrollingImagesEffect";
-import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
 
 import TransitionPages from "../../components/TransitionPages";
 
@@ -21,11 +18,10 @@ export default function Page(props) {
 
   return (
     <React.Fragment>
-      <Header title={props.page} />
-      <Menu />
-
-      {posts &&
-        posts.map((post, index) => <h1>Categoria {post.title.rendered}</h1>)}
+      <TransitionPages>
+        {posts &&
+          posts.map((post, index) => <h1>Categoria {post.title.rendered}</h1>)}
+      </TransitionPages>
     </React.Fragment>
   );
 }

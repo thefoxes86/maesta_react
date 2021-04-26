@@ -1,70 +1,18 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { state } from "./state";
 import "./menu.scss";
 
 export default function Menu(props) {
   const [open, setOpen] = useState(false);
-  const variants = {
-    openContainer: { left: "0" },
-    closeContainer: { opacity: 0, left: "-50vw" },
-    opacityOff: {
-      display: "none",
-    },
-    opacityOn: {
-      display: "block",
-    },
-    openMenu: {
-      backgroundColor: "rgb(255,255,255)",
-    },
-    openMenuText: {
-      color: "rgb(0,0,0)",
-    },
-    closeMenu: {
-      backgroundColor: "rgb(0,0,0)",
-    },
-    closeMenuText: {
-      color: "rgb(255,255,255)",
-    },
-    firstSpan: {
-      open: {
-        backgroundColor: "rgb(0,0,0)",
-        transform: "rotate(45deg) translateX(5px) translateY(10px)",
-      },
-      close: {},
-    },
-    secondtSpan: {
-      open: {
-        opacity: 0,
-        left: "-15px",
-        backgroundColor: "black",
-      },
-      close: {},
-    },
-    thirdSpan: {
-      open: {
-        backgroundColor: "black",
-        width: "100%",
-        transform: "rotate(-45deg) translateX(5px) translateY(-10px)",
-      },
-      close: {},
-    },
-    transition: {
-      duration: 1.5,
-      ease: [0.87, 0, 0.13, 1],
-    },
-    transitiondDelay: {
-      delay: 1.5,
-      duration: 0.2,
-      ease: [0.87, 0, 0.13, 1],
-    },
-  };
+
   return (
     <React.Fragment>
       <motion.div
         className={open ? "menu hover__light" : "menu hover__dark"}
-        transition={variants.transition}
-        animate={open ? variants.openMenu : variants.closeMenu}
+        transition={state.transition}
+        animate={open ? state.openMenu : state.closeMenu}
         onTap={() => {
           const status = open ? false : true;
           setOpen(status);
@@ -72,23 +20,21 @@ export default function Menu(props) {
       >
         <div className="hamburger">
           <motion.span
-            transition={variants.transition}
-            animate={open ? variants.firstSpan.open : variants.firstSpan.close}
+            transition={state.transition}
+            animate={open ? state.firstSpan.open : state.firstSpan.close}
           ></motion.span>
           <motion.span
-            transition={variants.transition}
-            animate={
-              open ? variants.secondtSpan.open : variants.secondtSpan.close
-            }
+            transition={state.transition}
+            animate={open ? state.secondtSpan.open : state.secondtSpan.close}
           ></motion.span>
           <motion.span
-            transition={variants.transition}
-            animate={open ? variants.thirdSpan.open : variants.thirdSpan.close}
+            transition={state.transition}
+            animate={open ? state.thirdSpan.open : state.thirdSpan.close}
           ></motion.span>
         </div>
         <motion.span
           className="text__menu"
-          animate={open ? variants.openMenuText : variants.closeMenuText}
+          animate={open ? state.openMenuText : state.closeMenuText}
         >
           {open ? "MENU" : "MENU"}
         </motion.span>
@@ -96,12 +42,12 @@ export default function Menu(props) {
 
       <motion.nav
         className="container__menu"
-        animate={open ? variants.openContainer : variants.closeContainer}
-        transition={variants.transition}
+        animate={open ? state.openContainer : state.closeContainer}
+        transition={state.transition}
       >
         <motion.ul
-          animate={open ? variants.opacityOn : variants.opacityOff}
-          transition={variants.transitiondDelay}
+          animate={open ? state.opacityOn : state.opacityOff}
+          transition={state.transitiondDelay}
         >
           <li>
             <NavLink
@@ -109,6 +55,9 @@ export default function Menu(props) {
               className="hover__dark"
               activeClassName="active"
               type="category"
+              onClick={() => {
+                setOpen(false);
+              }}
             >
               LUOGHI DEL RACCONTO
             </NavLink>
@@ -119,6 +68,9 @@ export default function Menu(props) {
               className="hover__dark"
               activeClassName="active"
               type="category"
+              onClick={() => {
+                setOpen(false);
+              }}
             >
               SAPORI DELLA TERRA
             </NavLink>
@@ -129,6 +81,9 @@ export default function Menu(props) {
               className="hover__dark"
               activeClassName="active"
               type="category"
+              oonClick={() => {
+                setOpen(false);
+              }}
             >
               VOLTI DELL'ALTIPIANO
             </NavLink>
@@ -139,6 +94,9 @@ export default function Menu(props) {
               className="hover__dark"
               activeClassName="active"
               type="category"
+              onClick={() => {
+                setOpen(false);
+              }}
             >
               RESPIRI DELLA MENTE
             </NavLink>
@@ -149,6 +107,9 @@ export default function Menu(props) {
               className="hover__dark"
               activeClassName="active"
               type="page"
+              onClick={() => {
+                setOpen(false);
+              }}
             >
               CONTATTI
             </NavLink>
