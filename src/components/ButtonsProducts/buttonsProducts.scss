@@ -1,0 +1,55 @@
+.buttons__products {
+  display: grid;
+  width: 100vw;
+  margin: 10vh 0;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  div.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    a {
+      background-color: black;
+      padding: 20px 30px;
+      color: white;
+      font-size: 24px;
+      min-width: 200px;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 400;
+      width: auto;
+      text-decoration: none;
+    }
+  }
+
+  @for $i from 1 to 5 {
+    div.button {
+      grid-column: #{$i} -1 / #{$i};
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .buttons__products {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @for $i from 1 to 3 {
+      div.button {
+        grid-column: #{$i} -1 / #{$i};
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 590px) {
+  .buttons__products {
+    grid-template-columns: 1fr;
+    div.button {
+      grid-column: 1;
+      a {
+        width: 80vw;
+      }
+    }
+  }
+}

@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import FetchApi from "../../lib/fetchApi";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import simpleParallax from "simple-parallax-js";
 import "../../assets/js/scrollingImagesEffect";
 import { NavLink } from "react-router-dom";
 import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
 import Parallax from "../../components/Parallax";
 import { motion } from "framer-motion";
+import ButtonsProducts from "../../components/ButtonsProducts";
 
 export default function Home(props) {
   const posts = FetchApi("https://maestadellaformica.com/wp-json/wp/v2/posts", {
@@ -109,7 +111,10 @@ export default function Home(props) {
               quam, finibus quis nunc a, efficitur tincidunt erat. Duis
               porttitor sagittis sem nec semper.
             </p>
-            <NavLink to="/luoghi-del-racconto" className="continue">
+            <NavLink
+              to="/luoghi-del-racconto"
+              className="continue hover__light"
+            >
               Continua
             </NavLink>
           </span>
@@ -127,7 +132,7 @@ export default function Home(props) {
               quam, finibus quis nunc a, efficitur tincidunt erat. Duis
               porttitor sagittis sem nec semper.
             </p>
-            <NavLink to="/" exact className="continue">
+            <NavLink to="/" exact className="continue hover__light">
               Continua
             </NavLink>
           </span>
@@ -160,7 +165,15 @@ export default function Home(props) {
           </div>
         </div>
 
-        <Parallax height="100vh" />
+        <Parallax
+          height="100vh"
+          background="img/texture__muro.png"
+          content="product"
+        />
+
+        <ButtonsProducts />
+
+        <Parallax height="50vh" background="img/clouds.png" content="text" />
 
         <div className="content__item content__item__left">
           <div className="content__item-imgwrap">
@@ -200,12 +213,13 @@ export default function Home(props) {
               quam, finibus quis nunc a, efficitur tincidunt erat. Duis
               porttitor sagittis sem nec semper.
             </p>
-            <NavLink to="/" exact className="continue">
+            <NavLink to="/" exact className="continue hover__light">
               Continua
             </NavLink>
           </span>
         </div>
       </div>
+      <Footer />
     </React.Fragment>
   );
 }

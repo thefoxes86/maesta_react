@@ -96,7 +96,8 @@
       right: 0;
 
       h3 {
-        font-size: 18px;
+        font-size: 22px;
+        font-weight: 100;
         color: white;
         margin: 0;
         text-transform: uppercase;
@@ -117,6 +118,7 @@
       width: 40%;
       text-decoration: none;
       position: relative;
+      color: black;
       &::after {
         content: "";
         display: block;
@@ -125,7 +127,6 @@
         height: 1px;
         background: black;
         bottom: -5px;
-        right: 0;
       }
     }
   }
@@ -203,6 +204,10 @@
 
     .continue {
       text-align: left;
+
+      &::after {
+        right: -10%;
+      }
     }
   }
 }
@@ -237,41 +242,10 @@
 
     .continue {
       text-align: right;
+      &::after {
+        right: 10%;
+      }
     }
-  }
-}
-
-// PARALLAX
-.parallax__container {
-  position: relative;
-  margin: 200px 0;
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5vh 0;
-
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    z-index: 0;
-
-    img {
-      width: 100vw;
-    }
-  }
-
-  .foreground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-    display: grid;
   }
 }
 

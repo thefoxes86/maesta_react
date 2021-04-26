@@ -1,7 +1,8 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
-import Menu from "./Menu";
+import Menu from "../Menu";
+import "./header.scss";
 
 export default function Header(props) {
   cursorPersonalize();

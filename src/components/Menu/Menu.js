@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import "./menu.scss";
 
 export default function Menu(props) {
   const [open, setOpen] = useState(false);

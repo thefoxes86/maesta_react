@@ -1,0 +1,28 @@
+.logo {
+  top: 5vh;
+  width: 12vw;
+  height: 15vh;
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+
+  & a {
+    text-align: right;
+    img {
+      width: 80%;
+      height: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .logo {
+    width: 40vw;
+    height: 70px;
+    left: 45vw;
+  }
+}

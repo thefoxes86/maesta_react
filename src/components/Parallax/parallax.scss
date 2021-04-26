@@ -1,0 +1,269 @@
+// PARALLAX
+.parallax__container {
+  position: relative;
+  margin: 100px 0;
+  width: 100vw;
+  overflow-y: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 0;
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+
+    img {
+      min-height: 100vh;
+    }
+  }
+
+  .foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: grid;
+  }
+}
+
+.parrallax_circle {
+  margin: 45vh 0;
+}
+
+// GRID PARALLAX WINE
+
+.grid__container_pruduct {
+  display: grid;
+  margin: 10vh 0;
+  align-items: center;
+
+  .title {
+    grid-area: title;
+    background-color: black;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 98;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    h3 {
+      font-size: 38px;
+      text-transform: uppercase;
+      color: white;
+      margin-right: 0;
+      padding: 20px 10px;
+      font-weight: 100;
+    }
+  }
+  .image {
+    grid-area: image;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    align-self: flex-end;
+    height: auto;
+    z-index: 99;
+    position: relative;
+
+    img {
+      position: absolute;
+      height: 400px;
+      bottom: -4vh;
+    }
+  }
+  .description {
+    grid-area: description;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: white;
+    width: 100%;
+    min-height: 60px;
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 5% 15%;
+    z-index: 98;
+  }
+}
+
+.grid__container_pruduct_left {
+  grid-template-areas: "title image description .";
+  grid-template-columns: 0.2fr 0.1fr 2fr 2fr;
+
+  .title {
+    transform: rotate(180deg);
+  }
+
+  .description {
+    justify-content: flex-start;
+  }
+}
+
+.grid__container_pruduct_right {
+  grid-template-areas: ". description image title";
+  grid-template-columns: 2fr 2fr 0.1fr 0.2fr;
+
+  .title {
+    transform: rotate(0deg);
+  }
+
+  .description {
+    justify-content: flex-end;
+  }
+}
+
+// CIRCLE
+
+.circle__black {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -55vh;
+  z-index: -1;
+
+  svg {
+    padding: 10%;
+  }
+
+  .volti__container {
+    position: absolute;
+    top: 20vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 15% 1fr 1fr 1fr 15%;
+
+    .volti {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+      img {
+        width: 50%;
+      }
+    }
+    .volti:nth-child(2) img {
+      margin-top: 80px;
+    }
+    @for $b from 1 to 4 {
+      .volti:nth-child(#{$b}) {
+        grid-column: #{$b + 1} / #{$b + 2};
+      }
+    }
+  }
+}
+
+// GRID ITEM RIGHT
+.content__item__parallax__right {
+  display: grid;
+  width: 100vw;
+  height: auto;
+  grid-template-columns: 30% 70%;
+  grid-template-areas: ". text";
+  z-index: 9;
+  position: absolute;
+  top: 10%;
+
+  .content__item__parallax-text {
+    grid-area: text;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .title {
+      background-color: black;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      height: 60px;
+      width: 30%;
+      right: 0;
+
+      h3 {
+        font-size: 22px;
+        color: white;
+        margin: 0;
+        font-weight: 100;
+        text-transform: uppercase;
+      }
+    }
+    .description {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      flex-direction: column;
+      padding: 25px;
+      color: black;
+      font-size: 22px;
+      font-weight: 100;
+      width: 80%;
+      margin-right: 10%;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    .continue {
+      font-weight: 300;
+      font-size: 26px;
+      width: 30%;
+      text-decoration: none;
+      position: relative;
+      color: black;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 95%;
+        height: 1px;
+        background: black;
+        bottom: -5px;
+        right: 0;
+      }
+    }
+  }
+}
+
+// BIG DEVICE / TABLET
+@media only screen and (max-width: 768px) {
+  .grid__container_pruduct_left {
+    grid-template-columns: 0.2fr 0.1fr 2fr 1fr;
+    .description {
+      padding: 5% 15%;
+    }
+  }
+
+  .grid__container_pruduct_right {
+    grid-template-columns: 1fr 2fr 0.1fr 0.2fr;
+    .description {
+      padding: 5% 15%;
+    }
+  }
+}
+
+// SMALL DEVICE / SMARTPHONE
+@media only screen and (max-width: 568px) {
+  .grid__container_pruduct_left {
+    grid-template-columns: 0.2fr 0.1fr 2fr 0.5fr;
+    .description {
+      padding: 5% 15%;
+    }
+  }
+
+  .grid__container_pruduct_right {
+    grid-template-columns: 0.5fr 2fr 0.1fr 0.2fr;
+    .description {
+      padding: 5% 15%;
+    }
+  }
+}

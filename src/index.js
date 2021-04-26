@@ -8,6 +8,7 @@ import Respiri from "./pages/Respiri";
 import Page from "./pages/Page";
 import ScrollTop from "./components/ScrollTop";
 import TransitionPages from "./components/TransitionPages";
+import Footer from "./components/Footer";
 
 import "./assets/index.scss";
 import reportWebVitals from "./reportWebVitals";
