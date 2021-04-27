@@ -7,8 +7,6 @@ import Page from "./pages/Page";
 import ScrollTop from "./components/ScrollTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { blackBox } from "./lib/blackBox";
-import { motion } from "framer-motion";
 
 import { Switch, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";

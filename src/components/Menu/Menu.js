@@ -81,7 +81,7 @@ export default function Menu(props) {
               className="hover__dark"
               activeClassName="active"
               type="category"
-              oonClick={() => {
+              onClick={() => {
                 setOpen(false);
               }}
             >

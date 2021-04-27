@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
-import { blackBox } from "../lib/blackBox";
+import { blackBox } from "./blackBox";
 
 export default function TransitionPages({ children, page, type }) {
   const location = useLocation();
