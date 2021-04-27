@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
 import Menu from "../Menu";
@@ -6,6 +6,7 @@ import "./header.scss";
 
 export default function Header(props) {
   cursorPersonalize();
+  const [closeMenu, setCloseMenu] = useState(false);
   return (
     <React.Fragment>
       <Helmet>
@@ -18,12 +19,12 @@ export default function Header(props) {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <div className="logo hover__light">
-        <NavLink to="/" exact>
+        <NavLink to="/" exact onClick={() => setCloseMenu(true)}>
           <img src="img/logo.png" alt="" />
         </NavLink>
       </div>
       <div className="cursor"></div>
-      <Menu />
+      <Menu closeMenu={closeMenu} />
     </React.Fragment>
   );
 }

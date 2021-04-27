@@ -1,5 +1,4 @@
-.content__page__first,
-.content {
+.content__page__first {
   grid-area: grid;
   margin: 0vh 0 0 0 !important;
 
@@ -28,11 +27,6 @@
       left: 0;
     }
   }
-
-  //   .content__item-path {
-  //     grid-area: 1 / 2 / 3 / 3;
-  //     height: 700px;
-  //   }
 }
 
 .title__container {

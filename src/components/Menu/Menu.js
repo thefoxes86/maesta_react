@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { state } from "./state";
@@ -6,7 +6,9 @@ import "./menu.scss";
 
 export default function Menu(props) {
   const [open, setOpen] = useState(false);
-
+  useEffect(() => {
+    const status = props.closeMenu ? false : true;
+  }, [props.closeMenu]);
   return (
     <React.Fragment>
       <motion.div

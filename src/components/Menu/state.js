@@ -3,9 +3,13 @@ const state = {
   closeContainer: { opacity: 0, left: "-50vw" },
   opacityOff: {
     display: "none",
+    opacity: 0,
+    y: -20,
   },
   opacityOn: {
     display: "block",
+    opacity: 1,
+    y: 0,
   },
   openMenu: {
     backgroundColor: "rgb(255,255,255)",
@@ -43,12 +47,12 @@ const state = {
     close: {},
   },
   transition: {
-    duration: 1.5,
+    duration: 2,
     ease: [0.87, 0, 0.13, 1],
   },
   transitiondDelay: {
     delay: 1.5,
-    duration: 0.2,
+    duration: 1.2,
     ease: [0.87, 0, 0.13, 1],
   },
 };
