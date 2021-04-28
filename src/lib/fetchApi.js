@@ -1,20 +1,18 @@
-import { useEffect, useState } from "react";
-
 export default function FetchApi(url) {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    async function loadData() {
-      const response = await fetch(url);
-      if (!response.ok) {
-        // oups! something went wrong
-        return;
-      }
-
-      const posts = await response.json();
-      setData(posts);
+  async function loadData() {
+    const response = await fetch(url);
+    if (!response.ok) {
+      // oups! something went wrong
+      return "Error Call";
     }
 
-    loadData();
-  }, [url]);
-  return data;
+    const res = await response.json();
+    return res;
+  }
+  const data = loadData();
+
+  return new Promise((resolve, reject) => {
+    resolve(data);
+    reject("Error");
+  });
 }

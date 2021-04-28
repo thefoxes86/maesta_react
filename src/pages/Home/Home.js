@@ -8,6 +8,7 @@ import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
 import Parallax from "../../components/Parallax";
 import { motion } from "framer-motion";
 import ButtonsProducts from "../../components/ButtonsProducts";
+import Path from "../../components/Path";
 
 export default function Home(props) {
   const posts = FetchApi("https://maestadellaformica.com/wp-json/wp/v2/posts", {
@@ -67,101 +68,33 @@ export default function Home(props) {
               </svg>
             </div>
           </div>
+          <Path
+            position="left"
+            title="Luoghi del racconto"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          sagittis eros eget blandit hendrerit. Aenean varius nisl id mattis
+          consectetur. Curabitur a vulputate nulla. Donec ex quam, finibus quis
+          nunc a, efficitur tincidunt erat. Duis porttitor sagittis sem nec
+          semper."
+            link="/luoghi-del-racconto"
+            textLink="continua"
+            image="img/img__1.png"
+            pathColor="#eb8c2c"
+          />
 
-          <div className="content__item content__item__left">
-            <div className="content__item-imgwrap">
-              <div
-                className="content__item-img"
-                style={{
-                  backgroundImage: `url(img/img__1.png)`,
-                }}
-              ></div>
-            </div>
-
-            <div className="content__item-path">
-              <svg
-                id="path__1"
-                data-name="path__1"
-                xmlns="http://www.w3.org/2000/svg"
-                width="885.398"
-                height="611.931"
-                viewBox="0 0 885.398 611.931"
-              >
-                <g id="path__1" data-name="path__1">
-                  <path
-                    id="track__1"
-                    data-name="track__1"
-                    d="M885.4,611.931,0,537V0L885.4,74.932Z"
-                    transform="translate(0 0)"
-                    fill="#eb8c2c"
-                  />
-                </g>
-              </svg>
-            </div>
-            <span className="content__item-text">
-              <div className="title">
-                <h3>Luoghi del racconto</h3>
-              </div>
-              <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
-                nisl id mattis consectetur. Curabitur a vulputate nulla. Donec
-                ex quam, finibus quis nunc a, efficitur tincidunt erat. Duis
-                porttitor sagittis sem nec semper.
-              </p>
-              <NavLink
-                to="/luoghi-del-racconto"
-                className="continue hover__light"
-              >
-                Continua
-              </NavLink>
-            </span>
-          </div>
-
-          <div className="content__item  content__item__right">
-            <span className="content__item-text">
-              <div className="title">
-                <h3>Testo di prova</h3>
-              </div>
-              <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
-                nisl id mattis consectetur. Curabitur a vulputate nulla. Donec
-                ex quam, finibus quis nunc a, efficitur tincidunt erat. Duis
-                porttitor sagittis sem nec semper.
-              </p>
-              <NavLink to="/" exact className="continue hover__light">
-                Continua
-              </NavLink>
-            </span>
-
-            <div className="content__item-imgwrap">
-              <div
-                className="content__item-img"
-                style={{
-                  backgroundImage: `url(img/img__2.png)`,
-                }}
-              ></div>
-            </div>
-
-            <div className="content__item-path">
-              <svg
-                id="path__2"
-                data-name="path__2"
-                xmlns="http://www.w3.org/2000/svg"
-                width="885.398"
-                height="611.931"
-                viewBox="0 0 885.398 611.931"
-              >
-                <path
-                  id="track__2"
-                  data-name="track__2"
-                  d="M0,0,885.4,74.932v537L0,537Z"
-                  fill="#e3672a"
-                />
-              </svg>
-            </div>
-          </div>
+          <Path
+            position="right"
+            title="Sapori della Terra"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          sagittis eros eget blandit hendrerit. Aenean varius nisl id mattis
+          consectetur. Curabitur a vulputate nulla. Donec ex quam, finibus quis
+          nunc a, efficitur tincidunt erat. Duis porttitor sagittis sem nec
+          semper."
+            link="/sapori-della-terra"
+            textLink="continua"
+            image="img/img__2.png"
+            pathColor="#e3672a"
+          />
 
           <Parallax
             height="100vh"
@@ -173,49 +106,19 @@ export default function Home(props) {
 
           <Parallax height="50vh" background="img/clouds.png" content="text" />
 
-          <div className="content__item content__item__left">
-            <div className="content__item-imgwrap">
-              <div
-                className="content__item-img"
-                style={{
-                  backgroundImage: `url(img/img__3.png)`,
-                }}
-              ></div>
-            </div>
-
-            <div className="content__item-path">
-              <svg
-                id="path__2"
-                data-name="path__2"
-                xmlns="http://www.w3.org/2000/svg"
-                width="885.398"
-                height="611.931"
-                viewBox="0 0 885.398 611.931"
-              >
-                <path
-                  id="track__3"
-                  data-name="track__3"
-                  d="M885.4,611.931,0,537V0L885.4,74.932Z"
-                  fill="#d44d2b"
-                />
-              </svg>
-            </div>
-            <span className="content__item-text">
-              <div className="title">
-                <h3>Testo di prova</h3>
-              </div>
-              <p className="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse sagittis eros eget blandit hendrerit. Aenean varius
-                nisl id mattis consectetur. Curabitur a vulputate nulla. Donec
-                ex quam, finibus quis nunc a, efficitur tincidunt erat. Duis
-                porttitor sagittis sem nec semper.
-              </p>
-              <NavLink to="/" exact className="continue hover__light">
-                Continua
-              </NavLink>
-            </span>
-          </div>
+          <Path
+            position="left"
+            title="Respiri della mente"
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          sagittis eros eget blandit hendrerit. Aenean varius nisl id mattis
+          consectetur. Curabitur a vulputate nulla. Donec ex quam, finibus quis
+          nunc a, efficitur tincidunt erat. Duis porttitor sagittis sem nec
+          semper."
+            link="/respiri-della-mente"
+            textLink="continua"
+            image="img/img__3.png"
+            pathColor="#d44d2b"
+          />
         </div>
       </TransitionPages>
     </React.Fragment>

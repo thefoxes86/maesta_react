@@ -27,10 +27,22 @@
       left: 0;
     }
   }
+  .content__item-imgwrap {
+    grid-area: 1 / 2 / 1 / 2;
+    height: 80vh;
+  }
+  .content__item-path {
+    grid-area: 1 / 2 / 2 / 4;
+    display: flex;
+    justify-content: flex-end;
+    svg {
+      margin-top: 15vh;
+    }
+  }
 }
 
 .title__container {
-  width: 12vw;
+  min-width: 12vw;
   height: 70px;
   background-color: rgb(0, 0, 0);
   position: absolute;

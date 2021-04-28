@@ -14,13 +14,13 @@ export default function TitlePages(props) {
         <div
           className="content__item-img"
           style={{
-            backgroundImage: `url(img/img__0.png)`,
+            backgroundImage: "url(" + props.img + ")",
           }}
         ></div>
       </div>
 
       <div className="title__container">
-        <h1 className="title">{props.title}</h1>
+        <h1 className="title">{props.title.normalize()}</h1>
       </div>
 
       <div className="content__item-path">
@@ -36,7 +36,7 @@ export default function TitlePages(props) {
             id="track__1"
             data-name="track__1"
             d="M0,0,1091.5,92.375v662L0,662Z"
-            fill="#252526"
+            fill={props.pathColor}
           />
         </svg>
       </div>
