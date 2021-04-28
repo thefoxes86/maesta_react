@@ -1,5 +1,5 @@
-import react from "react";
-import { motion } from "framer-motion";
+import React from "react";
+import { decodeHtmlCharCodes } from "../../lib/decodeHtmlCharCodes";
 import "./titlePages.scss";
 
 export default function TitlePages(props) {
@@ -20,25 +20,26 @@ export default function TitlePages(props) {
       </div>
 
       <div className="title__container">
-        <h1 className="title">{props.title.normalize()}</h1>
+        <h1 className="title">{decodeHtmlCharCodes(props.title)}</h1>
       </div>
-
       <div className="content__item-path">
-        <svg
-          id="path__0"
-          data-name="path__0"
-          xmlns="http://www.w3.org/2000/svg"
-          width="1091.5"
-          height="754.375"
-          viewBox="0 0 1091.5 754.375"
-        >
-          <path
-            id="track__1"
-            data-name="track__1"
-            d="M0,0,1091.5,92.375v662L0,662Z"
-            fill={props.pathColor}
-          />
-        </svg>
+        {props.pathColor && (
+          <svg
+            id="path__0"
+            data-name="path__0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="1091.5"
+            height="754.375"
+            viewBox="0 0 1091.5 754.375"
+          >
+            <path
+              id="track__1"
+              data-name="track__1"
+              d="M0,0,1091.5,92.375v662L0,662Z"
+              fill={props.pathColor}
+            />
+          </svg>
+        )}
       </div>
     </div>
   );
