@@ -7,6 +7,10 @@ import Page from "./pages/Page";
 import ScrollTop from "./components/ScrollTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Vino from "./pages/Vino";
+import Frutta from "./pages/Frutta";
+import Conserve from "./pages/Conserve";
+import Altro from "./pages/Altro";
 
 import { Switch, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -52,11 +56,19 @@ function App() {
                 />
               </Route>
               <Route exact path="/contatti">
-                <Page
-                  type="page"
-                  title="contatti"
-                  key={window.location.pathname}
-                />
+                <Page type="page" key={window.location.pathname} />
+              </Route>
+              <Route exact path="/vino">
+                <Vino type="page" key={window.location.pathname} />
+              </Route>
+              <Route exact path="/conserve">
+                <Conserve type="page" key={window.location.pathname} />
+              </Route>
+              <Route exact path="/frutta">
+                <Frutta type="page" key={window.location.pathname} />
+              </Route>
+              <Route exact path="/altro">
+                <Altro type="page" key={window.location.pathname} />
               </Route>
             </Switch>
           </AnimatePresence>

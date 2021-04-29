@@ -6,28 +6,23 @@ export default function ButtonsProducts(props) {
   return (
     <div className="buttons__products">
       <div className="button">
-        <NavLink to="/vini" exact className="hover__dark">
-          Vini
-        </NavLink>
-      </div>
-      <div className="button">
-        <NavLink to="/olio" exact className="hover__dark">
-          Olio
+        <NavLink to="/vino" exact className="hover__dark">
+          Vino
         </NavLink>
       </div>
       <div className="button">
         <NavLink to="/conserve" exact className="hover__dark">
           Conserve
         </NavLink>
-      </div>{" "}
-      <div className="button">
-        <NavLink to="/selvatico" exact className="hover__dark">
-          Selvatico
-        </NavLink>
       </div>
       <div className="button">
         <NavLink to="/frutta" exact className="hover__dark">
           Frutta
+        </NavLink>
+      </div>
+      <div className="button">
+        <NavLink to="/altro" exact className="hover__dark">
+          Altro
         </NavLink>
       </div>
     </div>
