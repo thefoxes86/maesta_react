@@ -7,13 +7,19 @@ export default function Path(props) {
   return (
     <div className={classPosition}>
       <span className="content__item-text">
-        <div className="title">
-          <h3>{props.title}</h3>
-        </div>
-        <p className="description">{props.description}</p>
-        <NavLink to={props.link} exact className="continue hover__light">
-          {props.textLink}
-        </NavLink>
+        {props.title && (
+          <div className="title">
+            <h3>{props.title}</h3>
+          </div>
+        )}
+        {props.description && (
+          <p className="description">{props.description}</p>
+        )}
+        {props.link && (
+          <NavLink to={props.link} exact className="continue hover__light">
+            {props.textLink}
+          </NavLink>
+        )}
       </span>
 
       <div className="content__item-imgwrap">

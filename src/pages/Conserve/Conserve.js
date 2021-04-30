@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import FetchApi from "../../lib/fetchApi";
 import TransitionPages from "../../components/TransitionPages";
-import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
 import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
 import TitlePages from "../../components/TitlePages";
+import Product from "../../components/Product";
+import Path from "../../components/Path";
 
 const ID = 55;
 
@@ -48,18 +48,61 @@ export default function Conserve(props) {
 
   !loading && getScrollPage();
   return (
-    <React.Fragment>
-      <TransitionPages>
-        {!loading && (
-          <div className="content content__page__first content--full">
-            <TitlePages
-              title={page.title.rendered}
-              img={img.guid.rendered}
-              pathColor={page.acf.path_color}
+    <TransitionPages>
+      {!loading && (
+        <React.Fragment>
+          <div className="content">
+            <div className="content__page__first content--full">
+              <TitlePages
+                title={page.title.rendered}
+                img={img.guid.rendered}
+                pathColor={page.acf.path_color}
+              />
+            </div>
+            <Product
+              title="Tarassaco di sambuco"
+              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
+              bgColor="brown"
+            />
+            <Product
+              title="Tarassaco di sambuco"
+              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
+              bgColor="green"
+            />
+            <Product
+              title="Tarassaco di sambuco"
+              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
+              bgColor="yellow"
+            />
+            <Product
+              title="Tarassaco di sambuco"
+              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
+              bgColor="red"
+            />
+            <Path position="right" image="img/img__2.png" pathColor="#e3672a" />
+            <Product
+              title="Tarassaco di sambuco"
+              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
+              bgColor="brown"
+            />
+            <Product
+              title="Tarassaco di sambuco"
+              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
+              bgColor="green"
+            />
+            <Product
+              title="Tarassaco di sambuco"
+              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
+              bgColor="yellow"
+            />
+            <Product
+              title="Tarassaco di sambuco"
+              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
+              bgColor="red"
             />
           </div>
-        )}
-      </TransitionPages>
-    </React.Fragment>
+        </React.Fragment>
+      )}
+    </TransitionPages>
   );
 }
