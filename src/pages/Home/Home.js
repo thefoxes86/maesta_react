@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import FetchApi from "../../lib/fetchApi";
 import TransitionPages from "../../components/TransitionPages";
-import simpleParallax from "simple-parallax-js";
 import "../../assets/js/scrollingImagesEffect";
-import { NavLink } from "react-router-dom";
+import ParallaxProduct from "../../components/ParallaxProduct";
 import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
 import Parallax from "../../components/Parallax";
 import { motion } from "framer-motion";
@@ -22,12 +21,6 @@ export default function Home(props) {
     redirect: "follow", // manual, *follow, error
   });
 
-  const images = [...document.querySelectorAll(".px__background__image")];
-  images.forEach((el) => {
-    new simpleParallax(el, {
-      scale: 1.1,
-    });
-  });
   getScrollPage();
 
   return (
@@ -96,15 +89,11 @@ export default function Home(props) {
             pathColor="#e3672a"
           />
 
-          <Parallax
-            height="100vh"
-            background="img/texture__muro.png"
-            content="product"
-          />
+          <ParallaxProduct height="100vh" background="img/texture__muro.png" />
 
           <ButtonsProducts />
 
-          <Parallax height="50vh" background="img/clouds.png" content="text" />
+          <Parallax height="50vh" background="img/clouds.png" />
 
           <Path
             position="left"

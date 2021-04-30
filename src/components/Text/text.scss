@@ -1,0 +1,25 @@
+.content__text_right {
+  display: grid;
+  grid-template-columns: 40% 50% 10%;
+  grid-template-areas: ". text .";
+
+  p {
+    grid-area: text;
+    font-size: 20px;
+    line-height: 2;
+    font-weight: 100;
+  }
+}
+
+.content__text_left {
+  display: grid;
+  grid-template-columns: 10% 50% 40%;
+  grid-template-areas: ". text .";
+
+  p {
+    grid-area: text;
+    font-size: 20px;
+    line-height: 2;
+    font-weight: 100;
+  }
+}

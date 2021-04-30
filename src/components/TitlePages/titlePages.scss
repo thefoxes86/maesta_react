@@ -1,3 +1,7 @@
+.content__page {
+  margin-top: 0 !important;
+}
+
 .content__page__first {
   grid-area: grid;
   margin: 0vh 0 0 0 !important;
@@ -5,6 +9,7 @@
   .content__item__first__right {
     width: 100vw;
     grid-template-columns: 25% 65% 10%;
+    margin-top: 0;
   }
 
   .content__block__inner-page {

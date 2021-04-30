@@ -5,6 +5,10 @@ import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
 import TitlePages from "../../components/TitlePages";
 import Product from "../../components/Product";
 import Path from "../../components/Path";
+import ButtonsProducts from "../../components/ButtonsProducts";
+import ParallaxProduct from "../../components/ParallaxProduct";
+import Parallax from "../../components/Parallax";
+import Text from "../../components/Text";
 
 const ID = 55;
 
@@ -51,7 +55,7 @@ export default function Conserve(props) {
     <TransitionPages>
       {!loading && (
         <React.Fragment>
-          <div className="content">
+          <div className="content content__page">
             <div className="content__page__first content--full">
               <TitlePages
                 title={page.title.rendered}
@@ -59,47 +63,59 @@ export default function Conserve(props) {
                 pathColor={page.acf.path_color}
               />
             </div>
-            <Product
-              title="Tarassaco di sambuco"
-              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
-              bgColor="brown"
-            />
-            <Product
-              title="Tarassaco di sambuco"
-              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
-              bgColor="green"
-            />
-            <Product
-              title="Tarassaco di sambuco"
-              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
-              bgColor="yellow"
-            />
-            <Product
-              title="Tarassaco di sambuco"
-              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
-              bgColor="red"
-            />
-            <Path position="right" image="img/img__2.png" pathColor="#e3672a" />
-            <Product
-              title="Tarassaco di sambuco"
-              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
-              bgColor="brown"
-            />
-            <Product
-              title="Tarassaco di sambuco"
-              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
-              bgColor="green"
-            />
-            <Product
-              title="Tarassaco di sambuco"
-              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
-              bgColor="yellow"
-            />
-            <Product
-              title="Tarassaco di sambuco"
-              text="Cappero di sambuco prova ad assaggiarlo è molto molto buono"
-              bgColor="red"
-            />
+            {page.acf.item &&
+              page.acf.item.map((field) => {
+                switch (field.component) {
+                  case "Product":
+                    return (
+                      <Product
+                        title={field.title}
+                        text={field.description}
+                        bgColor={field.bgcolor}
+                      />
+                    );
+                    break;
+
+                  case "Path":
+                    return (
+                      <Path
+                        position={field.position}
+                        title={field.title}
+                        description={field.description}
+                        link={field.link}
+                        image={field.bgimage.url}
+                        pathColor={field.bgcolor}
+                      />
+                    );
+                    break;
+                  case "Buttons":
+                    return <ButtonsProducts />;
+                    break;
+                  case "ParallaxProduct":
+                    return (
+                      <ParallaxProduct
+                        height={field.height}
+                        background={field.bgimage.url}
+                      />
+                    );
+                    break;
+                  case "Parallax":
+                    return (
+                      <Parallax
+                        title={field.title}
+                        height={field.height}
+                        background={field.bgimage.url}
+                      />
+                    );
+                    break;
+                  case "Text":
+                    return <Text text={field.text} position={field.position} />;
+                    break;
+
+                  default:
+                    break;
+                }
+              })}
           </div>
         </React.Fragment>
       )}
