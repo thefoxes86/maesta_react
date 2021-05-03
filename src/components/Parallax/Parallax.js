@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { initParallax } from "../../lib/initParallax";
+import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 import "./parallax.scss";
 export default function Parallax(props) {
+  checkHoverPersonalized();
   useEffect(() => {
     initParallax();
   }, [props.background]);

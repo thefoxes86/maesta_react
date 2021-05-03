@@ -9,6 +9,7 @@ import ButtonsProducts from "../../components/ButtonsProducts";
 import ParallaxProduct from "../../components/ParallaxProduct";
 import Parallax from "../../components/Parallax";
 import Text from "../../components/Text";
+import Form from "../../components/Form";
 
 const ID = 55;
 
@@ -110,6 +111,9 @@ export default function Conserve(props) {
                     break;
                   case "Text":
                     return <Text text={field.text} position={field.position} />;
+                    break;
+                  case "Form":
+                    return <Form text={field.text} />;
                     break;
 
                   default:

@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { state } from "./state";
+import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 import "./menu.scss";
 
 export default function Menu(props) {
   const [open, setOpen] = useState(false);
+  checkHoverPersonalized();
   useEffect(() => {
     const status = props.closeMenu ? false : true;
   }, [props.closeMenu]);
@@ -103,20 +105,15 @@ export default function Menu(props) {
               RESPIRI DELLA MENTE
             </NavLink>
           </li>
+          <li></li>
           <li>
-            <NavLink
-              to="/contatti"
+            <a
+              href="https://www.instagram.com/maestadellaformica/"
               className="hover__dark"
-              activeClassName="active"
-              type="page"
-              onClick={() => {
-                setOpen(false);
-              }}
             >
-              CONTATTI
-            </NavLink>
+              <img width="25" src="img/instagram-icon.png" alt="" />
+            </a>
           </li>
-          <li>INSTAGRAM ICON</li>
         </motion.ul>
       </motion.nav>
     </React.Fragment>

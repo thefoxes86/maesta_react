@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 import "./buttonsProducts.scss";
 
 export default function ButtonsProducts(props) {
+  checkHoverPersonalized();
   return (
     <div className="buttons__products">
       <div className="button">

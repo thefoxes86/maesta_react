@@ -3,11 +3,15 @@ import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
 import Menu from "../Menu";
 import "./header.scss";
-import { cursorPersonalize } from "../../lib/cursorPerzonalize";
+import {
+  cursorPersonalize,
+  checkHoverPersonalized,
+} from "../../lib/cursorPerzonalize";
 
 export default function Header(props) {
   const [closeMenu, setCloseMenu] = useState(false);
   cursorPersonalize();
+  checkHoverPersonalized();
   return (
     <React.Fragment>
       <Helmet>

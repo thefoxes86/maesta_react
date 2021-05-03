@@ -1,8 +1,10 @@
 import React from "react";
 import { decodeHtmlCharCodes } from "../../lib/decodeHtmlCharCodes";
+import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 import "./titlePages.scss";
 
 export default function TitlePages(props) {
+  checkHoverPersonalized();
   return (
     <div className="content__item content__item__first__right content--full-height">
       <div className="content__block__inner-page">

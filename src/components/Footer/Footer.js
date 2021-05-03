@@ -1,7 +1,9 @@
-import react from "react";
+import React from "react";
 import "./footer.scss";
+import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 
 export default function Footer(props) {
+  checkHoverPersonalized();
   return (
     <footer>
       <div className="footer__logo">

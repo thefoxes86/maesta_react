@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { initParallax } from "../../lib/initParallax";
+import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 import "./parallaxProduct.scss";
 
 export default function ParallaxProduct(props) {
+  checkHoverPersonalized();
   useEffect(() => {
     initParallax();
     console.log("here");

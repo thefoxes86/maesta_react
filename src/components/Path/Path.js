@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 import "./path.scss";
 
 export default function Path(props) {
+  checkHoverPersonalized();
   const classPosition = "content__item content__item__" + props.position;
   return (
     <div className={classPosition}>

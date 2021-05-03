@@ -1,7 +1,5 @@
 const cursorPersonalize = () => {
   const cursor = document.querySelector(".cursor");
-  const hoverLight = [...document.querySelectorAll(".hover__light")];
-  const hoverDark = [...document.querySelectorAll(".hover__dark")];
   let outPage = false;
 
   cursor &&
@@ -21,6 +19,12 @@ const cursorPersonalize = () => {
         "top: " + (e.pageY - 15) + "px; left: " + (e.pageX - 15) + "px;"
       );
     });
+};
+
+const checkHoverPersonalized = () => {
+  const cursor = document.querySelector(".cursor");
+  const hoverLight = [...document.querySelectorAll(".hover__light")];
+  const hoverDark = [...document.querySelectorAll(".hover__dark")];
 
   hoverLight.forEach((element) => {
     element.addEventListener("mouseover", () =>
@@ -40,4 +44,4 @@ const cursorPersonalize = () => {
   });
 };
 
-export { cursorPersonalize };
+export { cursorPersonalize, checkHoverPersonalized };

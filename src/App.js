@@ -3,7 +3,7 @@ import Luoghi from "./pages/Luoghi";
 import Sapori from "./pages/Sapori";
 import Volti from "./pages/Volti";
 import Respiri from "./pages/Respiri";
-import Page from "./pages/Page";
+import Contatti from "./pages/Contatti";
 import ScrollTop from "./components/ScrollTop";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -55,9 +55,7 @@ function App() {
                   key={window.location.pathname}
                 />
               </Route>
-              <Route exact path="/contatti">
-                <Page type="page" key={window.location.pathname} />
-              </Route>
+
               <Route exact path="/vino">
                 <Vino type="page" key={window.location.pathname} />
               </Route>
