@@ -75,7 +75,6 @@ export default function Respiri(props) {
                         bgColor={field.bgcolor}
                       />
                     );
-                    break;
 
                   case "Path":
                     return (
@@ -89,10 +88,10 @@ export default function Respiri(props) {
                         pathColor={field.bgcolor}
                       />
                     );
-                    break;
+
                   case "Buttons":
                     return <ButtonsProducts />;
-                    break;
+
                   case "ParallaxProduct":
                     return (
                       <ParallaxProduct
@@ -100,7 +99,7 @@ export default function Respiri(props) {
                         background={field.bgimage.url}
                       />
                     );
-                    break;
+
                   case "Parallax":
                     return (
                       <Parallax
@@ -109,13 +108,12 @@ export default function Respiri(props) {
                         background={field.bgimage.url}
                       />
                     );
-                    break;
+
                   case "Text":
                     return <Text text={field.text} position={field.position} />;
-                    break;
+
                   case "Form":
                     return <Form text={field.text} />;
-                    break;
 
                   default:
                     break;

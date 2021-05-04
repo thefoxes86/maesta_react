@@ -70,16 +70,17 @@ export default function Altro(props) {
                   case "Product":
                     return (
                       <Product
+                        key={field.title}
                         title={field.title}
                         text={field.description}
                         bgColor={field.bgcolor}
                       />
                     );
-                    break;
 
                   case "Path":
                     return (
                       <Path
+                        key={field.title}
                         position={field.position}
                         title={field.title}
                         description={field.description}
@@ -88,33 +89,40 @@ export default function Altro(props) {
                         pathColor={field.bgcolor}
                       />
                     );
-                    break;
+
                   case "Buttons":
-                    return <ButtonsProducts />;
-                    break;
+                    return <ButtonsProducts key={field.title} />;
+
                   case "ParallaxProduct":
                     return (
                       <ParallaxProduct
+                        key={field.title}
                         height={field.height}
                         background={field.bgimage.url}
                       />
                     );
-                    break;
+
                   case "Parallax":
                     return (
                       <Parallax
+                        key={field.title}
                         title={field.title}
                         height={field.height}
                         background={field.bgimage.url}
                       />
                     );
-                    break;
+
                   case "Text":
-                    return <Text text={field.text} position={field.position} />;
-                    break;
+                    return (
+                      <Text
+                        key={field.title}
+                        text={field.text}
+                        position={field.position}
+                      />
+                    );
+
                   case "Form":
-                    return <Form text={field.text} />;
-                    break;
+                    return <Form key={field.title} text={field.text} />;
 
                   default:
                     break;
