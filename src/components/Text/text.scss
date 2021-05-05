@@ -23,3 +23,14 @@
     font-weight: 100;
   }
 }
+
+@media screen and (max-width: 590px) {
+  .content__text_right {
+    grid-template-columns: 10% 80% 10%;
+    grid-template-areas: ". text .";
+  }
+  .content__text_left {
+    grid-template-columns: 10% 80% 10%;
+    grid-template-areas: ". text .";
+  }
+}

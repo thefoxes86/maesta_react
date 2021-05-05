@@ -70,6 +70,7 @@
   grid-area: person1;
   display: flex;
   align-items: center;
+  flex-direction: row;
 
   img {
     padding: 20px;
@@ -83,6 +84,7 @@
   grid-area: person2;
   display: flex;
   align-items: center;
+  flex-direction: row;
 
   img {
     padding: 20px;
@@ -96,6 +98,7 @@
   grid-area: person3;
   display: flex;
   align-items: center;
+  flex-direction: row;
 
   img {
     padding: 20px;
@@ -103,5 +106,35 @@
   }
   p {
     padding-right: 50px;
+  }
+}
+
+@media screen and (min-width: 591px) and (max-width: 991px) {
+  .person1,
+  .person3 {
+    flex-direction: column;
+  }
+  .person2 {
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .contacts__grid__container {
+    grid-template-areas:
+      "person1"
+      "person2"
+      "person3"
+      "form";
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .person1,
+  .person3 {
+    flex-direction: column;
+  }
+  .person2 {
+    flex-direction: column-reverse;
   }
 }
