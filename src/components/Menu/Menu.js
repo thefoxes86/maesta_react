@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { state } from "./state";
 import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
+import { disablePageScroll, enablePageScroll } from "scroll-lock";
 import "./menu.scss";
 
 export default function Menu(props) {

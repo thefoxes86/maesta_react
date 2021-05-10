@@ -68,8 +68,8 @@ function App() {
                 <Altro type="page" key={window.location.pathname} />
               </Route>
             </Switch>
+            <Footer />
           </AnimatePresence>
-          <Footer />
         </div>
       </main>
     </ScrollTop>
