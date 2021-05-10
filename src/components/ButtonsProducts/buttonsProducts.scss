@@ -33,7 +33,7 @@
 
 @media only screen and (max-width: 1000px) {
   .buttons__products {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     @for $i from 1 to 3 {
       div.button {

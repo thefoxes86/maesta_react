@@ -243,7 +243,7 @@
   .grid__container_pruduct_left {
     grid-template-columns: 0.2fr 0.1fr 2fr 1fr;
     .description {
-      padding: 5% 15%;
+      padding: 5% 5% 5% 25%;
     }
   }
 
@@ -260,14 +260,14 @@
   .grid__container_pruduct_left {
     grid-template-columns: 0.2fr 0.1fr 2fr 0.5fr;
     .description {
-      padding: 5% 15%;
+      padding: 5% 5% 5% 25%;
     }
   }
 
   .grid__container_pruduct_right {
     grid-template-columns: 0.5fr 2fr 0.1fr 0.2fr;
     .description {
-      padding: 5% 15%;
+      padding: 5% 25% 5% 5%;
     }
   }
 }

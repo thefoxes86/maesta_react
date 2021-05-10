@@ -93,7 +93,7 @@ export default function Home(props) {
 
           <ButtonsProducts />
 
-          <Parallax height="50vh" background="img/clouds.png" />
+          <Parallax height="70vh" background="img/clouds.png" />
 
           <Path
             position="left"

@@ -41,90 +41,6 @@
   margin: 45vh 0;
 }
 
-// GRID PARALLAX WINE
-
-.grid__container_pruduct {
-  display: grid;
-  margin: 10vh 0;
-  align-items: center;
-
-  .title {
-    grid-area: title;
-    background-color: black;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 98;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    h3 {
-      font-size: 38px;
-      text-transform: uppercase;
-      color: white;
-      margin-right: 0;
-      padding: 20px 10px;
-      font-weight: 100;
-    }
-  }
-  .image {
-    grid-area: image;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    align-self: flex-end;
-    height: auto;
-    z-index: 99;
-    position: relative;
-
-    img {
-      position: absolute;
-      height: 400px;
-      bottom: -4vh;
-    }
-  }
-  .description {
-    grid-area: description;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    background-color: white;
-    width: 100%;
-    min-height: 60px;
-    color: black;
-    font-size: 14px;
-    font-weight: 300;
-    padding: 5% 15%;
-    z-index: 98;
-  }
-}
-
-.grid__container_pruduct_left {
-  grid-template-areas: "title image description .";
-  grid-template-columns: 0.2fr 0.1fr 2fr 2fr;
-
-  .title {
-    transform: rotate(180deg);
-  }
-
-  .description {
-    justify-content: flex-start;
-  }
-}
-
-.grid__container_pruduct_right {
-  grid-template-areas: ". description image title";
-  grid-template-columns: 2fr 2fr 0.1fr 0.2fr;
-
-  .title {
-    transform: rotate(0deg);
-  }
-
-  .description {
-    justify-content: flex-end;
-  }
-}
-
 // CIRCLE
 
 .circle__black {
@@ -240,34 +156,23 @@
 
 // BIG DEVICE / TABLET
 @media only screen and (max-width: 768px) {
-  .grid__container_pruduct_left {
-    grid-template-columns: 0.2fr 0.1fr 2fr 1fr;
-    .description {
-      padding: 5% 15%;
+  .content__item__parallax__right {
+    grid-template-columns: 5% 95%;
+    top: 10%;
+    .content__item__parallax-text .description {
+      padding: 10px;
+      font-size: 22px;
     }
   }
+  .circle__black .volti__container {
+    grid-template-columns: 2% 1fr 1fr 1fr 2%;
 
-  .grid__container_pruduct_right {
-    grid-template-columns: 1fr 2fr 0.1fr 0.2fr;
-    .description {
-      padding: 5% 15%;
+    .volti img {
+      width: 95%;
     }
   }
 }
 
 // SMALL DEVICE / SMARTPHONE
 @media only screen and (max-width: 568px) {
-  .grid__container_pruduct_left {
-    grid-template-columns: 0.2fr 0.1fr 2fr 0.5fr;
-    .description {
-      padding: 5% 15%;
-    }
-  }
-
-  .grid__container_pruduct_right {
-    grid-template-columns: 0.5fr 2fr 0.1fr 0.2fr;
-    .description {
-      padding: 5% 15%;
-    }
-  }
 }

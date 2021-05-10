@@ -68,3 +68,39 @@
     text-transform: uppercase;
   }
 }
+@media only screen and (min-width: 581px) and (max-width: 781px) {
+  .content__page__first {
+    .content__item__first__right {
+      .content__block__inner-page {
+        grid-area: 1 / 2 / 3 / 3;
+        .text__intro {
+          width: 100%;
+          top: 50%;
+          left: 5%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .content__page__first {
+    .content__item__first__right {
+      grid-template-columns: 40% 60%;
+      margin-top: 0;
+
+      .content__block__inner-page {
+        grid-area: 2 / 1 / 2 / 3;
+        .text__intro {
+          width: 100%;
+          top: 60%;
+          left: 5%;
+          font-size: 30px;
+        }
+      }
+      .content__item-imgwrap {
+        grid-area: 2 / 1 / 2 / 3;
+      }
+    }
+  }
+}
