@@ -60,9 +60,10 @@ export default function Home(props) {
             <div className="content content__first content--full">
               <div className="content__item content__item__first__right content--full-height">
                 <div className="content__block__inner-page">
-                  <div className="text__intro">
-                    Quasi tutta tradizione con un pizzico di fantasia...
-                  </div>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: page.acf.intro_page }}
+                    className="text__intro"
+                  ></div>
                   <motion.img src="img/circle_home_top.png" />
                 </div>
                 <div className="content__item-imgwrap">

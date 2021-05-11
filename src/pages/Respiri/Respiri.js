@@ -62,6 +62,7 @@ export default function Respiri(props) {
               <div className="content__page__first content--full">
                 <TitlePages
                   title={page.title.rendered}
+                  intro={page.acf.intro_page}
                   img={img.guid.rendered}
                   pathColor={page.acf.path_color}
                 />

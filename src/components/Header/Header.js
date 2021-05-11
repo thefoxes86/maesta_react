@@ -7,6 +7,7 @@ import {
   cursorPersonalize,
   checkHoverPersonalized,
 } from "../../lib/cursorPerzonalize";
+import HTML2React from "html2react";
 
 export default function Header({ meta }) {
   const [closeMenu, setCloseMenu] = useState(false);
@@ -21,7 +22,7 @@ export default function Header({ meta }) {
         <Helmet>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          {meta.yoast_head}
+          {HTML2React(meta.yoast_head)}
           <link rel="canonical" href="http://mysite.com/example" />
         </Helmet>
       )}
