@@ -10,6 +10,7 @@ import ParallaxProduct from "../../components/ParallaxProduct";
 import Parallax from "../../components/Parallax";
 import Text from "../../components/Text";
 import Form from "../../components/Form";
+import LayoutApp from "../../components/LayoutApp";
 
 const ID = 11;
 
@@ -52,75 +53,79 @@ export default function Volti(props) {
 
   !loading && getScrollPage();
   return (
-    <TransitionPages>
-      {!loading && (
-        <React.Fragment>
-          <div className="content content__page">
-            <div className="content__page__first content--full">
-              <TitlePages
-                title={page.title.rendered}
-                img={img.guid.rendered}
-                pathColor={page.acf.path_color}
-              />
+    <LayoutApp meta={page}>
+      <TransitionPages>
+        {!loading && (
+          <React.Fragment>
+            <div className="content content__page">
+              <div className="content__page__first content--full">
+                <TitlePages
+                  title={page.title.rendered}
+                  img={img.guid.rendered}
+                  pathColor={page.acf.path_color}
+                />
+              </div>
+              {page.acf.item &&
+                page.acf.item.map((field) => {
+                  switch (field.component) {
+                    case "Product":
+                      return (
+                        <Product
+                          title={field.title}
+                          text={field.description}
+                          bgColor={field.bgcolor}
+                        />
+                      );
+
+                    case "Path":
+                      return (
+                        <Path
+                          position={field.position}
+                          title={field.title}
+                          description={field.description}
+                          link={field.link}
+                          textLink={field.textLink}
+                          image={field.bgimage.url}
+                          pathColor={field.bgcolor}
+                        />
+                      );
+
+                    case "Buttons":
+                      return <ButtonsProducts />;
+
+                    case "ParallaxProduct":
+                      return (
+                        <ParallaxProduct
+                          height={field.height}
+                          background={field.bgimage.url}
+                        />
+                      );
+
+                    case "Parallax":
+                      return (
+                        <Parallax
+                          title={field.title}
+                          height={field.height}
+                          background={field.bgimage.url}
+                        />
+                      );
+
+                    case "Text":
+                      return (
+                        <Text text={field.text} position={field.position} />
+                      );
+
+                    case "Form":
+                      return <Form text={field.text} />;
+
+                    default:
+                      break;
+                  }
+                })}
             </div>
-            {page.acf.item &&
-              page.acf.item.map((field) => {
-                switch (field.component) {
-                  case "Product":
-                    return (
-                      <Product
-                        title={field.title}
-                        text={field.description}
-                        bgColor={field.bgcolor}
-                      />
-                    );
-
-                  case "Path":
-                    return (
-                      <Path
-                        position={field.position}
-                        title={field.title}
-                        description={field.description}
-                        link={field.link}
-                        textLink={field.textLink}
-                        image={field.bgimage.url}
-                        pathColor={field.bgcolor}
-                      />
-                    );
-
-                  case "Buttons":
-                    return <ButtonsProducts />;
-
-                  case "ParallaxProduct":
-                    return (
-                      <ParallaxProduct
-                        height={field.height}
-                        background={field.bgimage.url}
-                      />
-                    );
-
-                  case "Parallax":
-                    return (
-                      <Parallax
-                        title={field.title}
-                        height={field.height}
-                        background={field.bgimage.url}
-                      />
-                    );
-
-                  case "Text":
-                    return <Text text={field.text} position={field.position} />;
-
-                  case "Form":
-                    return <Form text={field.text} />;
-
-                  default:
-                    break;
-                }
-              })}
-          </div>
-        </React.Fragment>
-      )}
-    </TransitionPages>
+          </React.Fragment>
+        )}
+      </TransitionPages>
+    </LayoutApp>
   );
 }

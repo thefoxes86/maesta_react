@@ -1,5 +1,6 @@
 import React, { useEffect, Fragment } from "react";
 import { withRouter } from "react-router-dom";
+import { enablePageScroll } from "scroll-lock";
 
 function ScrollToTop({ history, children }) {
   useEffect(() => {

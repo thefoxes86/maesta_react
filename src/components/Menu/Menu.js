@@ -21,6 +21,12 @@ export default function Menu(props) {
         onTap={() => {
           const status = open ? false : true;
           setOpen(status);
+          window.scrollTo(0, 0);
+          if (open) {
+            enablePageScroll();
+          } else {
+            disablePageScroll();
+          }
         }}
       >
         <div className="hamburger">

@@ -14,6 +14,7 @@ export default function Header({ meta }) {
   useEffect(() => {
     checkHoverPersonalized();
     cursorPersonalize();
+    console.log(JSON.stringify(meta.yoast_head));
   }, []);
   return (
     <React.Fragment>
