@@ -10,18 +10,9 @@ import ButtonsProducts from "../../components/ButtonsProducts";
 import Path from "../../components/Path";
 
 export default function Home(props) {
-  const posts = FetchApi("https://maestadellaformica.com/wp-json/wp/v2/posts", {
-    mode: "cors", // no-cors, *cors, same-origin
-    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: "same-origin", // include, *same-origin, omit
-    headers: {
-      "Content-Type": "application/json",
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    redirect: "follow", // manual, *follow, error
-  });
-
-  getScrollPage();
+  useEffect(() => {
+    getScrollPage();
+  }, []);
 
   return (
     <React.Fragment>

@@ -4,7 +4,6 @@ import Sapori from "./pages/Sapori";
 import Volti from "./pages/Volti";
 import Respiri from "./pages/Respiri";
 import ScrollTop from "./components/ScrollTop";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Vino from "./pages/Vino";
 import Frutta from "./pages/Frutta";
@@ -20,7 +19,6 @@ function App() {
     <ScrollTop>
       <main className="demo-1">
         <div data-scroll className="page page--layout-2">
-          <Header title="Home" />
           <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.pathname}>
               <Route exact path="/">
