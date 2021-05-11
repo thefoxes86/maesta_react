@@ -21,10 +21,7 @@ export default function Header({ meta }) {
         <Helmet>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="description" content="" />
-          <meta name="keywords" content="" />
-          <meta name="author" content="" />
-          <title>{meta.title.rendered}</title>
+          {meta.yoast_head}
           <link rel="canonical" href="http://mysite.com/example" />
         </Helmet>
       )}
