@@ -106,12 +106,15 @@
     }
     .description {
       display: flex;
-      align-items: center;
+      flex-direction: column;
       padding: 25px;
       color: black;
       font-size: 16px;
       font-weight: 100;
       width: 80%;
+      p {
+        margin: 0;
+      }
     }
     .continue {
       font-weight: 300;
@@ -200,6 +203,7 @@
     }
     .description {
       justify-content: flex-start;
+      align-items: flex-end;
       text-align: right;
     }
 
