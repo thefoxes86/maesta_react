@@ -9,6 +9,7 @@
     "animejs": "^3.2.1",
     "bootstrap": "^4.6.0",
     "framer-motion": "^4.1.4",
+    "html2react": "^1.2.1",
     "imagesloades": "file:local_modules/ImagesLoades",
     "node-sass": "^5.0.0",
     "react": "^17.0.2",

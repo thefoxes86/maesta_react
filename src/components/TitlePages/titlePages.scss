@@ -17,12 +17,16 @@
     position: relative;
 
     .text__intro {
-      font-weight: 100;
-      font-size: 40px;
       width: 50%;
       position: absolute;
       top: 40%;
       left: 16%;
+
+      p {
+        margin: 0;
+        font-weight: 100;
+        font-size: 40px;
+      }
     }
 
     img {

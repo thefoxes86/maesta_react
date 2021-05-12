@@ -15,8 +15,11 @@ export default function Path(props) {
               <h3>{props.title}</h3>
             </div>
           )}
-          {props.description && (
-            <p className="description">{props.description}</p>
+          {props.text && (
+            <p
+              dangerouslySetInnerHTML={{ __html: props.text }}
+              className="description"
+            ></p>
           )}
           {props.link && (
             <NavLink to={props.link} exact className="continue hover__light">

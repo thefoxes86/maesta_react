@@ -11,6 +11,7 @@ import Parallax from "../../components/Parallax";
 import Text from "../../components/Text";
 import Form from "../../components/Form";
 import LayoutApp from "../../components/LayoutApp";
+import ProductWithImage from "../../components/ProductWithImage";
 
 const ID = 52;
 
@@ -62,6 +63,7 @@ export default function Vino(props) {
               <div className="content__page__first content--full">
                 <TitlePages
                   title={page.title.rendered}
+                  intro={page.acf.intro_page}
                   img={img.guid.rendered}
                   pathColor={page.acf.path_color}
                 />
@@ -83,7 +85,7 @@ export default function Vino(props) {
                         <Path
                           position={field.position}
                           title={field.title}
-                          description={field.description}
+                          text={field.text}
                           link={field.link}
                           textLink={field.textLink}
                           image={field.bgimage.url}
@@ -118,6 +120,16 @@ export default function Vino(props) {
 
                     case "Form":
                       return <Form text={field.text} />;
+                    case "ProductWithImage":
+                      return (
+                        <ProductWithImage
+                          pathColor={field.bgcolor}
+                          background={field.bgimage.url}
+                          title={field.title}
+                          text={field.text}
+                          position={field.position}
+                        />
+                      );
 
                     default:
                       break;

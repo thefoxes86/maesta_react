@@ -62,6 +62,7 @@ export default function Altro(props) {
               <div className="content__page__first content--full">
                 <TitlePages
                   title={page.title.rendered}
+                  intro={page.acf.intro_page}
                   img={img.guid.rendered}
                   pathColor={page.acf.path_color}
                 />
@@ -85,7 +86,7 @@ export default function Altro(props) {
                           key={field.title}
                           position={field.position}
                           title={field.title}
-                          description={field.description}
+                          text={field.text}
                           link={field.link}
                           image={field.bgimage.url}
                           pathColor={field.bgcolor}

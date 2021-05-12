@@ -8,9 +8,10 @@ export default function TitlePages(props) {
   return (
     <div className="content__item content__item__first__right content--full-height">
       <div className="content__block__inner-page">
-        <div className="text__intro">
-          Quasi tutta tradizione con un pizzico di fantasia...
-        </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: props.intro }}
+          className="text__intro"
+        ></div>
       </div>
       <div className="content__item-imgwrap">
         <div
@@ -22,7 +23,10 @@ export default function TitlePages(props) {
       </div>
 
       <div className="title__container">
-        <h1 className="title">{decodeHtmlCharCodes(props.title)}</h1>
+        <h1
+          dangerouslySetInnerHTML={{ __html: props.title }}
+          className="title"
+        ></h1>
       </div>
       <div className="content__item-path">
         {props.pathColor && (
