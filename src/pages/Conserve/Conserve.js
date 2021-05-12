@@ -84,7 +84,7 @@ export default function Conserve(props) {
                         <Path
                           position={field.position}
                           title={field.title}
-                          description={field.description}
+                          text={field.text}
                           link={field.link}
                           image={field.bgimage.url}
                           pathColor={field.bgcolor}

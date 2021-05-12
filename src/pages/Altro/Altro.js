@@ -86,7 +86,7 @@ export default function Altro(props) {
                           key={field.title}
                           position={field.position}
                           title={field.title}
-                          description={field.description}
+                          text={field.text}
                           link={field.link}
                           image={field.bgimage.url}
                           pathColor={field.bgcolor}
