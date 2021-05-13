@@ -141,7 +141,11 @@ export default function Home(props) {
 
                     case "Text":
                       return (
-                        <Text text={field.text} position={field.position} />
+                        <Text
+                          text={field.text}
+                          position={field.position}
+                          showlogomountain={field.product_high_mountain}
+                        />
                       );
 
                     case "Form":

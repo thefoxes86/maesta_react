@@ -121,6 +121,7 @@ export default function Altro(props) {
                           key={field.title}
                           text={field.text}
                           position={field.position}
+                          showlogomountain={field.product_high_mountain}
                         />
                       );
 

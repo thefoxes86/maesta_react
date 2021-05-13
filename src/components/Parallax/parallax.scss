@@ -58,7 +58,7 @@
 
   .volti__container {
     position: absolute;
-    top: 20vh;
+    top: 15vh;
     width: 100vw;
     display: grid;
     grid-template-columns: 15% 1fr 1fr 1fr 15%;
@@ -74,7 +74,7 @@
       }
     }
     .volti:nth-child(2) img {
-      margin-top: 80px;
+      margin-top: 60px;
     }
     @for $b from 1 to 4 {
       .volti:nth-child(#{$b}) {

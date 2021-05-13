@@ -62,6 +62,19 @@ export default function Menu(props) {
         >
           <li>
             <NavLink
+              to="/"
+              className="hover__dark"
+              activeClassName="active"
+              type="category"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              HOME
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/luoghi-del-racconto"
               className="hover__dark"
               activeClassName="active"
@@ -88,19 +101,6 @@ export default function Menu(props) {
           </li>
           <li>
             <NavLink
-              to="/volti-dell-altipiano"
-              className="hover__dark"
-              activeClassName="active"
-              type="category"
-              onClick={() => {
-                setOpen(false);
-              }}
-            >
-              VOLTI DELL'ALTIPIANO
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
               to="/respiri-della-mente"
               className="hover__dark"
               activeClassName="active"
@@ -110,6 +110,19 @@ export default function Menu(props) {
               }}
             >
               RESPIRI DELLA MENTE
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/volti-dell-altipiano"
+              className="hover__dark"
+              activeClassName="active"
+              type="category"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              VOLTI DELL'ALTIPIANO
             </NavLink>
           </li>
           <li></li>

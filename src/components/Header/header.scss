@@ -1,10 +1,10 @@
 .logo {
   top: 5vh;
-  width: 12vw;
+  width: 9vw;
   height: 15vh;
   position: absolute;
   z-index: 9999;
-  left: 0;
+  left: 3vw;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -21,7 +21,7 @@
 
 @media only screen and (max-width: 580px) {
   .logo {
-    width: 40vw;
+    width: 30vw;
     height: 70px;
     left: 45vw;
   }

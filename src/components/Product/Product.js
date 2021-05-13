@@ -10,7 +10,8 @@ export default function Product(props) {
       <div className="title__block" style={{ backgroundColor: props.bgColor }}>
         <h3>{props.title}</h3>
         <a href={props.pdf} className="hover__light">
-          Scheda Tecnica
+          Scheda tecnica
+          <img src="img/icon_download.png" alt="" />
         </a>
       </div>
       <div className="text__content">{props.text}</div>
