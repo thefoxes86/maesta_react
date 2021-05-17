@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import FetchApi from "../../lib/fetchApi";
 import TransitionPages from "../../components/TransitionPages";
 import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
-import TitlePages from "../../components/TitlePages";
+
+import TitlePagesWithProducts from "../../components/TitlePagesWithProducts";
 import Product from "../../components/Product";
 import Path from "../../components/Path";
 import ButtonsProducts from "../../components/ButtonsProducts";
@@ -61,10 +62,13 @@ export default function Sapori(props) {
           <React.Fragment>
             <div className="content content__page">
               <div className="content__page__first content--full">
-                <TitlePages
+                <TitlePagesWithProducts
                   title={page.title.rendered}
                   intro={page.acf.intro_page}
-                  img={img.guid.rendered}
+                  imgVino={page.acf.imgvino}
+                  imgConserve={page.acf.imgconserve}
+                  imgFrutta={page.acf.imgfrutta}
+                  imgAltro={page.acf.imgaltro}
                   pathColor={page.acf.path_color}
                 />
               </div>

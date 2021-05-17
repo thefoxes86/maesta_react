@@ -23,7 +23,6 @@ export default function Header({ meta }) {
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           {HTML2React(meta.yoast_head)}
-          <link rel="canonical" href="http://mysite.com/example" />
         </Helmet>
       )}
       <div className="logo hover__light">

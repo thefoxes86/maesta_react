@@ -44,6 +44,23 @@
   }
 }
 
+.gallery {
+  display: grid;
+  width: 100%;
+  .gallery-item {
+    grid: 1 / 1;
+  }
+}
+.gallery-columns-2 {
+  grid-template-columns: 1fr 1fr;
+}
+.gallery-columns-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.gallery-columns-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 @media screen and (max-width: 991px) {
   .float_image__container {
     width: 25vw;

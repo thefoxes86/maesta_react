@@ -3,8 +3,10 @@ import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 import "./productwithimage.scss";
 
 export default function ProductWithImage(props) {
+  const classPosition =
+    "productWithImage__content productWithImage__content_" + props.position;
   return (
-    <div className="productWithImage__content">
+    <div className={classPosition}>
       <div className="block__black">
         <h3>{props.title}</h3>
       </div>
@@ -12,21 +14,27 @@ export default function ProductWithImage(props) {
         className="content__block"
         style={{ backgroundColor: props.pathColor }}
       >
-        <div
+        {props.position === "right" && (
+          <a href={props.pdf} className="hover__light">
+            Scheda tecnica
+            <img src="img/icon_download.png" alt="" />
+          </a>
+        )}
+        <img
+          src={props.background}
+          alt={props.title}
           className="img__content"
-          style={{
-            backgroundImage: `url(${props.background})`,
-          }}
-        ></div>
+        />
         <div
           className="text__content"
           dangerouslySetInnerHTML={{ __html: props.text }}
         ></div>
-
-        <a href={props.pdf} className="hover__light">
-          Scheda tecnica
-          <img src="img/icon_download.png" alt="" />
-        </a>
+        {props.position === "left" && (
+          <a href={props.pdf} className="hover__light">
+            Scheda tecnica
+            <img src="img/icon_download.png" alt="" />
+          </a>
+        )}
       </div>
     </div>
   );
