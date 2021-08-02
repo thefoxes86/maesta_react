@@ -9,13 +9,35 @@ import Vino from "./pages/Vino";
 import Frutta from "./pages/Frutta";
 import Conserve from "./pages/Conserve";
 import Altro from "./pages/Altro";
+import Comunicazioni from "./pages/Comunicazioni";
 import SimpleReactLightbox from "simple-react-lightbox";
-
+import FetchApi from "./lib/fetchApi";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import Post from "./pages/Post";
 
 function App() {
   const location = useLocation();
+  const [postsRoute, setPostsRoute] = useState([]);
+  useEffect(() => {
+    // Mount Component
+    FetchApi("https://maestadellaformica.com/wp-json/wp/v2/posts/", {
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: "follow", // manual, *follow, error
+    }).then((resPosts) => {
+      setPostsRoute(resPosts);
+    });
+
+    // Unmount Component
+    return () => {};
+  }, []);
   return (
     <SimpleReactLightbox>
       <ScrollTop>
@@ -67,6 +89,16 @@ function App() {
                 <Route exact path="/altro">
                   <Altro type="page" key={window.location.pathname} />
                 </Route>
+                <Route exact path="/parole-dal-mondo">
+                  <Comunicazioni type="page" key={window.location.pathname} />
+                </Route>
+
+                {postsRoute &&
+                  postsRoute.map((post) => (
+                    <Route key={post.slug} exact path={`/${post.slug}`}>
+                      <Post data={post} />
+                    </Route>
+                  ))}
               </Switch>
               <Footer />
             </AnimatePresence>

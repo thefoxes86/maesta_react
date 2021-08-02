@@ -74,6 +74,8 @@
       width: 100%;
       position: absolute;
       background-size: cover;
+      object-fit: cover;
+      object-position: 50% 0;
       background-position: 50% 0%;
       will-change: transform;
       opacity: 1;

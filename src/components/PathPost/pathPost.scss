@@ -1,0 +1,23 @@
+.content__item .content__item-text .title_post {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  height: 60px;
+  width: 50%;
+  right: 0;
+  h3 {
+    font-size: 22px;
+    font-weight: 100;
+    color: black;
+    margin: 0;
+    text-transform: uppercase;
+  }
+}
+
+.content__item__left .content__item-text .title_post {
+  justify-content: flex-end !important;
+}
+.content__item__right .content__item-text .title_post {
+  justify-content: flex-start !important;
+}

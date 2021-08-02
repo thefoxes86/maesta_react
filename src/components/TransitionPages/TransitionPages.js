@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
-import { disablePageScroll } from "scroll-lock";
 
 import { blackBox } from "./blackBox";
 

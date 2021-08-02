@@ -114,6 +114,19 @@ export default function Menu(props) {
           </li>
           <li>
             <NavLink
+              to="/parole-dal-mondo"
+              className="hover__dark"
+              activeClassName="active"
+              type="category"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              PAROLE DAL MONDO
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/volti-dell-altipiano"
               className="hover__dark"
               activeClassName="active"
@@ -125,6 +138,7 @@ export default function Menu(props) {
               VOLTI DELL'ALTIPIANO
             </NavLink>
           </li>
+
           <li></li>
           <li>
             <a

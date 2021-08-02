@@ -36,6 +36,19 @@ const blackBox = {
       ease: [0.87, 0, 0.13, 1],
     },
   },
+  imgInitial: {
+    transform: "scale(1.2)",
+    opacity: 0,
+  },
+  imgAnimate: {
+    transform: "scale(1.0)",
+    opacity: 1,
+    transition: {
+      duration: 2,
+      delay: 0.3,
+      ease: [0.87, 0, 0.13, 1],
+    },
+  },
 };
 
 export { blackBox };

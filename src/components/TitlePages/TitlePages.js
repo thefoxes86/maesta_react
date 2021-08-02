@@ -1,6 +1,9 @@
 import React from "react";
-import { decodeHtmlCharCodes } from "../../lib/decodeHtmlCharCodes";
 import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
+import { motion } from "framer-motion";
+import { blackBox } from "../TransitionPages/blackBox";
+import LazyLoad from "react-lazyload";
+import PlaceholderImgComponent from "../PlaceholderImgComponent";
 import "./titlePages.scss";
 
 export default function TitlePages(props) {
@@ -14,12 +17,20 @@ export default function TitlePages(props) {
         ></div>
       </div>
       <div className="content__item-imgwrap">
-        <div
-          className="content__item-img"
-          style={{
-            backgroundImage: "url(" + props.img + ")",
-          }}
-        ></div>
+        <LazyLoad
+          height={200}
+          offset={[-200, 0]}
+          placeholder={<PlaceholderImgComponent />}
+        >
+          <motion.img
+            className="content__item-img"
+            src={props.img}
+            key={props.img}
+            initial="imgInitial"
+            animate="imgAnimate"
+            variants={blackBox}
+          ></motion.img>
+        </LazyLoad>
       </div>
 
       <div className="title__container">
