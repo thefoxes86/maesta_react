@@ -17,20 +17,14 @@ export default function TitlePages(props) {
         ></div>
       </div>
       <div className="content__item-imgwrap">
-        <LazyLoad
-          height={200}
-          offset={[-200, 0]}
-          placeholder={<PlaceholderImgComponent />}
-        >
-          <motion.img
-            className="content__item-img"
-            src={props.img}
-            key={props.img}
-            initial="imgInitial"
-            animate="imgAnimate"
-            variants={blackBox}
-          ></motion.img>
-        </LazyLoad>
+        <motion.img
+          className="content__item-img"
+          src={props.img}
+          key={props.img}
+          initial="imgInitial"
+          animate="imgAnimate"
+          variants={blackBox}
+        ></motion.img>
       </div>
 
       <div className="title__container">

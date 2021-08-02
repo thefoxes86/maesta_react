@@ -53,21 +53,14 @@ export default function PathPost(props) {
       )}
 
       <div className="content__item-imgwrap">
-        <LazyLoad
-          height={200}
-          offset={[-200, 0]}
-          throttle={200}
-          placeholder={<PlaceholderImgComponent />}
-        >
-          <motion.img
-            className="content__item-img"
-            src={props.image && props.image}
-            key={props.image}
-            initial="imgInitial"
-            animate="imgAnimate"
-            variants={blackBox}
-          ></motion.img>
-        </LazyLoad>
+        <motion.img
+          className="content__item-img"
+          src={props.image && props.image}
+          key={props.image}
+          initial="imgInitial"
+          animate="imgAnimate"
+          variants={blackBox}
+        ></motion.img>
       </div>
 
       <div className="content__item-path">
