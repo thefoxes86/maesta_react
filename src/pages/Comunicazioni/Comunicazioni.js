@@ -23,28 +23,6 @@ export default function Comunicazioni(props) {
   const [img, setImg] = useState();
   const [posts, setPosts] = useState([]);
 
-  const fetchImagePost = (imgApiId) => {
-    if (imgApiId) {
-      FetchApi(
-        "https://maestadellaformica.com/wp-json/wp/v2/media/" + imgApiId,
-        {
-          mode: "cors", // no-cors, *cors, same-origin
-          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: "same-origin", // include, *same-origin, omit
-          headers: {
-            "Content-Type": "application/json",
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          redirect: "follow", // manual, *follow, error
-        }
-      ).then((imgPost) => {
-        return imgPost.source_url;
-      });
-    } else {
-      return "img/img__0.png";
-    }
-  };
-
   useEffect(() => {
     FetchApi("https://maestadellaformica.com/wp-json/wp/v2/pages/" + ID, {
       mode: "cors", // no-cors, *cors, same-origin
@@ -179,7 +157,7 @@ export default function Comunicazioni(props) {
                     text={post.excerpt.rendered}
                     link={post.slug}
                     textLink={"Leggi tutto"}
-                    image={fetchImagePost(post.featured_media)}
+                    image={post.featured_media}
                   />
                 ))}
             </div>

@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
-import LazyLoad from "react-lazyload";
-import PlaceholderImgComponent from "../PlaceholderImgComponent";
+import FetchApi from "../../lib/fetchApi";
 import { motion } from "framer-motion";
 import { blackBox } from "../../components/TransitionPages/blackBox";
 import "./pathPost.scss";
 
 export default function PathPost(props) {
+  const [img, setImg] = useState("img/img__0.png");
   checkHoverPersonalized();
   const classPosition = "content__item content__item__" + props.position;
   const colors = [
@@ -29,6 +29,26 @@ export default function PathPost(props) {
     console.log("numero ");
     return colors[Math.floor(Math.random() * colors.length)];
   };
+
+  useEffect(() => {
+    FetchApi(
+      "https://maestadellaformica.com/wp-json/wp/v2/media/" + props.image,
+      {
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: "follow", // manual, *follow, error
+      }
+    ).then((imgPost) => {
+      imgPost.guid && setImg(imgPost.guid.rendered);
+    });
+
+    return () => {};
+  });
   return (
     <div className={classPosition}>
       {props.title && (
@@ -55,7 +75,7 @@ export default function PathPost(props) {
       <div className="content__item-imgwrap">
         <motion.img
           className="content__item-img"
-          src={props.image && props.image}
+          src={img}
           key={props.image}
           initial="imgInitial"
           animate="imgAnimate"
