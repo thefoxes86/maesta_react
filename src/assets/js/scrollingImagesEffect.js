@@ -55,7 +55,7 @@ class Item {
         ease: 0.1,
         // current value setter
         setValue: () => {
-          const toValue = 1.5;
+          const toValue = 1.3;
           const fromValue = 1;
           const val = MathUtils.map(
             this.props.top - docScroll,

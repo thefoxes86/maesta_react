@@ -2,12 +2,18 @@ import React from "react";
 import "./footer.scss";
 import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 import TransitionPages from "../../components/TransitionPages";
+import { motion } from "framer-motion";
+import { blackBox } from "../TransitionPages/blackBox";
 
 export default function Footer(props) {
   checkHoverPersonalized();
   return (
     <TransitionPages>
-      <footer>
+      <motion.footer
+        initial="footerInitial"
+        animate="footerAnimate"
+        variants={blackBox}
+      >
         <div className="footer__logo">
           <img src="img/logo.png" alt="" />
         </div>
@@ -21,7 +27,7 @@ export default function Footer(props) {
             Cookie Policy - Credits xdesigners.it
           </p>
         </div>
-      </footer>
+      </motion.footer>
     </TransitionPages>
   );
 }

@@ -14,12 +14,15 @@ import SimpleReactLightbox from "simple-react-lightbox";
 import FetchApi from "./lib/fetchApi";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Post from "./pages/Post";
+import ScrollToTop from "./components/ScrollToTop/ScrollTop";
 
 function App() {
   const location = useLocation();
   const [postsRoute, setPostsRoute] = useState([]);
+  const mainDiv = useRef();
+
   useEffect(() => {
     // Mount Component
     FetchApi("https://maestadellaformica.com/wp-json/wp/v2/posts/", {
@@ -41,7 +44,7 @@ function App() {
   return (
     <SimpleReactLightbox>
       <ScrollTop>
-        <main className="demo-1">
+        <main className="demo-1" ref={mainDiv}>
           <div data-scroll className="page page--layout-2">
             <AnimatePresence exitBeforeEnter>
               <Switch location={location} key={location.pathname}>
@@ -104,6 +107,7 @@ function App() {
             </AnimatePresence>
           </div>
         </main>
+        <ScrollToTop />
       </ScrollTop>
     </SimpleReactLightbox>
   );
