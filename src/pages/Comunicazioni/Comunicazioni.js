@@ -158,6 +158,7 @@ export default function Comunicazioni(props) {
                     link={post.slug}
                     textLink={"Leggi tutto"}
                     image={post.featured_media}
+                    date={post.date}
                   />
                 ))}
             </div>

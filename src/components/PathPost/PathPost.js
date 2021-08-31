@@ -30,6 +30,22 @@ export default function PathPost(props) {
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
+  const date = new Date(props.date);
+  const monthNames = [
+    "Gennaio",
+    "febbario",
+    "Marzo",
+    "Aprile",
+    "Maggio",
+    "Giugno",
+    "Luglio",
+    "Agosto",
+    "Settembre",
+    "ottobre",
+    "Novembre",
+    "Dicembre",
+  ];
+
   useEffect(() => {
     FetchApi(
       "https://maestadellaformica.com/wp-json/wp/v2/media/" + props.image,
@@ -55,9 +71,13 @@ export default function PathPost(props) {
         <span className="content__item-text">
           {props.title && (
             <div className="title_post">
-              <h3>{props.title}</h3>
+              <h3 dangerouslySetInnerHTML={{ __html: props.title }}></h3>
             </div>
           )}
+
+          <p className="date">{`${date.getDate()} ${
+            monthNames[date.getMonth()]
+          } ${date.getFullYear()}`}</p>
           {props.text && (
             <p
               dangerouslySetInnerHTML={{ __html: props.text }}
