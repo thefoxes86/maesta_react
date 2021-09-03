@@ -15,14 +15,6 @@ export default function Text(props) {
           className="text"
         ></p>
 
-        <NavLink
-          to="/parole-dal-mondo"
-          exact
-          className="hover__light continue back"
-        >
-          Torna agli articoli
-        </NavLink>
-
         {props.showlogomountain === true && (
           <div className="float_image__container">
             <img src="img/prodotto_di_montagna.png" alt="" />

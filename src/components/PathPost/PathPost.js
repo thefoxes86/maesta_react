@@ -84,11 +84,6 @@ export default function PathPost(props) {
               className="description"
             ></p>
           )}
-          {props.link && (
-            <NavLink to={props.link} exact className="continue hover__light">
-              {props.textLink}
-            </NavLink>
-          )}
         </span>
       )}
 
