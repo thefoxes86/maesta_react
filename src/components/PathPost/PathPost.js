@@ -41,7 +41,7 @@ export default function PathPost(props) {
     "Luglio",
     "Agosto",
     "Settembre",
-    "ottobre",
+    "Ottobre",
     "Novembre",
     "Dicembre",
   ];

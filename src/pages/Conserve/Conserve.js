@@ -76,6 +76,7 @@ export default function Conserve(props) {
                           title={field.title}
                           text={field.description}
                           bgColor={field.bgcolor}
+                          pdf={field.pdf}
                         />
                       );
 

@@ -132,6 +132,7 @@ export default function Vino(props) {
                           title={field.title}
                           text={field.text}
                           position={field.position}
+                          pdf={field.pdf}
                         />
                       );
 
