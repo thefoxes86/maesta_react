@@ -17,6 +17,7 @@ import { AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Post from "./pages/Post";
 import ScrollToTop from "./components/ScrollToTop/ScrollTop";
+import "./assets/effectImages.css";
 
 function App() {
   const location = useLocation();
