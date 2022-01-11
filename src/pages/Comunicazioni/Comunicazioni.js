@@ -24,20 +24,23 @@ export default function Comunicazioni(props) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    FetchApi("https://maestadellaformica.com/wp-json/wp/v2/pages/" + ID, {
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin", // include, *same-origin, omit
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: "follow", // manual, *follow, error
-    }).then((data) => {
+    FetchApi(
+      "https://backend.maestadellaformica.com/wp-json/wp/v2/pages/" + ID,
+      {
+        mode: "cors", // no-cors, *cors, same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, *same-origin, omit
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: "follow", // manual, *follow, error
+      }
+    ).then((data) => {
       setPage(data);
 
       FetchApi(
-        "https://maestadellaformica.com/wp-json/wp/v2/media/" +
+        "https://backend.maestadellaformica.com/wp-json/wp/v2/media/" +
           data.featured_media,
         {
           mode: "cors", // no-cors, *cors, same-origin
@@ -54,7 +57,7 @@ export default function Comunicazioni(props) {
         setLoading(false);
       });
 
-      FetchApi("https://maestadellaformica.com/wp-json/wp/v2/posts/", {
+      FetchApi("https://backend.maestadellaformica.com/wp-json/wp/v2/posts/", {
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
         credentials: "same-origin", // include, *same-origin, omit

@@ -18,7 +18,7 @@ export default function Post({ data }) {
   useEffect(() => {
     console.log(data);
     FetchApi(
-      "https://maestadellaformica.com/wp-json/wp/v2/media/" +
+      "https://backend.maestadellaformica.com/wp-json/wp/v2/media/" +
         data.featured_media,
       {
         mode: "cors", // no-cors, *cors, same-origin

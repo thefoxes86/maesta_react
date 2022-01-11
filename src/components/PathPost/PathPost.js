@@ -48,7 +48,8 @@ export default function PathPost(props) {
 
   useEffect(() => {
     FetchApi(
-      "https://maestadellaformica.com/wp-json/wp/v2/media/" + props.image,
+      "https://backend.maestadellaformica.com/wp-json/wp/v2/media/" +
+        props.image,
       {
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
