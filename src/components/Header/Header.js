@@ -11,7 +11,6 @@ import HTML2React from "html2react";
 
 export default function Header({ meta }) {
   const [closeMenu, setCloseMenu] = useState(false);
-  console.log(meta);
 
   useEffect(() => {
     checkHoverPersonalized();
