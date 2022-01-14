@@ -179,4 +179,7 @@
 
 // SMALL DEVICE / SMARTPHONE
 @media only screen and (max-width: 568px) {
+  .content__item__parallax__right .content__item__parallax-text .title {
+    width: 80%;
+  }
 }
