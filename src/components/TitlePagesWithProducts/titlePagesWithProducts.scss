@@ -123,6 +123,7 @@
 
 @media only screen and (max-width: 590px) {
   .buttons__products__header {
+    bottom: -22vh;
     grid-template-columns: 1fr;
     div.button {
       grid-column: 1;
@@ -158,9 +159,9 @@
         grid-area: 2 / 1 / 2 / 3;
         .text__intro {
           width: 100%;
-          top: -60%;
+          top: -40%;
           left: 5%;
-          font-size: 30px;
+          font-size: 26px;
         }
       }
       .content__item-imgwrap {

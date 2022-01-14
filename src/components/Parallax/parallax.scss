@@ -157,6 +157,9 @@
 
 // BIG DEVICE / TABLET
 @media only screen and (max-width: 768px) {
+  .parrallax_circle {
+    margin: 45vh 0 15vh 0;
+  }
   .content__item__parallax__right {
     grid-template-columns: 5% 95%;
     top: 10%;

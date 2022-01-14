@@ -45,7 +45,7 @@ export default function Form(props) {
         <p>
           Classe 1979: Laureato in viticoltura ed enologia all'università di
           Pisa, da subito inizia a lavorare in lucchesia, con particolare
-          predilezione per i lavori in vigna. e qui, oltre a qualche consulenza
+          predilezione per i lavori in vigna. E qui, oltre a qualche consulenza
           in toscana, si ferma fino ad oggi, raggiungendo in questi anni una
           grande conoscenza di questo territorio. E la vigna, la terra, i campi
           lo conquistano sempre di più diventando la grande passione della sua,

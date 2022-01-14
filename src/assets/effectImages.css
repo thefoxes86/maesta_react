@@ -297,7 +297,7 @@
     left: 0;
   }
   .content__first .content__block__inner-page img {
-    bottom: -10vh;
+    bottom: 15vh;
   }
   .content__first .content__item-imgwrap {
     grid-area: 1/2/3/3;

@@ -142,6 +142,9 @@
 }
 
 @media screen and (max-width: 789px) {
+  .grid__container_background {
+    background-size: contain;
+  }
   .productWithImage__content {
     margin: 20px 0;
     height: auto;

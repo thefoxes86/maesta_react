@@ -151,6 +151,9 @@
       top: calc(50% - 40px);
     }
   }
+  .gallery .gallery-item {
+    margin: 10px;
+  }
 }
 
 @media screen and (max-width: 590px) {
@@ -166,7 +169,7 @@
   .float_image__container {
     width: 45vw;
     height: 45vw;
-    top: 95%;
+    top: 97.5%;
     left: 5%;
 
     img {
@@ -174,5 +177,8 @@
       left: 5%;
       top: calc(50% - 80px);
     }
+  }
+  .gallery .gallery-item {
+    margin: 2px;
   }
 }

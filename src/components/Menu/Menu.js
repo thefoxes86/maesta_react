@@ -147,6 +147,13 @@ export default function Menu(props) {
             >
               <img width="25" src="img/instagram-icon.png" alt="" />
             </a>
+            <a
+              style={{ marginLeft: 20 }}
+              href="https://www.facebook.com/www.maestadellaformica.it"
+              className="hover__dark"
+            >
+              <img width="25" src="img/facebook.png" alt="" />
+            </a>
           </li>
         </motion.ul>
       </motion.nav>
