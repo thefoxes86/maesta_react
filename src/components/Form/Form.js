@@ -48,10 +48,10 @@ export default function Form(props) {
           predilezione per i lavori in vigna. E qui, oltre a qualche consulenza
           in toscana, si ferma fino ad oggi, raggiungendo in questi anni una
           grande conoscenza di questo territorio. E la vigna, la terra, i campi
-          lo conquistano sempre di più diventando la grande passione della sua,
-          vita, oltre all'agricoltura biodinamica, di cui si rivela uno dei
-          pionieri in zona. È lui l'anima dell nostre vigne, curandole in modo
-          maniacale e saltando senza sosta da una all'altra.
+          lo conquistano sempre di più diventando la grande passione della sua
+          vita, insieme all'agricoltura biodinamica. È lui l'anima dell nostre
+          vigne, curandole in modo maniacale e saltando senza sosta da una
+          all'altra.
         </p>
         <img src="img/volto_3.png" alt="" />
       </div>

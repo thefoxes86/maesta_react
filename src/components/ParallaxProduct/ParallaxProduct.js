@@ -8,7 +8,6 @@ export default function ParallaxProduct(props) {
   checkHoverPersonalized();
   useEffect(() => {
     initParallax();
-    console.log("here");
   }, [props.background]);
   return (
     <React.Fragment>
@@ -47,14 +46,14 @@ export default function ParallaxProduct(props) {
         <ProductWithImage
           pathColor="#c6b67b"
           background="https://backend.maestadellaformica.com/wp-content/uploads/2021/08/Vino_Maestà-della-Formica.png"
-          title="Maestà"
+          title="Maestà della formica"
           text="
           
           Prodotto nei nostri vigneti alla <strong>Foce di Careggine</strong>, a 1050 mt s.l.m. a pochi km dalla costa, su terreni rocciosi famosi per il marmo bianco. Elevato sbalzo termico tra giorno e notte, il suolo e l'elevata altezza garantiscono una pronunciata mineralità, ma con influenze della flora mediterranea. Poco alcool, elevata acidità, grande sapidità, idrocarburi, pietra, lana bagnata e frutta matura sono alcune delle caratteristiche di questo vino.
           
          "
           position="right"
-          pdf="https://backend.maestadellaformica.com/wp-content/uploads/2021/11/Scheda-tecnica_RIESLING-19.pdf"
+          pdf="https://backend.maestadellaformica.com/wp-content/uploads/2021/12/Scheda-tecnica_RIESLING-19-20.pdf"
         />
       </section>
     </React.Fragment>
