@@ -10,6 +10,7 @@ import Frutta from "./pages/Frutta";
 import Conserve from "./pages/Conserve";
 import Altro from "./pages/Altro";
 import Comunicazioni from "./pages/Comunicazioni";
+import Smaltimento from "./pages/Smaltimento";
 import SimpleReactLightbox from "simple-react-lightbox";
 import FetchApi from "./lib/fetchApi";
 import { Switch, Route, useLocation } from "react-router-dom";
@@ -95,6 +96,9 @@ function App() {
                 </Route>
                 <Route exact path="/parole-dal-mondo">
                   <Comunicazioni type="page" key={window.location.pathname} />
+                </Route>
+                <Route exact path="/etichetta-ambientale">
+                  <Smaltimento type="page" key={window.location.pathname} />
                 </Route>
 
                 {postsRoute &&
