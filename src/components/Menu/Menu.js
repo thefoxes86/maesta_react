@@ -114,6 +114,19 @@ export default function Menu(props) {
           </li>
           <li>
             <NavLink
+              to="/parole-dal-mondo"
+              className="hover__dark"
+              activeClassName="active"
+              type="category"
+              onClick={() => {
+                setOpen(false);
+              }}
+            >
+              PAROLE DAL MONDO
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/volti-dell-altipiano"
               className="hover__dark"
               activeClassName="active"
@@ -125,6 +138,7 @@ export default function Menu(props) {
               VOLTI DELL'ALTIPIANO
             </NavLink>
           </li>
+
           <li></li>
           <li>
             <a
@@ -132,6 +146,13 @@ export default function Menu(props) {
               className="hover__dark"
             >
               <img width="25" src="img/instagram-icon.png" alt="" />
+            </a>
+            <a
+              style={{ marginLeft: 20 }}
+              href="https://www.facebook.com/www.maestadellaformica.it"
+              className="hover__dark"
+            >
+              <img width="25" src="img/facebook.png" alt="" />
             </a>
           </li>
         </motion.ul>

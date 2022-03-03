@@ -3,6 +3,7 @@ import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 import "./productwithimage.scss";
 
 export default function ProductWithImage(props) {
+  console.log("PDF", props.pdf);
   const classPosition =
     "productWithImage__content productWithImage__content_" + props.position;
   return (
@@ -30,7 +31,7 @@ export default function ProductWithImage(props) {
           dangerouslySetInnerHTML={{ __html: props.text }}
         ></div>
         {props.position === "left" && (
-          <a href={props.pdf} className="hover__light">
+          <a href={props.pdf.link} className="hover__light">
             Scheda tecnica
             <img src="img/icon_download.png" alt="" />
           </a>

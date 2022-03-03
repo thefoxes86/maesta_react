@@ -38,7 +38,7 @@ class Item {
     this.DOM = { el: el };
     // the inner image
     this.DOM.image = this.DOM.el.querySelector(".content__item-img");
-    this.DOM.imageWrapper = this.DOM.image.parentNode;
+    this.DOM.imageWrapper = this.DOM.image && this.DOM.image.parentNode;
     this.DOM.title = this.DOM.el.querySelector(".content__item-path");
     this.renderedStyles = {
       // here we define which property will change as we scroll the page and the item is inside the viewport
@@ -55,7 +55,7 @@ class Item {
         ease: 0.1,
         // current value setter
         setValue: () => {
-          const toValue = 1.5;
+          const toValue = 1.3;
           const fromValue = 1;
           const val = MathUtils.map(
             this.props.top - docScroll,
@@ -106,9 +106,8 @@ class Item {
   update() {
     // sets the initial value (no interpolation)
     for (const key in this.renderedStyles) {
-      this.renderedStyles[key].current = this.renderedStyles[
-        key
-      ].previous = this.renderedStyles[key].setValue();
+      this.renderedStyles[key].current = this.renderedStyles[key].previous =
+        this.renderedStyles[key].setValue();
     }
     // apply changes/styles
     this.layout();
@@ -197,9 +196,8 @@ class SmoothScroll {
   update() {
     // sets the initial value (no interpolation) - translate the scroll value
     for (const key in this.renderedStyles) {
-      this.renderedStyles[key].current = this.renderedStyles[
-        key
-      ].previous = this.renderedStyles[key].setValue();
+      this.renderedStyles[key].current = this.renderedStyles[key].previous =
+        this.renderedStyles[key].setValue();
     }
     // translate the scrollable element
     this.layout();

@@ -40,7 +40,11 @@ export default function Parallax(props) {
                   <strong> un grande prodotto</strong>.
                 </p>
               </p>
-              <NavLink to="/scrivi" exact className="continue hover__light">
+              <NavLink
+                to="/volti-dell-altipiano"
+                exact
+                className="continue hover__light"
+              >
                 Scrivi...
               </NavLink>
             </div>

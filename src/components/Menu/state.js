@@ -1,6 +1,6 @@
 const state = {
   openContainer: { left: "0" },
-  closeContainer: { opacity: 0, left: "-50vw" },
+  closeContainer: { opacity: 0, left: "-100vw" },
   opacityOff: {
     display: "none",
     opacity: 0,

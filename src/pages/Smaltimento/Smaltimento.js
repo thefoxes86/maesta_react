@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import FetchApi from "../../lib/fetchApi";
 import TransitionPages from "../../components/TransitionPages";
 import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
-
-import TitlePagesWithProducts from "../../components/TitlePagesWithProducts";
+import TitlePages from "../../components/TitlePages";
 import Product from "../../components/Product";
 import Path from "../../components/Path";
 import ButtonsProducts from "../../components/ButtonsProducts";
@@ -13,9 +12,9 @@ import Text from "../../components/Text";
 import Form from "../../components/Form";
 import LayoutApp from "../../components/LayoutApp";
 
-const ID = 44;
+const ID = 606;
 
-export default function Sapori(props) {
+export default function Smaltimento(props) {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState();
   const [img, setImg] = useState();
@@ -57,7 +56,6 @@ export default function Sapori(props) {
   }, [loading]);
 
   !loading && getScrollPage();
-
   return (
     <LayoutApp meta={page}>
       <TransitionPages>
@@ -65,13 +63,10 @@ export default function Sapori(props) {
           <React.Fragment>
             <div className="content content__page">
               <div className="content__page__first content--full">
-                <TitlePagesWithProducts
+                <TitlePages
                   title={page.title.rendered}
                   intro={page.acf.intro_page}
-                  imgVino={page.acf.imgvino}
-                  imgConserve={page.acf.imgconserve}
-                  imgFrutta={page.acf.imgfrutta}
-                  imgAltro={page.acf.imgaltro}
+                  img={img.guid.rendered}
                   pathColor={page.acf.path_color}
                 />
               </div>

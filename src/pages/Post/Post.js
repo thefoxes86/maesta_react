@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import FetchApi from "../../lib/fetchApi";
 import TransitionPages from "../../components/TransitionPages";
 import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
-
-import TitlePagesWithProducts from "../../components/TitlePagesWithProducts";
+import TitlePages from "../../components/TitlePages";
 import Product from "../../components/Product";
 import Path from "../../components/Path";
 import ButtonsProducts from "../../components/ButtonsProducts";
@@ -13,16 +12,14 @@ import Text from "../../components/Text";
 import Form from "../../components/Form";
 import LayoutApp from "../../components/LayoutApp";
 
-const ID = 44;
-
-export default function Sapori(props) {
+export default function Post({ data }) {
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState();
   const [img, setImg] = useState();
-
   useEffect(() => {
+    console.log(data);
     FetchApi(
-      "https://backend.maestadellaformica.com/wp-json/wp/v2/pages/" + ID,
+      "https://backend.maestadellaformica.com/wp-json/wp/v2/media/" +
+        data.featured_media,
       {
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -33,50 +30,28 @@ export default function Sapori(props) {
         },
         redirect: "follow", // manual, *follow, error
       }
-    ).then((data) => {
-      setPage(data);
-
-      FetchApi(
-        "https://backend.maestadellaformica.com/wp-json/wp/v2/media/" +
-          data.featured_media,
-        {
-          mode: "cors", // no-cors, *cors, same-origin
-          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: "same-origin", // include, *same-origin, omit
-          headers: {
-            "Content-Type": "application/json",
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          redirect: "follow", // manual, *follow, error
-        }
-      ).then((imgRes) => {
-        setImg(imgRes);
-        setLoading(false);
-      });
+    ).then((imgRes) => {
+      setImg(imgRes);
+      setLoading(false);
     });
   }, [loading]);
 
   !loading && getScrollPage();
-
   return (
-    <LayoutApp meta={page}>
+    <LayoutApp meta={data}>
       <TransitionPages>
         {!loading && (
           <React.Fragment>
             <div className="content content__page">
               <div className="content__page__first content--full">
-                <TitlePagesWithProducts
-                  title={page.title.rendered}
-                  intro={page.acf.intro_page}
-                  imgVino={page.acf.imgvino}
-                  imgConserve={page.acf.imgconserve}
-                  imgFrutta={page.acf.imgfrutta}
-                  imgAltro={page.acf.imgaltro}
-                  pathColor={page.acf.path_color}
+                <TitlePages
+                  title={data.title.rendered}
+                  img={img.guid ? img.guid.rendered : "img/img__0.png"}
+                  pathColor={data.acf.path_color}
                 />
               </div>
-              {page.acf.item &&
-                page.acf.item.map((field) => {
+              {data.acf.item &&
+                data.acf.item.map((field) => {
                   switch (field.component) {
                     case "Product":
                       return (
@@ -136,6 +111,7 @@ export default function Sapori(props) {
                       break;
                   }
                 })}
+              <Text text={data.content.rendered} position={"right"} />;
             </div>
           </React.Fragment>
         )}

@@ -2,6 +2,7 @@ import React from "react";
 import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 import { SRLWrapper } from "simple-react-lightbox";
 import "./text.scss";
+import { NavLink } from "react-router-dom";
 
 export default function Text(props) {
   checkHoverPersonalized();
@@ -13,6 +14,7 @@ export default function Text(props) {
           dangerouslySetInnerHTML={{ __html: props.text }}
           className="text"
         ></p>
+
         {props.showlogomountain === true && (
           <div className="float_image__container">
             <img src="img/prodotto_di_montagna.png" alt="" />

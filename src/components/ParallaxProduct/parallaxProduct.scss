@@ -59,7 +59,7 @@
     writing-mode: vertical-rl;
     text-orientation: mixed;
     h3 {
-      font-size: 38px;
+      font-size: 28px;
       text-transform: uppercase;
       color: white;
       margin-right: 0;
@@ -98,7 +98,15 @@
     z-index: 98;
   }
 }
+.grid__container_background {
 
+  .productWithImage__content .text__content {
+    padding: 30px 60px;
+  }
+  .productWithImage__content {
+    margin: 250px 0;
+  }
+} 
 .grid__container_pruduct_left {
   grid-template-areas: "title image description .";
   grid-template-columns: 0.2fr 0.1fr 2fr 2fr;

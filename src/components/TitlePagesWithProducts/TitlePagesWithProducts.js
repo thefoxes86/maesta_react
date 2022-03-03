@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
+import { blackBox } from "../TransitionPages/blackBox";
 import "./titlePagesWithProducts.scss";
 
 export default function TitlePagesWithProducts(props) {
   checkHoverPersonalized();
   const [bgImg, setBgImg] = useState(props.imgVino.url);
-  let bgImage = {
-    backgroundImage: "url(" + bgImg + ")",
-  };
   const handleBgImage = (img) => {
     setBgImg(img);
   };
@@ -23,14 +22,23 @@ export default function TitlePagesWithProducts(props) {
       </div>
       <div className="content__item-imgwrap">
         {props.imgVino ? (
-          <div className="content__item-img" style={bgImage}></div>
-        ) : (
-          <div
+          <motion.img
             className="content__item-img"
-            style={{
-              backgroundImage: "url(" + props.img + ")",
-            }}
-          ></div>
+            src={bgImg}
+            key={bgImg}
+            initial="imgInitial"
+            animate="imgAnimate"
+            variants={blackBox}
+          ></motion.img>
+        ) : (
+          <motion.img
+            className="content__item-img"
+            src={props.img}
+            key={props.img}
+            initial="imgInitial"
+            animate="imgAnimate"
+            variants={blackBox}
+          ></motion.img>
         )}
       </div>
 
