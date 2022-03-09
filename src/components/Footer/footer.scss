@@ -16,6 +16,7 @@ footer {
   }
 }
 
+
 .info__footer {
   display: flex;
   align-items: center;
@@ -35,8 +36,75 @@ footer {
   }
 }
 
+.form {
+  display: flex;
+  justify-content: center;
+  padding: 0px 20px 40px 20px;
+  h2 {
+    font-weight: 300;
+    font-size: 36px;
+    width: 100%;
+    text-decoration: none;
+    position: relative;
+    color: black;
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 95%;
+      height: 1px;
+      background: black;
+      bottom: -5px;
+      left: -90%;
+    }
+  }
+
+  input,
+    textarea {
+      width: auto;
+      padding: 15px;
+      margin: 5px 0 5px 0;
+      border-radius: 0;
+      border: 1px solid black;
+      transition: 0.25s all ease-out;
+
+      &:focus {
+        border-color: red;
+        outline: red;
+      }
+    }
+
+    textarea {
+      min-height: 180px;
+    }
+    input[type="submit"], button {
+      background-color: black;
+      padding: 16px 30px;
+      border: 0;
+      color: white;
+      text-transform: lowercase;
+    }
+  }
+
+.container_newsletter {
+  width: 100vw;
+}
+.text {
+  display: flex;
+  justify-content: center;
+
+  p {
+    font-size: 16px;
+    
+  }
+}
+
 
 @media screen and (max-width: 768px) {
+
+  .sapori-della-terra {
+    margin-top: 22vh;
+  }
   footer {
     margin-top: -100px;
   }
