@@ -1,48 +1,49 @@
-import Home from "./pages/Home";
-import Luoghi from "./pages/Luoghi";
-import Sapori from "./pages/Sapori";
-import Volti from "./pages/Volti";
-import Respiri from "./pages/Respiri";
-import ScrollTop from "./components/ScrollTop";
-import Footer from "./components/Footer";
-import Vino from "./pages/Vino";
-import Frutta from "./pages/Frutta";
-import Conserve from "./pages/Conserve";
-import Altro from "./pages/Altro";
-import Comunicazioni from "./pages/Comunicazioni";
-import Smaltimento from "./pages/Smaltimento";
-import SimpleReactLightbox from "simple-react-lightbox";
-import FetchApi from "./lib/fetchApi";
-import { Switch, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import Post from "./pages/Post";
-import ScrollToTop from "./components/ScrollToTop/ScrollTop";
-import "./assets/effectImages.css";
+import Home from './pages/Home'
+import Luoghi from './pages/Luoghi'
+import Sapori from './pages/Sapori'
+import Volti from './pages/Volti'
+import Respiri from './pages/Respiri'
+import ScrollTop from './components/ScrollTop'
+import Footer from './components/Footer'
+import Vino from './pages/Vino'
+import Frutta from './pages/Frutta'
+import Conserve from './pages/Conserve'
+import Altro from './pages/Altro'
+import Comunicazioni from './pages/Comunicazioni'
+import Smaltimento from './pages/Smaltimento'
+import SimpleReactLightbox from 'simple-react-lightbox'
+import FetchApi from './lib/fetchApi'
+import { Switch, Route, useLocation } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
+import Post from './pages/Post'
+import ScrollToTop from './components/ScrollToTop/ScrollTop'
+import './assets/effectImages.css'
+import Maintenance from './pages/Maintenance'
 
 function App() {
-  const location = useLocation();
-  const [postsRoute, setPostsRoute] = useState([]);
-  const mainDiv = useRef();
+  const location = useLocation()
+  const [postsRoute, setPostsRoute] = useState([])
+  const mainDiv = useRef()
 
   useEffect(() => {
     // Mount Component
-    FetchApi("https://backend.maestadellaformica.com/wp-json/wp/v2/posts/", {
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: "same-origin", // include, *same-origin, omit
+    FetchApi('https://backend.maestadellaformica.com/wp-json/wp/v2/posts/', {
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      redirect: "follow", // manual, *follow, error
-    }).then((resPosts) => {
-      setPostsRoute(resPosts);
-    });
+      redirect: 'follow', // manual, *follow, error
+    }).then(resPosts => {
+      setPostsRoute(resPosts)
+    })
 
     // Unmount Component
-    return () => {};
-  }, []);
+    return () => {}
+  }, [])
   return (
     <SimpleReactLightbox>
       <ScrollTop>
@@ -98,11 +99,12 @@ function App() {
                   <Comunicazioni type="page" key={window.location.pathname} />
                 </Route>
                 <Route exact path="/etichetta-ambientale">
-                  <Smaltimento type="page" key={window.location.pathname} />
+                  {/* <Smaltimento type="page" key={window.location.pathname} /> */}
+                  <Maintenance title="L'etichetta ambientale sarà presto disponibile" />
                 </Route>
 
                 {postsRoute &&
-                  postsRoute.map((post) => (
+                  postsRoute.map(post => (
                     <Route key={post.slug} exact path={`/${post.slug}`}>
                       <Post data={post} />
                     </Route>
@@ -115,7 +117,7 @@ function App() {
         <ScrollToTop />
       </ScrollTop>
     </SimpleReactLightbox>
-  );
+  )
 }
 
-export default App;
+export default App
