@@ -20,6 +20,7 @@ import Post from './pages/Post'
 import ScrollToTop from './components/ScrollToTop/ScrollTop'
 import './assets/effectImages.css'
 import Maintenance from './pages/Maintenance'
+import Privacy from './pages/Privacy'
 
 function App() {
   const location = useLocation()
@@ -101,6 +102,9 @@ function App() {
                 <Route exact path="/etichetta-ambientale">
                   {/* <Smaltimento type="page" key={window.location.pathname} /> */}
                   <Maintenance title="L'etichetta ambientale sarà presto disponibile" />
+                </Route>
+                <Route exact path="/privacy-policy">
+                  <Privacy type="page" key={window.location.pathname} />
                 </Route>
 
                 {postsRoute &&

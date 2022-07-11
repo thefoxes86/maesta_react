@@ -1,11 +1,10 @@
-import React from "react";
-import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
-import "./productwithimage.scss";
+import React from 'react'
+import { checkHoverPersonalized } from '../../lib/cursorPerzonalize'
+import './productwithimage.scss'
 
 export default function ProductWithImage(props) {
-  console.log("PDF", props.pdf);
   const classPosition =
-    "productWithImage__content productWithImage__content_" + props.position;
+    'productWithImage__content productWithImage__content_' + props.position
   return (
     <div className={classPosition}>
       <div className="block__black">
@@ -15,7 +14,7 @@ export default function ProductWithImage(props) {
         className="content__block"
         style={{ backgroundColor: props.pathColor }}
       >
-        {props.position === "right" && (
+        {props.position === 'right' && (
           <a href={props.pdf} className="hover__light">
             Scheda tecnica
             <img src="img/icon_download.png" alt="" />
@@ -30,7 +29,7 @@ export default function ProductWithImage(props) {
           className="text__content"
           dangerouslySetInnerHTML={{ __html: props.text }}
         ></div>
-        {props.position === "left" && (
+        {props.position === 'left' && (
           <a href={props.pdf.link} className="hover__light">
             Scheda tecnica
             <img src="img/icon_download.png" alt="" />
@@ -38,5 +37,5 @@ export default function ProductWithImage(props) {
         )}
       </div>
     </div>
-  );
+  )
 }
