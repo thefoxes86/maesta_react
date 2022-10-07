@@ -1,62 +1,56 @@
-import React, { useState, useEffect } from "react";
-import FetchApi from "../../lib/fetchApi";
-import TransitionPages from "../../components/TransitionPages";
-import { getScrollPage } from "../../assets/js/scrollingImagesEffect";
+import React, { useState, useEffect } from 'react'
+import FetchApi from '../../lib/fetchApi'
+import TransitionPages from '../../components/TransitionPages'
+import { getScrollPage } from '../../assets/js/scrollingImagesEffect'
 
-import TitlePagesWithProducts from "../../components/TitlePagesWithProducts";
-import Product from "../../components/Product";
-import Path from "../../components/Path";
-import ButtonsProducts from "../../components/ButtonsProducts";
-import ParallaxProduct from "../../components/ParallaxProduct";
-import Parallax from "../../components/Parallax";
-import Text from "../../components/Text";
-import Form from "../../components/Form";
-import LayoutApp from "../../components/LayoutApp";
+import TitlePagesWithProducts from '../../components/TitlePagesWithProducts'
+import Product from '../../components/Product'
+import Path from '../../components/Path'
+import ButtonsProducts from '../../components/ButtonsProducts'
+import ParallaxProduct from '../../components/ParallaxProduct'
+import Parallax from '../../components/Parallax'
+import Text from '../../components/Text'
+import Form from '../../components/Form'
+import LayoutApp from '../../components/LayoutApp'
+import { pathBackend } from '../../lib/pathBackend'
 
-const ID = 44;
+const ID = 44
 
 export default function Sapori(props) {
-  const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState();
-  const [img, setImg] = useState();
+  const [loading, setLoading] = useState(true)
+  const [page, setPage] = useState()
+  const [img, setImg] = useState()
 
   useEffect(() => {
-    FetchApi(
-      "https://backend.maestadellaformica.com/wp-json/wp/v2/pages/" + ID,
-      {
-        mode: "cors", // no-cors, *cors, same-origin
-        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
+    FetchApi(`${pathBackend}/wp-json/wp/v2/pages/${ID}`, {
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow', // manual, *follow, error
+    }).then(data => {
+      setPage(data)
+
+      FetchApi(`${pathBackend}/wp-json/wp/v2/media/${data.featured_media}`, {
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-        redirect: "follow", // manual, *follow, error
-      }
-    ).then((data) => {
-      setPage(data);
+        redirect: 'follow', // manual, *follow, error
+      }).then(imgRes => {
+        setImg(imgRes)
+        setLoading(false)
+      })
+    })
+  }, [loading])
 
-      FetchApi(
-        "https://backend.maestadellaformica.com/wp-json/wp/v2/media/" +
-          data.featured_media,
-        {
-          mode: "cors", // no-cors, *cors, same-origin
-          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: "same-origin", // include, *same-origin, omit
-          headers: {
-            "Content-Type": "application/json",
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          redirect: "follow", // manual, *follow, error
-        }
-      ).then((imgRes) => {
-        setImg(imgRes);
-        setLoading(false);
-      });
-    });
-  }, [loading]);
-
-  !loading && getScrollPage();
+  !loading && getScrollPage()
 
   return (
     <LayoutApp meta={page}>
@@ -76,18 +70,18 @@ export default function Sapori(props) {
                 />
               </div>
               {page.acf.item &&
-                page.acf.item.map((field) => {
+                page.acf.item.map(field => {
                   switch (field.component) {
-                    case "Product":
+                    case 'Product':
                       return (
                         <Product
                           title={field.title}
                           text={field.description}
                           bgColor={field.bgcolor}
                         />
-                      );
+                      )
 
-                    case "Path":
+                    case 'Path':
                       return (
                         <Path
                           position={field.position}
@@ -98,42 +92,42 @@ export default function Sapori(props) {
                           image={field.bgimage.url}
                           pathColor={field.bgcolor}
                         />
-                      );
+                      )
 
-                    case "Buttons":
-                      return <ButtonsProducts />;
+                    case 'Buttons':
+                      return <ButtonsProducts />
 
-                    case "ParallaxProduct":
+                    case 'ParallaxProduct':
                       return (
                         <ParallaxProduct
                           height={field.height}
                           background={field.bgimage.url}
                         />
-                      );
+                      )
 
-                    case "Parallax":
+                    case 'Parallax':
                       return (
                         <Parallax
                           title={field.title}
                           height={field.height}
                           background={field.bgimage.url}
                         />
-                      );
+                      )
 
-                    case "Text":
+                    case 'Text':
                       return (
                         <Text
                           text={field.text}
                           position={field.position}
                           showlogomountain={field.product_high_mountain}
                         />
-                      );
+                      )
 
-                    case "Form":
-                      return <Form text={field.text} />;
+                    case 'Form':
+                      return <Form text={field.text} />
 
                     default:
-                      break;
+                      break
                   }
                 })}
             </div>
@@ -141,5 +135,5 @@ export default function Sapori(props) {
         )}
       </TransitionPages>
     </LayoutApp>
-  );
+  )
 }

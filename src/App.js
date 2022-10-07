@@ -21,7 +21,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollTop'
 import './assets/effectImages.css'
 import Maintenance from './pages/Maintenance'
 import Privacy from './pages/Privacy'
-
+import { pathBackend } from './lib/pathBackend'
 function App() {
   const location = useLocation()
   const [postsRoute, setPostsRoute] = useState([])
@@ -29,7 +29,7 @@ function App() {
 
   useEffect(() => {
     // Mount Component
-    FetchApi('https://backend.maestadellaformica.com/wp-json/wp/v2/posts/', {
+    FetchApi(`${pathBackend}/wp-json/wp/v2/posts/`, {
       mode: 'cors', // no-cors, *cors, same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
       credentials: 'same-origin', // include, *same-origin, omit

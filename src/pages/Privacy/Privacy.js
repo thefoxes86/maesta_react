@@ -11,6 +11,7 @@ import Parallax from '../../components/Parallax'
 import Text from '../../components/Text'
 import Form from '../../components/Form'
 import LayoutApp from '../../components/LayoutApp'
+import { pathBackend } from '../../lib/pathBackend'
 
 const ID = 3
 
@@ -20,9 +21,19 @@ export default function Privacy(props) {
   const [img, setImg] = useState()
 
   useEffect(() => {
-    FetchApi(
-      'https://backend.maestadellaformica.com/wp-json/wp/v2/pages/' + ID,
-      {
+    FetchApi(`${pathBackend}/wp-json/wp/v2/pages/${ID}`, {
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow', // manual, *follow, error
+    }).then(data => {
+      setPage(data)
+
+      FetchApi(`${pathBackend}/wp-json/wp/v2/media/${data.featured_media}`, {
         mode: 'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
         credentials: 'same-origin', // include, *same-origin, omit
@@ -31,24 +42,7 @@ export default function Privacy(props) {
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
         redirect: 'follow', // manual, *follow, error
-      }
-    ).then(data => {
-      setPage(data)
-
-      FetchApi(
-        'https://backend.maestadellaformica.com/wp-json/wp/v2/media/' +
-          data.featured_media,
-        {
-          mode: 'cors', // no-cors, *cors, same-origin
-          cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: 'same-origin', // include, *same-origin, omit
-          headers: {
-            'Content-Type': 'application/json',
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          redirect: 'follow', // manual, *follow, error
-        }
-      ).then(imgRes => {
+      }).then(imgRes => {
         setImg(imgRes)
         setLoading(false)
       })

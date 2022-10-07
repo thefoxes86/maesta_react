@@ -1,71 +1,68 @@
-import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
-import FetchApi from "../../lib/fetchApi";
-import { motion } from "framer-motion";
-import { blackBox } from "../../components/TransitionPages/blackBox";
-import "./pathPost.scss";
+import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { checkHoverPersonalized } from '../../lib/cursorPerzonalize'
+import FetchApi from '../../lib/fetchApi'
+import { motion } from 'framer-motion'
+import { blackBox } from '../../components/TransitionPages/blackBox'
+import './pathPost.scss'
+import { pathBackend } from '../../lib/pathBackend'
 
 export default function PathPost(props) {
-  const [img, setImg] = useState("img/img__0.png");
-  checkHoverPersonalized();
-  const classPosition = "content__item content__item__" + props.position;
+  const [img, setImg] = useState('img/img__0.png')
+  checkHoverPersonalized()
+  const classPosition = 'content__item content__item__' + props.position
   const colors = [
-    "#D9000D",
-    "#9FAA7F",
-    "#E5D2A9",
-    "#9F431A",
-    "#47574D",
-    "#AC8830",
-    "#6E4632",
-    "#E3672A",
-    "#A11C2F",
-    "#F4B628",
-    "#8F050C",
-    "#B2DA60",
-  ];
+    '#D9000D',
+    '#9FAA7F',
+    '#E5D2A9',
+    '#9F431A',
+    '#47574D',
+    '#AC8830',
+    '#6E4632',
+    '#E3672A',
+    '#A11C2F',
+    '#F4B628',
+    '#8F050C',
+    '#B2DA60',
+  ]
 
   const getRandomColor = () => {
-    console.log("numero ");
-    return colors[Math.floor(Math.random() * colors.length)];
-  };
+    console.log('numero ')
+    return colors[Math.floor(Math.random() * colors.length)]
+  }
 
-  const date = new Date(props.date);
+  const date = new Date(props.date)
   const monthNames = [
-    "Gennaio",
-    "febbario",
-    "Marzo",
-    "Aprile",
-    "Maggio",
-    "Giugno",
-    "Luglio",
-    "Agosto",
-    "Settembre",
-    "Ottobre",
-    "Novembre",
-    "Dicembre",
-  ];
+    'Gennaio',
+    'febbario',
+    'Marzo',
+    'Aprile',
+    'Maggio',
+    'Giugno',
+    'Luglio',
+    'Agosto',
+    'Settembre',
+    'Ottobre',
+    'Novembre',
+    'Dicembre',
+  ]
 
   useEffect(() => {
-    FetchApi(
-      "https://backend.maestadellaformica.com/wp-json/wp/v2/media/" +
-        props.image,
-      {
-        mode: "cors", // no-cors, *cors, same-origin
-        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: "same-origin", // include, *same-origin, omit
-        headers: {
-          "Content-Type": "application/json",
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        redirect: "follow", // manual, *follow, error
-      }
-    ).then((imgPost) => {
-      imgPost.guid && setImg(imgPost.guid.rendered);
-    });
+    FetchApi(`${pathBackend}/wp-json/wp/v2/media/${props.image}`, {
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json',
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow', // manual, *follow, error
+    }).then(imgPost => {
+      imgPost.guid && setImg(imgPost.guid.rendered)
+    })
 
-    return () => {};
-  });
+    return () => {}
+  })
   return (
     <div className={classPosition}>
       {props.title && (
@@ -117,5 +114,5 @@ export default function PathPost(props) {
         </svg>
       </div>
     </div>
-  );
+  )
 }
