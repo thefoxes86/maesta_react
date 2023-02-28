@@ -43,7 +43,7 @@ export default function Post({ data }) {
               <div className="content__page__first content--full">
                 <TitlePages
                   title={data.title.rendered}
-                  img={img.guid ? img.guid.rendered : 'img/img__0.png'}
+                  img={img.source_url ? img.source_url : 'img/img__0.png'}
                   pathColor={data.acf.path_color}
                 />
               </div>

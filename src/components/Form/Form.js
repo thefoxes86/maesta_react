@@ -1,31 +1,64 @@
-import React from "react";
-import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
-import "./form.scss";
+import React, { useEffect, useRef, useState } from 'react'
+import { checkHoverPersonalized } from '../../lib/cursorPerzonalize'
+import './form.scss'
+import emailjs from '@emailjs/browser'
 
 export default function Form(props) {
-  checkHoverPersonalized();
+  const form = useRef()
+  const [status, setStatus] = useState('inactive')
+
+  const sendEmail = e => {
+    e.preventDefault()
+    setStatus('sending')
+
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        result => {
+          result.text === 'OK' ? setStatus('sended') : setStatus('error')
+        },
+        error => {
+          setStatus('error')
+          console.log(error.text)
+        }
+      )
+  }
+
+  useEffect(() => {
+    checkHoverPersonalized()
+  }, [])
   return (
     <section className="contacts__grid__container">
       <div className="form">
         <h2 className="form__title">Scrivi</h2>
-        <form>
+        <form ref={form} onSubmit={sendEmail}>
           <label>
             Nome
-            <input type="text" name="nome" />
+            <input type="text" name="user_name" />
           </label>
           <label>
             Mail
-            <input type="text" name="mail" />
-          </label>
-          <label>
-            Oggetto
-            <input type="text" name="oggetto" />
+            <input type="text" name="user_email" />
           </label>
           <label>
             Messaggio
-            <textarea name="messaggio" />
+            <textarea name="message" />
           </label>
-          <input type="submit" value="Invia" className="hover__dark" />
+
+          <input
+            type="submit"
+            value={`${status === 'sending' ? 'Sto inviando' : 'Invia'}`}
+            className={`${
+              status === 'sending' ? 'disabled' : ''
+            } "hover__dark"`}
+          />
+          {status === 'error' ? <p>C'è un errore, prva di nuovo</p> : null}
+          {status === 'sended' ? <p>email inviata con successo</p> : null}
         </form>
       </div>
       <div className="person1">
@@ -75,5 +108,5 @@ export default function Form(props) {
         </p>
       </div>
     </section>
-  );
+  )
 }

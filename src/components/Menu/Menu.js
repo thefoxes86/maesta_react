@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import { motion } from "framer-motion";
-import { state } from "./state";
-import { checkHoverPersonalized } from "../../lib/cursorPerzonalize";
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
-import "./menu.scss";
+import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { state } from './state'
+import { checkHoverPersonalized } from '../../lib/cursorPerzonalize'
+import { disablePageScroll, enablePageScroll } from 'scroll-lock'
+import './menu.scss'
 
 export default function Menu(props) {
-  const [open, setOpen] = useState(false);
-  checkHoverPersonalized();
+  const [open, setOpen] = useState(false)
+  checkHoverPersonalized()
   useEffect(() => {
-    const status = props.closeMenu ? false : true;
-  }, [props.closeMenu]);
+    const status = props.closeMenu ? false : true
+  }, [props.closeMenu])
   return (
     <React.Fragment>
       <motion.div
-        className={open ? "menu hover__light" : "menu hover__dark"}
+        className={open ? 'menu hover__light' : 'menu hover__dark'}
         transition={state.transition}
         animate={open ? state.openMenu : state.closeMenu}
         onTap={() => {
-          const status = open ? false : true;
-          setOpen(status);
-          window.scrollTo(0, 0);
+          const status = open ? false : true
+          setOpen(status)
+          window.scrollTo(0, 0)
           if (open) {
-            enablePageScroll();
+            enablePageScroll()
           } else {
-            disablePageScroll();
+            disablePageScroll()
           }
         }}
       >
@@ -47,7 +47,7 @@ export default function Menu(props) {
           className="text__menu"
           animate={open ? state.openMenuText : state.closeMenuText}
         >
-          {open ? "MENU" : "MENU"}
+          {open ? 'MENU' : 'MENU'}
         </motion.span>
       </motion.div>
 
@@ -60,19 +60,19 @@ export default function Menu(props) {
           animate={open ? state.opacityOn : state.opacityOff}
           transition={state.transitiondDelay}
         >
-          <li>
+          {/* <li>
             <NavLink
               to="/"
               className="hover__dark"
               activeClassName="active"
               type="category"
               onClick={() => {
-                setOpen(false);
+                setOpen(false)
               }}
             >
               HOME
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               to="/luoghi-del-racconto"
@@ -80,10 +80,11 @@ export default function Menu(props) {
               activeClassName="active"
               type="category"
               onClick={() => {
-                setOpen(false);
+                setOpen(false)
               }}
             >
-              LUOGHI DEL RACCONTO
+              Azienda Agricola
+              <span>LUOGHI DEL RACCONTO</span>
             </NavLink>
           </li>
           <li>
@@ -93,10 +94,11 @@ export default function Menu(props) {
               activeClassName="active"
               type="category"
               onClick={() => {
-                setOpen(false);
+                setOpen(false)
               }}
             >
-              SAPORI DELLA TERRA
+              Vino e altri prodotti
+              <span>SAPORI DELLA TERRA</span>
             </NavLink>
           </li>
           <li>
@@ -106,10 +108,11 @@ export default function Menu(props) {
               activeClassName="active"
               type="category"
               onClick={() => {
-                setOpen(false);
+                setOpen(false)
               }}
             >
-              RESPIRI DELLA MENTE
+              Agriturismo
+              <span>RESPIRI DELLA MENTE</span>
             </NavLink>
           </li>
           <li>
@@ -119,10 +122,11 @@ export default function Menu(props) {
               activeClassName="active"
               type="category"
               onClick={() => {
-                setOpen(false);
+                setOpen(false)
               }}
             >
-              PAROLE DAL MONDO
+              Notizie
+              <span>LUOGHI DEL RACCONTO</span>
             </NavLink>
           </li>
           <li>
@@ -132,10 +136,11 @@ export default function Menu(props) {
               activeClassName="active"
               type="category"
               onClick={() => {
-                setOpen(false);
+                setOpen(false)
               }}
             >
-              VOLTI DELL'ALTIPIANO
+              Persone
+              <span>VOLTI DELL'ALTIPIANO</span>
             </NavLink>
           </li>
 
@@ -158,5 +163,5 @@ export default function Menu(props) {
         </motion.ul>
       </motion.nav>
     </React.Fragment>
-  );
+  )
 }

@@ -40,10 +40,12 @@ export default function Volti(props) {
           // 'Content-Type': 'application/x-www-form-urlencoded',
         },
         redirect: 'follow', // manual, *follow, error
-      }).then(imgRes => {
-        setImg(imgRes)
-        setLoading(false)
       })
+        .then(imgRes => {
+          setImg(imgRes)
+          setLoading(false)
+        })
+        .catch(err => console.log('ERROR', err))
     })
   }, [loading])
 
@@ -57,7 +59,7 @@ export default function Volti(props) {
               <div className="content__page__first content--full">
                 <TitlePages
                   title={page.title.rendered}
-                  img={img.guid.rendered}
+                  img={img.source_url}
                   pathColor={page.acf.path_color}
                 />
               </div>

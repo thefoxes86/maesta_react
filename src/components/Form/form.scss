@@ -33,6 +33,11 @@
     }
   }
 
+  input.disabled {
+    pointer-events: none;
+    background-color: lightgray !important;
+  }
+
   label {
     font-weight: 100;
     text-transform: lowercase;

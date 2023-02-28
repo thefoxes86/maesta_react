@@ -133,6 +133,30 @@
   }
 }
 
+.containerMore {
+  width: 100vw;
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .button a{
+    background-color: black;
+    padding: 20px 30px;
+    color: white;
+    font-size: 24px;
+    min-width: 200px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    width: auto;
+    text-decoration: none;
+    border: 2px solid black;
+    font-family: 'Oswald';
+  }
+}
+
+
 // CIRCLE
 
 .circle__black {

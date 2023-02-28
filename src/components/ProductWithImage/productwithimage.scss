@@ -46,6 +46,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      text-align: center;
+      min-width: 80px;
       img {
         width: 30px;
       }
@@ -166,5 +168,9 @@
     .img__content {
       right: 13vw;
     }
+  }
+
+  .content__block {
+    flex-direction: column;
   }
 }

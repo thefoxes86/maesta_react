@@ -58,7 +58,7 @@ export default function PathPost(props) {
       },
       redirect: 'follow', // manual, *follow, error
     }).then(imgPost => {
-      imgPost.guid && setImg(imgPost.guid.rendered)
+      setImg(imgPost?.source_url)
     })
 
     return () => {}

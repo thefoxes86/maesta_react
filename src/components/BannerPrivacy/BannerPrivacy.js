@@ -3,7 +3,7 @@ import Cookies from 'js-cookie'
 import { useEffect, useRef, useState } from 'react'
 
 const BannerPrivacy = () => {
-  const [showBanner, setShowBanner] = useState(true)
+  const [showBanner, setShowBanner] = useState(false)
   const ref = useRef()
   const handleCookies = () => {
     setShowBanner(false)

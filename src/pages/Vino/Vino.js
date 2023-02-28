@@ -61,7 +61,7 @@ export default function Vino(props) {
                 <TitlePages
                   title={page.title.rendered}
                   intro={page.acf.intro_page}
-                  img={img.guid.rendered}
+                  img={img.source_url}
                   pathColor={page.acf.path_color}
                 />
               </div>
