@@ -16,8 +16,7 @@ const BannerPrivacy = () => {
     let screenHeight = window.innerHeight
     let screenWidth = window.innerWidth
 
-    if (screenWidth <= 768) {
-      console.log('screenWidth', ref.current.style)
+    if (screenWidth <= 768 && ref.current) {
       ref.current.style.top = screenHeight - 50 + 'px'
     }
 
