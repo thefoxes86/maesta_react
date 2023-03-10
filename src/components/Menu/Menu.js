@@ -126,7 +126,7 @@ export default function Menu(props) {
               }}
             >
               Notizie
-              <span>LUOGHI DEL RACCONTO</span>
+              <span>PAROLE DAL MONDO</span>
             </NavLink>
           </li>
           <li>
