@@ -26,7 +26,7 @@ export default function ProductWithImage(props) {
         style={{ backgroundColor: props.pathColor }}
       >
         {props.position === 'right' && (
-          <a href={props.pdf} className="hover__light">
+          <a href={props?.pdf?.url} className="hover__light">
             Scheda tecnica
             <img src="img/icon_download.png" alt="" />
           </a>
@@ -42,7 +42,7 @@ export default function ProductWithImage(props) {
           dangerouslySetInnerHTML={{ __html: props.text }}
         ></div>
         {props.position === 'left' && (
-          <a href={props.pdf} className="hover__light">
+          <a href={props?.pdf?.url} className="hover__light">
             Scheda tecnica
             <img src="img/icon_download.png" alt="" />
           </a>
