@@ -12,6 +12,7 @@ import Text from '../../components/Text'
 import Form from '../../components/Form'
 import LayoutApp from '../../components/LayoutApp'
 import { pathBackend } from '../../lib/pathBackend'
+import ProductWithTable from '../../components/ProductWithTable'
 
 const ID = 606
 
@@ -32,6 +33,7 @@ export default function Smaltimento(props) {
       redirect: 'follow', // manual, *follow, error
     }).then(data => {
       setPage(data)
+      console.log('data', data)
 
       FetchApi(`${pathBackend}/wp-json/wp/v2/media/${data.featured_media}`, {
         mode: 'cors', // no-cors, *cors, same-origin
@@ -120,6 +122,17 @@ export default function Smaltimento(props) {
 
                     case 'Form':
                       return <Form text={field.text} />
+                    case 'ProductWithTable':
+                      return (
+                        <ProductWithTable
+                          title={field.title}
+                          position={field.position}
+                          text={field.text}
+                          background={field.bgimage.url}
+                          pathColor={field.bgcolor}
+                          table={field.table}
+                        />
+                      )
 
                     default:
                       break

@@ -100,8 +100,8 @@ function App() {
                   <Comunicazioni type="page" key={window.location.pathname} />
                 </Route>
                 <Route exact path="/etichetta-ambientale">
-                  {/* <Smaltimento type="page" key={window.location.pathname} /> */}
-                  <Maintenance title="L'etichetta ambientale sarà presto disponibile" />
+                  <Smaltimento type="page" key={window.location.pathname} />
+                  {/* <Maintenance title="L'etichetta ambientale sarà presto disponibile" /> */}
                 </Route>
                 <Route exact path="/privacy-policy">
                   <Privacy type="page" key={window.location.pathname} />
