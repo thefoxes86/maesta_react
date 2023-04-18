@@ -39,7 +39,7 @@ export default function ProductWithTable(props) {
           <div className="table__body">
             <>
               {props?.table?.body[index]?.map(item => (
-                <span>{item.c}</span>
+                <span dangerouslySetInnerHTML={{ __html: item.c }}></span>
               ))}
             </>
           </div>
