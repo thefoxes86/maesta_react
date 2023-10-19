@@ -19,7 +19,7 @@ export default function ParallaxProduct(props) {
       >
         <ProductWithImage
           pathColor="#9faa7f"
-          background={`${pathBackend}/wp-content/uploads/2023/02/Gamo-21.png`}
+          background={`${pathBackend}/wp-content/uploads/2023/10/Gamo_2022.png`}
           title="GAMO"
           text=" 
           <strong>Gamo</strong> è il primo dei vini qui prodotto. In un’area dove non esistono legami a varietà precise o denominazioni storiche, l’uva è sempre stata coltivata in vigneti antichi tramandati di generazione in generazione. Ed è proprio questo passaggio generazionale, dove ognuno ha aggiunto qualcosa di suo, che gli ha plasmati donandogli una forma unica e diversa da tutti i suoi vicini. Ogni vigneto diventa una sorpresa e una scommessa nel capire quali siano i vini da produrre per esprimere al meglio le sue uve."
@@ -29,7 +29,7 @@ export default function ParallaxProduct(props) {
 
         <ProductWithImage
           pathColor="#c9593d"
-          background={`${pathBackend}/wp-content/uploads/2023/02/Drankante-21.png`}
+          background={`${pathBackend}/wp-content/uploads/2023/10/Drankante_2022.png`}
           title="DRAKANTE"
           text="Nel tempo l'attività di recupero dei vigneti antichi è proseguita nelle zone di Gallicano e Molazzana. Qui abbiamo rimesso in produzione filari impiantati 40 anni fa, producendo a partire dal 2019 il <strong>Drankante.</strong> Un <strong>rosso frizzante IGT</strong> senza solfiti aggiunti, naturalmente biodinamico. Una spremuta di uva nel bicchiere."
           position="right"
