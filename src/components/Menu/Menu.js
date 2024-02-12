@@ -101,7 +101,7 @@ export default function Menu(props) {
               <span>SAPORI DELLA TERRA</span>
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               to="/respiri-della-mente"
               className="hover__dark"
@@ -114,7 +114,7 @@ export default function Menu(props) {
               Agriturismo
               <span>RESPIRI DELLA MENTE</span>
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               to="/parole-dal-mondo"

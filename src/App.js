@@ -76,13 +76,13 @@ function App() {
                     key={window.location.pathname}
                   />
                 </Route>
-                <Route exact path="/respiri-della-mente">
+                {/* <Route exact path="/respiri-della-mente">
                   <Respiri
                     type="category"
                     cat="respiri"
                     key={window.location.pathname}
                   />
-                </Route>
+                </Route> */}
 
                 <Route exact path="/vino">
                   <Vino type="page" key={window.location.pathname} />
