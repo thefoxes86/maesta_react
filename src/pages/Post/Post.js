@@ -12,6 +12,7 @@ import Text from '../../components/Text'
 import Form from '../../components/Form'
 import LayoutApp from '../../components/LayoutApp'
 import { pathBackend } from '../../lib/pathBackend'
+import Loader from '../../components/Loader'
 
 export default function Post({ data }) {
   const [loading, setLoading] = useState(true)
@@ -37,7 +38,7 @@ export default function Post({ data }) {
   return (
     <LayoutApp meta={data}>
       <TransitionPages>
-        {!loading && (
+        {!loading ? (
           <React.Fragment>
             <div className="content content__page">
               <div className="content__page__first content--full">
@@ -111,6 +112,8 @@ export default function Post({ data }) {
               <Text text={data.content.rendered} position={'right'} />;
             </div>
           </React.Fragment>
+        ) : (
+          <Loader />
         )}
       </TransitionPages>
     </LayoutApp>

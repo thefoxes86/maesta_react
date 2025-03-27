@@ -15,6 +15,7 @@ import PathPost from '../../components/PathPost'
 import LazyLoad from 'react-lazyload'
 import PlaceholderImgComponent from '../../components/PlaceholderImgComponent'
 import { pathBackend } from '../../lib/pathBackend'
+import Loader from '../../components/Loader'
 
 const ID = 212
 
@@ -72,7 +73,7 @@ export default function Comunicazioni(props) {
   return (
     <LayoutApp meta={page}>
       <TransitionPages>
-        {!loading && (
+        {!loading ? (
           <React.Fragment>
             <div className="content content__page">
               <div className="content__page__first content--full">
@@ -160,6 +161,8 @@ export default function Comunicazioni(props) {
                 ))}
             </div>
           </React.Fragment>
+        ) : (
+          <Loader />
         )}
       </TransitionPages>
     </LayoutApp>

@@ -92,23 +92,22 @@
     width: 100%;
     min-height: 60px;
     color: black;
-    font-size: 14px;
-    font-weight: 300;
+    font-size: 14px !important;
+    font-weight: 300 !important;
     padding: 5% 15%;
     z-index: 98;
   }
 }
 .grid__container_background {
-
   .productWithImage__content .text__content {
     padding: 30px 60px;
   }
   .productWithImage__content {
     margin: 250px 0;
   }
-} 
+}
 .grid__container_pruduct_left {
-  grid-template-areas: "title image description .";
+  grid-template-areas: 'title image description .';
   grid-template-columns: 0.2fr 0.1fr 2fr 2fr;
 
   .title {
@@ -121,7 +120,7 @@
 }
 
 .grid__container_pruduct_right {
-  grid-template-areas: ". description image title";
+  grid-template-areas: '. description image title';
   grid-template-columns: 2fr 2fr 0.1fr 0.2fr;
 
   .title {
@@ -140,7 +139,7 @@
   align-items: center;
   justify-content: center;
 
-  .button a{
+  .button a {
     background-color: black;
     padding: 20px 30px;
     color: white;
@@ -155,7 +154,6 @@
     font-family: 'Oswald';
   }
 }
-
 
 // CIRCLE
 
@@ -206,7 +204,7 @@
   width: 100vw;
   height: auto;
   grid-template-columns: 30% 70%;
-  grid-template-areas: ". text";
+  grid-template-areas: '. text';
   z-index: 9;
   position: absolute;
   top: 10%;
@@ -257,7 +255,7 @@
       position: relative;
       color: black;
       &::after {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         width: 95%;

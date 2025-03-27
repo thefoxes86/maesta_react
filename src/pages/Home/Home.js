@@ -13,6 +13,7 @@ import Text from '../../components/Text'
 import Form from '../../components/Form'
 import LayoutApp from '../../components/LayoutApp'
 import { pathBackend } from '../../lib/pathBackend'
+import Loader from '../../components/Loader'
 
 const ID = 132
 
@@ -52,7 +53,7 @@ export default function Home(props) {
   return (
     <LayoutApp meta={page}>
       <TransitionPages>
-        {!loading && (
+        {!loading ? (
           <React.Fragment>
             <div className="content content__first content--full">
               <div className="content__item content__item__first__right content--full-height">
@@ -154,6 +155,8 @@ export default function Home(props) {
                 })}
             </div>
           </React.Fragment>
+        ) : (
+          <Loader />
         )}
       </TransitionPages>
     </LayoutApp>

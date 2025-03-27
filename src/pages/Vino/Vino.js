@@ -13,6 +13,7 @@ import Form from '../../components/Form'
 import LayoutApp from '../../components/LayoutApp'
 import ProductWithImage from '../../components/ProductWithImage'
 import { pathBackend } from '../../lib/pathBackend'
+import Loader from '../../components/Loader'
 
 const ID = 52
 
@@ -54,7 +55,7 @@ export default function Vino(props) {
   return (
     <LayoutApp meta={page}>
       <TransitionPages>
-        {!loading && (
+        {!loading ? (
           <React.Fragment>
             <div className="content content__page">
               <div className="content__page__first content--full">
@@ -139,6 +140,8 @@ export default function Vino(props) {
                 })}
             </div>
           </React.Fragment>
+        ) : (
+          <Loader />
         )}
       </TransitionPages>
     </LayoutApp>

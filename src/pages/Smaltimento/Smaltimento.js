@@ -13,6 +13,7 @@ import Form from '../../components/Form'
 import LayoutApp from '../../components/LayoutApp'
 import { pathBackend } from '../../lib/pathBackend'
 import ProductWithTable from '../../components/ProductWithTable'
+import Loader from '../../components/Loader'
 
 const ID = 606
 
@@ -55,7 +56,7 @@ export default function Smaltimento(props) {
   return (
     <LayoutApp meta={page}>
       <TransitionPages>
-        {!loading && (
+        {!loading ? (
           <React.Fragment>
             <div className="content content__page">
               <div className="content__page__first content--full">
@@ -140,6 +141,8 @@ export default function Smaltimento(props) {
                 })}
             </div>
           </React.Fragment>
+        ) : (
+          <Loader />
         )}
       </TransitionPages>
     </LayoutApp>
