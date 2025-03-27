@@ -52,5 +52,8 @@
   },
   "devDependencies": {
     "@emailjs/browser": "^3.10.0"
+  },
+  "resolutions": {
+    "@babel/core": "^7.16.0"
   }
 }
