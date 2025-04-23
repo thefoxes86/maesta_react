@@ -132,6 +132,11 @@ export default function Smaltimento(props) {
                           background={field.bgimage.url}
                           pathColor={field.bgcolor}
                           table={field.table}
+                          tableIngredienti={field.table_ingredienti}
+                          tableValoriNutrizionali={
+                            field.table_valori_nutrizionali
+                          }
+                          show={field.mostra}
                         />
                       )
 

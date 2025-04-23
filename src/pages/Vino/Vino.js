@@ -34,6 +34,7 @@ export default function Vino(props) {
       redirect: 'follow', // manual, *follow, error
     }).then(data => {
       setPage(data)
+      console.log('DATA', data)
 
       FetchApi(`${pathBackend}/wp-json/wp/v2/media/${data.featured_media}`, {
         mode: 'cors', // no-cors, *cors, same-origin
@@ -127,6 +128,7 @@ export default function Vino(props) {
                         <ProductWithImage
                           pathColor={field.bgcolor}
                           background={field.bgimage.url}
+                          show={field.mostra}
                           title={field.title}
                           text={field.text}
                           position={field.position}
