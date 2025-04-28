@@ -8,9 +8,7 @@ export default function ProductWithTable(props) {
 
   const imageRef = useRef()
 
-  const scrollFallback = e => {
-    console.log('EVENT scroll', e)
-  }
+  const scrollFallback = e => {}
 
   useEffect(() => {
     window.addEventListener('scroll', scrollFallback)
@@ -46,12 +44,11 @@ export default function ProductWithTable(props) {
                 </>
               </div>
             ))}
+
             {props?.tableIngredienti && (
               <>
                 <div className="table__header" style={{ marginTop: '20px' }}>
-                  {props?.tableIngredienti?.header?.map(header => (
-                    <span>{header.c}</span>
-                  ))}
+                  <span>{props?.tableIngredienti?.header[0].c}</span>
                 </div>
                 {props?.tableIngredienti?.body?.map((header, index) => (
                   <div className="table__body">
